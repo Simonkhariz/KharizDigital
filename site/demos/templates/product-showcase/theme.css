@@ -7,7 +7,7 @@
   --secondary-cta-text: #1a1a1a;
   --accent: #7a7a72;
   --background-accent: #e5e4df;
-  --width-content-width: clamp(40rem, 72.5vw, 80rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 72.5vw, 80rem));
 }
 
 @media (width < 768px) {

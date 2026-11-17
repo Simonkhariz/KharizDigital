@@ -10,7 +10,7 @@
   --background-accent: #65417c;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="saas-platform"]) {
     --width-content-width: 87.5vw;
   }

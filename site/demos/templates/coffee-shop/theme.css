@@ -8,7 +8,7 @@
   --accent: #8b7355;
   --background-accent: #6f4e37;
   --radius: 1.75rem;
-  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 67.5vw, 100rem));
   --text-2xs: clamp(0.465rem, 0.62vw, 0.64rem);
   --text-xs: clamp(0.54rem, 0.72vw, 0.74rem);
   --text-sm: clamp(0.615rem, 0.82vw, 0.84rem);

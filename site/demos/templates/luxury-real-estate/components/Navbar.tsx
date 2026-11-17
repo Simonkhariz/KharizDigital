@@ -63,7 +63,7 @@ export default function Navbar({ logo, navItems, ctaButton }: NavbarProps) {
         <div className="flex items-center shrink-0 gap-2 xl:gap-3 2xl:gap-4">
           <div
             className={cn(
-              "transition-opacity duration-300",
+              "hidden sm:block transition-opacity duration-300",
               isMenuOpen && "opacity-0 pointer-events-none",
             )}
           >
@@ -116,17 +116,20 @@ export default function Navbar({ logo, navItems, ctaButton }: NavbarProps) {
                     : `${(navItems.length - 1 - index) * 0.05}s`,
                 }}
               >
-                <span className="text-7xl md:text-9xl font-medium text-background group-hover:ml-4 transition-[margin] duration-300">
+                <span className="text-5xl sm:text-7xl md:text-9xl font-medium text-background group-hover:ml-4 transition-[margin] duration-300">
                   {navItem.name}
                 </span>
                 <ArrowUpRight
-                  className="h-(--text-7xl) md:h-(--text-9xl) w-auto text-background group-hover:rotate-45 group-hover:mr-4 transition-all duration-300"
+                  className="h-10 sm:h-(--text-7xl) md:h-(--text-9xl) w-auto text-background group-hover:rotate-45 group-hover:mr-4 transition-all duration-300"
                   strokeWidth={1.5}
                 />
               </a>
               {index < navItems.length - 1 && <div className="h-px bg-background/20" />}
             </div>
           ))}
+          <div className="mt-8 sm:hidden" onClick={() => setIsMenuOpen(false)}>
+            <Button text={ctaButton.text} href={ctaButton.href} variant="primary" animate={false} />
+          </div>
         </div>
       </div>
     </nav>

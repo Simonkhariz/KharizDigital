@@ -68,6 +68,6 @@ export const collaboration = {
   heading: ["Have a project in mind?", "Let's build something meaningful together."],
   // Main button, for clients.
   button: "Start a project",
-  // Smaller link under it, for developers and creators who want to team up.
-  secondary: { lead: "Developer or creator?", label: "Collaborate with us" },
+  // Smaller link under it, for developers and designers who want to team up.
+  secondary: { lead: "Developer or Designer?", label: "Collaborate with us" },
 };

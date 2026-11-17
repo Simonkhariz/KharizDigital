@@ -73,11 +73,11 @@
   --accent: #a8cce8;
   --background-accent: #7ba3cf;
   --radius: 1.5rem;
-  --width-content-width: clamp(40rem, 72.5vw, 100rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 72.5vw, 100rem));
   --vw-1_5: 1.5vw;
   --width-x-padding-mask-fade: 5vw;
-  --width-carousel-padding: calc((100vw - var(--width-content-width)) / 2 + 1px - 1rem);
-  --width-carousel-padding-controls: calc((100vw - var(--width-content-width)) / 2 + 1px);
+  --width-carousel-padding: max(1rem, calc((100vw - var(--width-content-width)) / 2 + 1px - 1rem));
+  --width-carousel-padding-controls: max(1rem, calc((100vw - var(--width-content-width)) / 2 + 1px));
   --width-carousel-item-2: calc(var(--width-content-width) / 2 - var(--vw-1_5) / 2);
   --width-carousel-item-3: calc(var(--width-content-width) / 3 - var(--vw-1_5) / 3 * 2);
   --width-carousel-item-4: calc(var(--width-content-width) / 4 - var(--vw-1_5) / 4 * 3);
@@ -92,9 +92,34 @@
   --text-4xl: clamp(1.5rem, 2vw, 2rem);
   --text-5xl: clamp(2.025rem, 2.75vw, 2.75rem);
   --text-6xl: clamp(2.475rem, 3.3vw, 3.3rem);
-  --text-7xl: clamp(3rem, 4vw, 4rem);
-  --text-8xl: clamp(3.5rem, 4.5vw, 4.5rem);
-  --text-9xl: clamp(5.25rem, 7vw, 7rem);
+  --text-7xl: clamp(2.5rem, 4vw, 4rem);
+  --text-8xl: clamp(3rem, 4.5vw, 4.5rem);
+  --text-9xl: clamp(3.5rem, 7vw, 7rem);
+}
+
+html,
+body {
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  :root,
+  :root:where([data-template]) {
+    --width-content-width: min(calc(100vw - 2rem), 90vw) !important;
+    --width-carousel-padding: 1rem !important;
+    --width-carousel-padding-controls: 1rem !important;
+    --width-carousel-item-2: calc(100vw - 2.5rem) !important;
+    --width-carousel-item-3: calc(100vw - 2.5rem) !important;
+    --width-carousel-item-4: calc(100vw - 2.5rem) !important;
+    --text-4xl: clamp(1.35rem, 5vw, 1.75rem) !important;
+    --text-5xl: clamp(1.6rem, 6vw, 2.2rem) !important;
+    --text-6xl: clamp(1.85rem, 7vw, 2.6rem) !important;
+    --text-7xl: clamp(2rem, 8vw, 3rem) !important;
+    --text-8xl: clamp(2.25rem, 9vw, 3.5rem) !important;
+    --text-9xl: clamp(2.5rem, 10vw, 4rem) !important;
+  }
 }
 
 @keyframes cell-wave-pulse {

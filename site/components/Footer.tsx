@@ -36,7 +36,9 @@ export function Footer({ cta = true }: { cta?: boolean }) {
               <span
                 className={`absolute inset-0 rounded-full bg-background origin-left scale-x-0 transition-transform duration-[600ms] ${EASE} group-hover:scale-x-100`}
               />
-              <span className="relative z-10 text-base md:text-lg font-medium whitespace-nowrap transition-colors duration-500 group-hover:text-foreground">
+              <span
+                className={`relative z-10 text-base md:text-lg font-medium whitespace-nowrap transition-all duration-[600ms] ${EASE} group-hover:text-foreground group-hover:-translate-x-10 md:group-hover:-translate-x-12`}
+              >
                 {collaboration.button}
               </span>
               <span

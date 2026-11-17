@@ -8,10 +8,10 @@
   --secondary-cta-text: #f1f5f9;
   --accent: #38bdf8;
   --background-accent: #0284c7;
-  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 67.5vw, 100rem));
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="plumbing-services"]) {
     --width-content-width: 87.5vw;
   }

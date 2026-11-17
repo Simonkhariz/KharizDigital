@@ -25,9 +25,9 @@
   --default-font-family: var(--font-inter-tight), sans-serif;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="luxury-real-estate"]) {
-    --width-content-width: 87.5vw;
+    --width-content-width: min(calc(100vw - 2rem), 87.5vw);
   }
 }
 

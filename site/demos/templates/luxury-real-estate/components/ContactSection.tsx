@@ -102,7 +102,7 @@ export default function ContactSection({
     <section
       ref={sectionRef}
       aria-label="Contact section"
-      className="relative overflow-hidden h-[90svh] my-20"
+      className="relative overflow-hidden min-h-[90svh] py-12 md:py-0 md:h-[90svh] my-20"
     >
       <motion.div
         className="absolute inset-0"
@@ -117,7 +117,7 @@ export default function ContactSection({
         />
         <div className="absolute inset-0 bg-black/30" />
       </motion.div>
-      <div className="relative z-10 flex items-center h-full px-8 md:px-12">
+      <div className="relative z-10 flex items-center h-full px-4 md:px-12">
         <div className="mx-auto w-content-width">
           <motion.div
             initial={{

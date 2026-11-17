@@ -8,7 +8,7 @@
   --background-accent: #6fb85e;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="landscaping-services"]) {
     --width-content-width: 87.5vw;
   }

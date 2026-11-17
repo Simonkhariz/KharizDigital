@@ -9,7 +9,7 @@
   --background-accent: #60a5fa;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="hvac-management"]) {
     --width-content-width: 87.5vw;
   }

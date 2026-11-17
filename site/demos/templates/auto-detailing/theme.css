@@ -10,7 +10,7 @@
   --background-accent: #e8651a;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="auto-detailing"]) {
     --width-content-width: 87.5vw;
   }

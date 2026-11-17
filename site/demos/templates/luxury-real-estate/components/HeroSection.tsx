@@ -214,7 +214,7 @@ export default function HeroSection({
             aria-hidden="true"
           />
           <motion.div
-            className="relative z-10 w-content-width mx-auto pt-35"
+            className="relative z-10 w-content-width mx-auto pt-24 sm:pt-35"
             initial={{
               opacity: 0,
               y: 30,

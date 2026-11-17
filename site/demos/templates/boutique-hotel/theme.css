@@ -9,7 +9,7 @@
   --accent: #d4b896;
   --background-accent: #4f402d;
   --radius: 1rem;
-  --width-content-width: clamp(40rem, 80vw, 100rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 80vw, 100rem));
   --vw-1_5: 1.35rem;
   --width-x-padding-mask-fade: 4.5rem;
   --text-2xs: 0.62rem;
@@ -29,7 +29,7 @@
   --default-font-family: var(--font-inter-tight), sans-serif;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="boutique-hotel"]) {
     --width-content-width: 87.5vw;
   }

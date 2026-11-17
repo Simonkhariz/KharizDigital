@@ -10,7 +10,7 @@
   --background-accent: #106feb;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="ai-email-platform"]) {
     --width-content-width: 87.5vw;
   }

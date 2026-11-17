@@ -7,10 +7,10 @@
   --secondary-cta-text: #2e2521;
   --accent: #b2a28b;
   --background-accent: #b89461;
-  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+  --width-content-width: min(calc(100vw - 2rem), clamp(20rem, 67.5vw, 100rem));
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="natural-skincare"]) {
     --width-content-width: 87.5vw;
   }

@@ -8,7 +8,7 @@
   --background-accent: #c9725c;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="perfume-brand"]) {
     --width-content-width: 87.5vw;
   }

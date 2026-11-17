@@ -10,7 +10,7 @@
   --background-accent: #c89b3c;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="real-estate-agency"]) {
     --width-content-width: 87.5vw;
   }

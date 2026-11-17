@@ -11,9 +11,9 @@
   --radius: 2rem;
 }
 
-@media (width <= 1440px) and (width >= 768px) {
+@media (width <= 1440px) {
   :root:where([data-template="ai-consulting"]) {
-    --width-content-width: 87.5vw;
+    --width-content-width: min(calc(100vw - 2rem), 87.5vw);
   }
 }
 
