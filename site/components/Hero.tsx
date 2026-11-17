@@ -42,7 +42,7 @@ export function Hero() {
   const [what, who] = hero.pairs[index];
 
   return (
-    <section className="relative h-svh min-h-[640px] overflow-hidden bg-background">
+    <section id="hero" className="relative h-svh min-h-[640px] overflow-hidden bg-background">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ mixBlendMode: "multiply", maskImage: FADE_MASK, WebkitMaskImage: FADE_MASK }}

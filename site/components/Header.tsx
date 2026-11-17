@@ -47,7 +47,19 @@ export function Header() {
           transparent ? "border-transparent" : "border-border/70"
         }`}
       >
-        <Link href="/" aria-label={`${site.name}, home`} className="inline-flex items-center">
+        <Link
+          href="/"
+          scroll={true}
+          aria-label={`${site.name}, home`}
+          className="inline-flex items-center cursor-pointer"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            if (menuOpen) setMenuOpen(false);
+          }}
+        >
           <Logo />
         </Link>
 
