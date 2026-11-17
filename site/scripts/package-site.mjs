@@ -37,8 +37,9 @@ fs.cpSync(out, upload, { recursive: true });
 fs.rmSync(zip, { force: true });
 try {
   if (process.platform === "win32") {
+    const zipRel = path.relative(upload, zip);
     try {
-      execSync(`tar -a -c -f "${zip}" *`, { cwd: upload, stdio: "inherit" });
+      execSync(`tar -a -c -f "${zipRel}" *`, { cwd: upload, stdio: "inherit" });
     } catch {
       execSync(`powershell -NoProfile -Command "Compress-Archive -Path '*' -DestinationPath '${zip}' -Force"`, { cwd: upload, stdio: "inherit" });
     }

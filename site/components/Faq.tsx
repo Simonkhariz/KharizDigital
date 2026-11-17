@@ -8,7 +8,7 @@ import { EASE } from "./motion";
 // Accordion: one question open at a time. Each question is a real button, so
 // it works with the keyboard and announces its open/closed state.
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   const baseId = useId();
 
   return (
@@ -41,31 +41,12 @@ export function Faq() {
                     }`}
                     aria-hidden
                   >
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      className="overflow-visible"
-                    >
-                      {/* Horizontal stroke: always present */}
-                      <path
-                        d="M1 5H9"
-                        stroke="currentColor"
-                        strokeWidth="1.25"
-                        strokeLinecap="round"
-                      />
-                      {/* Vertical stroke: collapses cleanly when open */}
-                      <path
-                        d="M5 1V9"
-                        stroke="currentColor"
-                        strokeWidth="1.25"
-                        strokeLinecap="round"
-                        className={`origin-center transition-all duration-300 ${
-                          isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100"
-                        }`}
-                      />
-                    </svg>
+                    <span className="absolute inset-0 m-auto w-3 h-[1px] bg-current" />
+                    <span
+                      className={`absolute inset-0 m-auto w-3 h-[1px] bg-current transition-transform duration-300 ease-out origin-center ${
+                        isOpen ? "rotate-0" : "rotate-90"
+                      }`}
+                    />
                   </span>
                 </span>
               </button>
