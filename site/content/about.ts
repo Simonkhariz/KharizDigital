@@ -15,6 +15,6 @@ export const aboutIntro = {
     { label: "Agency", value: "Khariz Digital" },
     { label: "Studio", value: "26 Mount Street, Enugu, Nigeria" },
     { label: "Focus", value: "Web Design, Web Development, Logo Design & Branding" },
-    { label: "Tools", value: "Next.js, React, TypeScript, Tailwind CSS" },
+    { label: "Tools", value: "JavaScript, TypeScript, React, Next.js, PHP, Laravel, MySQL, PostgreSQL, Figma" },
   ],
 };
