@@ -1,0 +1,80 @@
+:root:where([data-template="auto-detailing"]) {
+  --background: #0a0a0a;
+  --card: #1a1a1a;
+  --foreground: #f5f5f5;
+  --primary-cta: #ff7a1a;
+  --primary-cta-text: #fff;
+  --secondary-cta: #1a1a1a;
+  --secondary-cta-text: #f5f5f5;
+  --accent: #ff7a1a;
+  --background-accent: #e8651a;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="auto-detailing"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="auto-detailing"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #ff7a1a4d #fff0;
+}
+
+html:where([data-template="auto-detailing"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="auto-detailing"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="auto-detailing"]) h1,
+:where([data-template="auto-detailing"]) h2,
+:where([data-template="auto-detailing"]) h3,
+:where([data-template="auto-detailing"]) h4,
+:where([data-template="auto-detailing"]) h5,
+:where([data-template="auto-detailing"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="auto-detailing"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="auto-detailing"]) .primary-button {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-cta) 0%,
+    var(--color-background-accent) 100%
+  );
+  box-shadow:
+    0 8px 24px -6px color-mix(in srgb, var(--color-primary-cta) 35%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+:where([data-template="auto-detailing"]) .secondary-button {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-secondary-cta) 80%, transparent),
+    var(--color-secondary-cta)
+  );
+  border: 1px solid var(--color-secondary-cta);
+  box-shadow: 0 1px 2px #0000000d;
+}

@@ -1,0 +1,99 @@
+html[data-showcase="nocturn"] {
+  --nc-sheet: #f8f8f8;
+  --nc-ink: #181818;
+  --nc-night: #020006;
+  --nc-navy: #0b0e2c;
+  --nc-text: #4b4b4b;
+  --nc-muted: #6f6f6f;
+  --nc-line: #b9b9b9;
+  --nc-hair: #dcdcdc;
+  --nc-white: #ffffff;
+  --nc-cream: #e9e8d2;
+  --nc-red: #b3261e;
+  --nc-display: var(--nc-font-display), "Helvetica Neue", Arial, sans-serif;
+  --nc-sans: var(--nc-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --nc-mono: var(--nc-font-mono), ui-monospace, Menlo, monospace;
+  background: var(--nc-sheet);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="nocturn"]) *,
+:where(html[data-showcase="nocturn"]) *::before,
+:where(html[data-showcase="nocturn"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="nocturn"]) body {
+  margin: 0;
+  background: var(--nc-sheet);
+  color: var(--nc-text);
+  font-family: var(--nc-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="nocturn"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="nocturn"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="nocturn"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="nocturn"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="nocturn"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="nocturn"]) :is(svg, img) {
+  display: block;
+  max-width: 100%;
+}
+
+html[data-showcase="nocturn"] :focus-visible {
+  outline: 2px solid #4b6bff;
+  outline-offset: 2px;
+}
+
+html[data-showcase="nocturn"] ::selection {
+  background: var(--nc-ink);
+  color: var(--nc-white);
+}
+
+html[data-showcase="nocturn"] .nc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="nocturn"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="nocturn"] *,
+  html[data-showcase="nocturn"] *::before,
+  html[data-showcase="nocturn"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

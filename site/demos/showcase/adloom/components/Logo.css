@@ -1,0 +1,19 @@
+.al-logo-site {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--black);
+}
+.al-logo-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-app), sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}

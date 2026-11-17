@@ -1,0 +1,113 @@
+html[data-showcase="guilder"] {
+  --gd-felt: #1d6a40;
+  --gd-night: #06201a;
+  --gd-pine: #0b3125;
+  --gd-green: #1f7a55;
+  --gd-green-soft: #dcebe1;
+  --gd-cream: #eeefe9;
+  --gd-paper: #f6f6f1;
+  --gd-white: #ffffff;
+  --gd-ink: #10261f;
+  --gd-text: #5a665f;
+  --gd-faint: #8a948d;
+  --gd-line: #e2e4dc;
+  --gd-gold: #d3b06a;
+  --gd-gold-deep: #a9833a;
+  --gd-amber: #b7791f;
+  --gd-serif: var(--gd-font-serif), Georgia, "Times New Roman", serif;
+  --gd-sans: var(--gd-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --gd-mono: var(--gd-font-mono), ui-monospace, Menlo, monospace;
+  --gd-max: 1070px;
+  --gd-gutter: clamp(18px, 4vw, 48px);
+  --gd-frame: clamp(8px, 3.2vw, 46px);
+  background: var(--gd-felt);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="guilder"]) *,
+:where(html[data-showcase="guilder"]) *::before,
+:where(html[data-showcase="guilder"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="guilder"]) body {
+  margin: 0;
+  color: var(--gd-text);
+  font-family: var(--gd-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="guilder"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="guilder"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="guilder"]) :is(h1, h2, h3) {
+  font-family: var(--gd-serif);
+  font-weight: 400;
+  color: var(--gd-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+:where(html[data-showcase="guilder"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="guilder"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="guilder"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="guilder"]) svg {
+  display: block;
+  flex: none;
+}
+
+html[data-showcase="guilder"] :focus-visible {
+  outline: 2px solid var(--gd-gold);
+  outline-offset: 3px;
+}
+
+html[data-showcase="guilder"] ::selection {
+  background: var(--gd-green);
+  color: var(--gd-white);
+}
+
+html[data-showcase="guilder"] .gd-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="guilder"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="guilder"] *,
+  html[data-showcase="guilder"] *::before,
+  html[data-showcase="guilder"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

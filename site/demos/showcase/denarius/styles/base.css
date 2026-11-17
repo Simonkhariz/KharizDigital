@@ -1,0 +1,152 @@
+html[data-showcase="denarius"] {
+  --dn-mist: #f1f1f1;
+  --dn-paper: #ffffff;
+  --dn-shell: #fbfaf8;
+  --dn-ink: #121212;
+  --dn-black: #050505;
+  --dn-graphite: #5a5a5a;
+  --dn-text: #5e5e5e;
+  --dn-muted: #767676;
+  --dn-faint: #b4b4b4;
+  --dn-line: #dedede;
+  --dn-teal-line: #2f4a4d;
+  --dn-champagne: #d4c7be;
+  --dn-champagne-deep: #b9aa9c;
+  --dn-blush: #faf5f2;
+  --dn-flag: #c8bbb1;
+  --dn-green: #5fe3a1;
+  --dn-green-ink: #1f7a4d;
+  --dn-orange: #e2672a;
+  --dn-danger: #b3402a;
+  --dn-serif: var(--dn-font-serif), "Didot", "Bodoni 72", Georgia, serif;
+  --dn-sans: var(--dn-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --dn-mono: var(--dn-font-mono), ui-monospace, Menlo, monospace;
+  --dn-gutter: clamp(16px, 1.67vw, 24px);
+  --dn-ease: cubic-bezier(0.22, 0.61, 0.21, 1);
+  background: var(--dn-paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="denarius"]) *,
+:where(html[data-showcase="denarius"]) *::before,
+:where(html[data-showcase="denarius"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="denarius"]) body {
+  margin: 0;
+  background: var(--dn-paper);
+  color: var(--dn-text);
+  font-family: var(--dn-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="denarius"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, fieldset) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="denarius"]) fieldset {
+  border: 0;
+  min-width: 0;
+}
+
+:where(html[data-showcase="denarius"]) :is(ul, ol) {
+  list-style: none;
+}
+
+/* Display serif: light, high contrast, tightly set. */
+:where(html[data-showcase="denarius"]) :is(h1, h2) {
+  font-family: var(--dn-serif);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+  color: var(--dn-ink);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+:where(html[data-showcase="denarius"]) :is(h3, h4) {
+  font-family: var(--dn-sans);
+  font-weight: 500;
+  color: var(--dn-ink);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+:where(html[data-showcase="denarius"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="denarius"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+:where(html[data-showcase="denarius"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="denarius"]) :is(svg, img) {
+  display: block;
+  max-width: 100%;
+}
+
+html[data-showcase="denarius"] :focus-visible {
+  outline: 2px solid var(--dn-ink);
+  outline-offset: 3px;
+}
+
+html[data-showcase="denarius"] .dn-on-dark :focus-visible,
+html[data-showcase="denarius"] .dn-on-dark:focus-visible {
+  outline-color: #ffffff;
+}
+
+html[data-showcase="denarius"] ::selection {
+  background: var(--dn-ink);
+  color: var(--dn-paper);
+}
+
+html[data-showcase="denarius"] .dn-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Serif figures used for every amount, on the site and in the app. */
+html[data-showcase="denarius"] .dn-num {
+  font-family: var(--dn-serif);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.035em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="denarius"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="denarius"] *,
+  html[data-showcase="denarius"] *::before,
+  html[data-showcase="denarius"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

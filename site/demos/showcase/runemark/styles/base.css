@@ -1,0 +1,114 @@
+html[data-showcase="runemark"] {
+  --rm-paper: #f3f3ef;
+  --rm-white: #ffffff;
+  --rm-ink: #111111;
+  --rm-text: #55554f;
+  --rm-muted: #8a8a84;
+  --rm-line: #e1e1dc;
+  --rm-orange: #ff5200;
+  --rm-orange-text: #d94400;
+  --rm-tint: #f6ddd4;
+  --rm-dark: #111111;
+  --rm-dark-2: #1a1a1a;
+  --rm-dark-line: #272727;
+  --rm-dark-text: #9c9c96;
+  --rm-sans: var(--rm-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --rm-mono: var(--rm-font-mono), ui-monospace, Menlo, monospace;
+  --rm-pixel: var(--rm-font-pixel), var(--rm-font-mono), monospace;
+  --rm-frame: clamp(6px, 3vw, 44px);
+  --rm-gut: 12.8%;
+  background: #ff7a3c;
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="runemark"]) *,
+:where(html[data-showcase="runemark"]) *::before,
+:where(html[data-showcase="runemark"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="runemark"]) body {
+  margin: 0;
+  padding: clamp(6px, 1.6vw, 24px) var(--rm-frame) clamp(40px, 8vw, 120px);
+  background: linear-gradient(180deg, #ff9462 0%, #ff6a12 4%, #ff6200 9%, #ff8a55 24%, #ff9a6e 40%, #ff6a12 52%, #ff6200 60%, #ff8650 78%, #ff9264 100%);
+  color: var(--rm-text);
+  font-family: var(--rm-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="runemark"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="runemark"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="runemark"]) :is(h1, h2, h3) {
+  font-weight: 500;
+  color: var(--rm-ink);
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+:where(html[data-showcase="runemark"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="runemark"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+:where(html[data-showcase="runemark"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="runemark"]) svg {
+  display: block;
+}
+
+html[data-showcase="runemark"] :focus-visible {
+  outline: 2px solid var(--rm-orange);
+  outline-offset: 3px;
+}
+
+html[data-showcase="runemark"] ::selection {
+  background: var(--rm-orange);
+  color: var(--rm-white);
+}
+
+@media (max-width: 1024px) {
+  html[data-showcase="runemark"] {
+    --rm-gut: 56px;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-showcase="runemark"] {
+    --rm-gut: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="runemark"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="runemark"] *,
+  html[data-showcase="runemark"] *::before,
+  html[data-showcase="runemark"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

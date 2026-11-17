@@ -1,0 +1,124 @@
+html[data-showcase="fiscara"] {
+  --fs-beige: #e4e1d2;
+  --fs-line: #d1cebf;
+  --fs-chip: #d8d4c8;
+  --fs-chip-deep: #cdc9bb;
+  --fs-paper: #efece0;
+  --fs-ink: #1a1512;
+  --fs-text: #4b443d;
+  --fs-grey: #8b7d74;
+  --fs-soft: #8a857a;
+  --fs-brown: #341815;
+  --fs-brown-lift: #40221d;
+  --fs-brown-line: #55342e;
+  --fs-brown-deep: #2a110e;
+  --fs-maroon: #7c3539;
+  --fs-maroon-deep: #672a2e;
+  --fs-cream: #e4e1d2;
+  --fs-on-brown: #b9aca5;
+  --fs-on-brown-mute: #8f7c76;
+  --fs-gold: #d9c6a3;
+  --fs-amber: #e58a2f;
+  --fs-sage: #949a89;
+  --fs-teal: #1c4a44;
+  --fs-white: #ffffff;
+  --fs-red: #a3271f;
+  --fs-sans: var(--fs-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --fs-ui: var(--fs-font-ui), var(--fs-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --fs-mono: var(--fs-font-mono), ui-monospace, Menlo, monospace;
+  --fs-gutter: 14px;
+  --fs-ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  background: var(--fs-beige);
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="fiscara"]) *,
+:where(html[data-showcase="fiscara"]) *::before,
+:where(html[data-showcase="fiscara"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="fiscara"]) body {
+  margin: 0;
+  background: var(--fs-beige);
+  color: var(--fs-text);
+  font-family: var(--fs-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="fiscara"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, dt, figure) {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+}
+
+:where(html[data-showcase="fiscara"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="fiscara"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="fiscara"]) :is(button, input, select, textarea) {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="fiscara"]) button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="fiscara"]) :is(svg, img) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(html[data-showcase="fiscara"]) :is(i, em) {
+  font-style: normal;
+}
+
+html[data-showcase="fiscara"] :focus-visible {
+  outline: 2px solid var(--fs-amber);
+  outline-offset: 2px;
+}
+
+html[data-showcase="fiscara"] ::selection {
+  background: var(--fs-maroon);
+  color: var(--fs-cream);
+}
+
+html[data-showcase="fiscara"] .fs-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="fiscara"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="fiscara"] *,
+  html[data-showcase="fiscara"] *::before,
+  html[data-showcase="fiscara"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

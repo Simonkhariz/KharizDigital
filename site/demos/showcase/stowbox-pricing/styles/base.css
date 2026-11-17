@@ -1,0 +1,107 @@
+html[data-showcase="stowbox-pricing"] {
+  --sb-ink: #111111;
+  --sb-text: #5c5c5c;
+  --sb-muted: #6f6f6f;
+  --sb-page: #fbfbfb;
+  --sb-paper: #ffffff;
+  --sb-tray: #f0f0f0;
+  --sb-dash: #cfcfcf;
+  --sb-line: #e6e6e6;
+  --sb-danger: #b3261e;
+  --sb-good: #1f6b3a;
+  --sb-display: var(--sb-font-sans), "Helvetica Neue", Arial, sans-serif;
+  background: var(--sb-page);
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) *,
+:where(html[data-showcase="stowbox-pricing"]) *::before,
+:where(html[data-showcase="stowbox-pricing"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) body {
+  margin: 0;
+  background: var(--sb-page);
+  color: var(--sb-text);
+  font-family: var(--sb-display);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) :is(h1, h2, h3) {
+  font-family: var(--sb-display);
+  font-weight: 400;
+  color: var(--sb-ink);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="stowbox-pricing"]) :is(svg, img) {
+  display: block;
+}
+
+html[data-showcase="stowbox-pricing"] :focus-visible {
+  outline: 2px solid var(--sb-ink);
+  outline-offset: 3px;
+}
+
+html[data-showcase="stowbox-pricing"] .sb-on-dark :focus-visible {
+  outline-color: #ffffff;
+}
+
+html[data-showcase="stowbox-pricing"] ::selection {
+  background: var(--sb-ink);
+  color: #ffffff;
+}
+
+html[data-showcase="stowbox-pricing"] .sb-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="stowbox-pricing"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="stowbox-pricing"] *,
+  html[data-showcase="stowbox-pricing"] *::before,
+  html[data-showcase="stowbox-pricing"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

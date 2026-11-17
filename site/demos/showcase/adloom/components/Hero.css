@@ -1,0 +1,87 @@
+.al-hero-hero {
+  padding-top: 72px;
+}
+.al-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.al-hero-title {
+  margin-top: 26px;
+  font-size: clamp(36px, 3.95vw, 60px);
+  line-height: 1.16;
+  max-width: 1000px;
+  text-wrap: pretty;
+}
+.al-hero-body {
+  margin-top: 22px;
+  max-width: 700px;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.al-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+.al-hero-stage {
+  position: relative;
+  margin-top: 64px;
+  height: 670px;
+  padding: 76px 88px 0;
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+  background: #9bc8ef;
+  isolation: isolate;
+}
+.al-hero-glow {
+  position: absolute;
+  inset: -40px;
+  z-index: -1;
+  filter: blur(36px);
+  background:
+    radial-gradient(38% 30% at 30% 2%, #ee7f1f 0%, rgba(238, 127, 31, 0.85) 45%, transparent 100%),
+    radial-gradient(22% 26% at 12% 2%, #d9a36c 0%, transparent 100%),
+    radial-gradient(18% 45% at 3% 38%, #4f9fdb 0%, rgba(103, 165, 202, 0.7) 60%, transparent 100%),
+    radial-gradient(16% 22% at 2% 78%, #e7a04a 0%, rgba(206, 181, 140, 0.8) 55%, transparent 100%),
+    radial-gradient(14% 14% at 4% 100%, #8e9a3c 0%, transparent 100%),
+    radial-gradient(30% 22% at 60% 0%, #c3c7c0 0%, transparent 100%),
+    radial-gradient(40% 60% at 100% 100%, #a2d0d6 0%, transparent 100%),
+    linear-gradient(180deg, #86c0ee 0%, #9bc8ef 55%, #9dcbdf 100%);
+}
+@media (min-width: 1100px) {
+  .al-hero-break {
+    display: inline;
+  }
+}
+@media (max-width: 1199px) {
+  .al-hero-stage {
+    padding-inline: 48px;
+  }
+}
+@media (max-width: 899px) {
+  .al-hero-hero {
+    padding-top: 40px;
+  }
+  .al-hero-stage {
+    height: auto;
+    padding: 40px 28px 0;
+    margin-top: 48px;
+  }
+}
+@media (max-width: 599px) {
+  .al-hero-break {
+    display: none;
+  }
+  .al-hero-stage {
+    padding: 22px 14px 0;
+    border-radius: 22px;
+  }
+  .al-hero-body {
+    font-size: 16px;
+  }
+}

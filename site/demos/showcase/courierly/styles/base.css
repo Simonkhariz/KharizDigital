@@ -1,0 +1,111 @@
+html[data-showcase="courierly"] {
+  --co-blue: #0a49d1;
+  --co-blue-deep: #083aa8;
+  --co-blue-mid: #3f6fdc;
+  --co-blue-soft: #9db6f2;
+  --co-ink: #17181c;
+  --co-coal: #2b2c30;
+  --co-text: #3d4048;
+  --co-muted: #7b7f8c;
+  --co-line: #eceef5;
+  --co-tray: #f1f2f8;
+  --co-paper: #ffffff;
+  --co-danger: #c2281d;
+  --co-display: var(--co-font-display), "Helvetica Neue", Arial, sans-serif;
+  --co-sans: var(--co-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --co-mono: var(--co-font-mono), ui-monospace, Menlo, monospace;
+  background: var(--co-paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="courierly"]) *,
+:where(html[data-showcase="courierly"]) *::before,
+:where(html[data-showcase="courierly"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="courierly"]) body {
+  margin: 0;
+  background: var(--co-paper);
+  color: var(--co-text);
+  font-family: var(--co-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="courierly"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="courierly"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="courierly"]) :is(h1, h2, h3) {
+  font-family: var(--co-display);
+  font-weight: 400;
+  color: var(--co-ink);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+:where(html[data-showcase="courierly"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="courierly"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="courierly"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="courierly"]) :is(svg, img) {
+  display: block;
+}
+
+html[data-showcase="courierly"] :focus-visible {
+  outline: 2px solid var(--co-blue);
+  outline-offset: 3px;
+}
+
+html[data-showcase="courierly"] .co-on-blue :focus-visible {
+  outline-color: #ffffff;
+}
+
+html[data-showcase="courierly"] ::selection {
+  background: var(--co-blue);
+  color: #ffffff;
+}
+
+html[data-showcase="courierly"] .co-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="courierly"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="courierly"] *,
+  html[data-showcase="courierly"] *::before,
+  html[data-showcase="courierly"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

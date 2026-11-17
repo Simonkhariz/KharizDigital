@@ -1,0 +1,1069 @@
+{
+  "pictureProjects": [
+    {
+      "slug": "meridiem",
+      "name": "Meridiem",
+      "originalBrand": "Incredible",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_2507.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_2507.JPGpro.jpeg",
+      "description": "Waitlist landing page for a reasoning-model API. Warm cream page, high-contrast condensed serif headline in black and grey, small grey sans body, dark pill button, large rounded golden-hour meadow image holding a frosted-glass prompt box.",
+      "sections": [
+        "Nav (About, Pricing, Blog, Log In, Join Now)",
+        "Announcement pill",
+        "Hero headline + waitlist button + avatar proof",
+        "Image panel with interactive prompt box and suggestion chips",
+        "Logo row"
+      ],
+      "missing": [
+        "Everything below the logo row (features, pricing, blog, footer)",
+        "Meadow hero image",
+        "Replacement logos for the real companies in the logo row"
+      ],
+      "notes": "Prompt box implies a working input with attach, style dropdown and send; suggestion chips should fill the input. Copy has a typo ('what matter') to fix.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "adloom",
+      "name": "Adloom",
+      "originalBrand": "Socialscale",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "L",
+      "images": [
+        "IMG_3007.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3007.JPGpro.jpeg",
+      "description": "Landing page for a social-commerce ad studio. Near-white page, very large light-weight grotesk headline, maroon announcement bar, black and white pill buttons, a detailed app-window mock on a blurred orange/blue gradient panel.",
+      "sections": [
+        "Announcement bar",
+        "Nav with four dropdown menus + Login / Book a demo / Try for free",
+        "Hero with eyebrow pill, headline, two buttons",
+        "Product mock: sidebar, chat history, generated image tiles, prompt composer with model select and format chips",
+        "Logo row"
+      ],
+      "missing": [
+        "All sections below the logo row",
+        "Dropdown menu contents",
+        "Product photos used in the mock",
+        "Replacement logos (real fintech brands shown)"
+      ],
+      "notes": "The app mock is the centrepiece and should be built as live HTML, ideally with a simulated 'generating' state. Logo-row caption talks about fintech transactions and does not match the product; rewrite.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "petalform",
+      "name": "Petalform",
+      "originalBrand": "Popty Ai",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_3168.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3168.JPGpro.jpeg",
+      "description": "Landing page for an SEO content and ad-creative generator. White page, saturated sky-blue full-width hero image (traffic light filled with flowers), tight geometric sans, white and translucent pill buttons, surreal floral editorial photography.",
+      "sections": [
+        "Nav (Solutions, Resources, Pricing, About, Sign in)",
+        "Image hero with headline and two buttons",
+        "'No credit card' pill + three stats",
+        "'Create the exact Ad type you need' two-card grid (more cards cut off)"
+      ],
+      "missing": [
+        "Rest of the feature grid and everything after it",
+        "Three surreal flower photographs",
+        "Footer"
+      ],
+      "notes": "Hero copy (SEO content) and feature copy (ad creatives) describe different products; pick one when writing demo copy.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "rapporta",
+      "name": "Rapporta",
+      "originalBrand": "Converto",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "L",
+      "images": [
+        "IMG_3185.JPGpro.jpeg",
+        "IMG_3218.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3218.JPG.jpeg",
+      "description": "Complete landing page for a customer-experience agent platform. Warm off-white, visible boxed grid with hairline rules, light grotesk two-tone headlines, square black buttons, single orange accent, giant orange wordmark footer.",
+      "sections": [
+        "Nav (Resources, Company, Careers, Pricing, EN, Sign in)",
+        "Hero with update pill and two buttons",
+        "Dashboard mock: KPI row, bar chart, view tabs, kanban columns",
+        "'Trusted by' logo cells",
+        "'A new standard for customer experience' with animated-looking flow diagram",
+        "'Solution for every Industry' three cards",
+        "'Here's what success looks like' CTA + newsletter",
+        "Footer with link columns and giant wordmark"
+      ],
+      "missing": [
+        "Nothing structural: the full page is visible",
+        "Small text in the dashboard mock is hard to read at source resolution",
+        "Replacement logos (real companies shown)"
+      ],
+      "notes": "IMG_3185 is a hero close-up of the same page as IMG_3218 (identical dashboard, nav, logos). The dashboard mock could double as a Dashboards-category demo. Hero grammar ('agents that turns') needs fixing.",
+      "duplicateImages": [
+        "IMG_3188.JPG.jpeg",
+        "IMG_3238.JPG.jpeg"
+      ]
+    },
+    {
+      "slug": "verdance",
+      "name": "Verdance",
+      "originalBrand": "Fropp",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_3186.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3186.JPGpro.jpeg",
+      "description": "Landing page for a developer platform with an in-editor assistant. Light grey page, outlined rectangular nav, geometric grotesk headline, square buttons, a code-editor mock floating over a painted flower-field image, boxed stat band.",
+      "sections": [
+        "Outlined nav (Gallery, Styles, Pricing, API, Sign in)",
+        "Hero with two buttons",
+        "Code editor mock: tabs, syntax-highlighted code, autocomplete menu, terminal tabs, assistant panel with refactor suggestion and Apply/Discard",
+        "Three-stat band"
+      ],
+      "missing": [
+        "Everything below the stat band",
+        "Flower-field background painting"
+      ],
+      "notes": "Shares its code-editor mock, body copy and stat band with the 'Ninny 2.0' design; the later sections of that page are a reasonable guide for the unseen part of this one. Nav labels (Gallery, Styles) do not match the product.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "helmdeck",
+      "name": "Helmdeck",
+      "originalBrand": "Ninny 2.0",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_3191.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3191.JPGpro.jpeg",
+      "description": "Complete landing page for a desktop 'command center' developer tool. Off-white page, left-aligned grotesk headline, black square buttons, dithered/pixelated landscape artwork used behind every mock and card, boxed stat band, giant wordmark footer.",
+      "sections": [
+        "Nav (boxed links, Download, Login)",
+        "Left-aligned hero with 'Download for macOS'",
+        "Code editor mock on dithered landscape",
+        "Logo strip",
+        "Three-stat band",
+        "'Connect your Stack' icon row",
+        "Two testimonial panels",
+        "'Scalable plans for every team' three tiers",
+        "Final CTA with two buttons",
+        "Footer with link columns and giant wordmark"
+      ],
+      "missing": [
+        "Nothing structural: the full page is visible",
+        "Dithered landscape artwork (can be generated from any photo with a dither filter)",
+        "Fine print in the editor mock"
+      ],
+      "notes": "Possibly the same product family as the 'Nigx' sign-in screen (IMG_3190): see uncertain groupings.",
+      "duplicateImages": [
+        "IMG_3217.JPG.jpeg"
+      ]
+    },
+    {
+      "slug": "meadowline",
+      "name": "Meadowline",
+      "originalBrand": "Axion",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "L",
+      "images": [
+        "IMG_3254.JPGpro.jpeg",
+        "IMG_3255.JPG.jpeg",
+        "IMG_3256.JPG.jpeg",
+        "IMG_3257.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3254.JPGpro.jpeg",
+      "description": "Landing page for a workflow-automation service. Cream background, dark brown condensed serif headlines with one orange italic word each, pill tags, dark pill buttons, storybook-style painted alpine landscapes behind hero and cards, frosted-glass panels, orange stat tiles.",
+      "sections": [
+        "Nav (Solutions, Process, Use, Pricing, Blogs, Contact)",
+        "Illustrated hero with three stats",
+        "'About' statement with dotted connector and 35%+ tile",
+        "'Trusted by' logo grid",
+        "'Why' section: six glass feature cards around a central logo",
+        "'Core Features': four cards with UI mocks (goals, assistant chat, add task, team)",
+        "'Use Case' tabs: Founders / Agencies / Solo Professionals",
+        "'Process': three numbered steps",
+        "'Reviews' header"
+      ],
+      "missing": [
+        "Review cards, pricing, blog, FAQ and footer (nav lists Pricing and Blogs)",
+        "About eight painted landscape illustrations in a consistent style",
+        "Butterfly overlays (probably animated)"
+      ],
+      "notes": "Each file is two viewport captures stitched, so some sections are split across the seam. Illustration set is the main cost.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "aerelle",
+      "name": "Aerelle",
+      "originalBrand": "OASISE",
+      "category": "Web Design",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_3288.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3288.JPGpro.jpeg",
+      "description": "Skincare brand site shown as desktop and mobile. Sky-blue gradient hero with clouds and light rays, white and blue product bottles on plinths, light geometric sans with one italic serif word, white rounded button, navy headings on white.",
+      "sections": [
+        "Nav (Skincare, Journal, About, Contact, Get Your Formula)",
+        "Hero with product still life",
+        "'What Makes It Skin-Credible' intro + three product image cards",
+        "Mobile layout of the same sections"
+      ],
+      "missing": [
+        "All sections after the first product row (collection, journal, formula quiz, footer)",
+        "Product photography or 3D renders: hero plus at least three cards",
+        "Shop / product detail pages if the demo is to be functional"
+      ],
+      "notes": "The only reference that shows the responsive layout. A designer credit is printed in the margin; do not reproduce it. Could also sit under Branding & Logo Design.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "driftlayer",
+      "name": "Driftlayer",
+      "originalBrand": "Cirro",
+      "category": "Landing Pages",
+      "batch": 1,
+      "complexity": "M",
+      "images": [
+        "IMG_3327.JPGpro.jpeg"
+      ],
+      "primaryImage": "IMG_3327.JPGpro.jpeg",
+      "description": "Landing page for an ambient assistant layer. Blue-sky 3D render hero with a stylised character, giant rounded white wordmark overlapping the figure, glass pill nav, rounded sans, navy and sky-blue two-tone headings, rounded image cards.",
+      "sections": [
+        "Glass pill nav (Product, Use cases, Pricing, Journal, FAQ, Get early access)",
+        "Hero with wordmark, tagline and two buttons",
+        "'What is' statement with button",
+        "'Where simple meets powerful' three numbered cards (cut off)"
+      ],
+      "missing": [
+        "Card captions and all later sections (use cases, pricing, journal, FAQ, footer)",
+        "3D character renders: hero plus three card images",
+        "Wordmark-behind-subject layering needs a cut-out of the hero figure"
+      ],
+      "notes": "First of six consecutive captures (IMG_3327-3332) that share a frame format but are six different brands.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "courierly",
+      "name": "Courierly",
+      "originalBrand": "Sendly AI",
+      "category": "Landing Pages",
+      "batch": 2,
+      "complexity": "M",
+      "images": [
+        "IMG_3189.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3189.JPG.jpeg",
+      "description": "Complete landing page for an email-sending platform with API. White page with faint grid, single cobalt-blue accent, blue halftone/grain hero and section panels, compact grotesk headings, square icon tiles, white cards.",
+      "sections": [
+        "Nav with dropdowns",
+        "Halftone hero with two buttons and testimonial slider",
+        "'Designed for Everyone' two audience cards",
+        "'Why' 2x2 cards on blue",
+        "Segment chips + testimonials button",
+        "'Powerful Email Tools' six cards",
+        "'How It Works' three steps",
+        "'Simple Pricing' four plans",
+        "CTA panel",
+        "Footer with giant wordmark"
+      ],
+      "missing": [
+        "Nothing structural",
+        "Body text is small at source resolution; copy will need rewriting",
+        "Halftone artwork"
+      ],
+      "notes": "Step numbers in 'How It Works' appear as 1, 3, 2 in the source; fix. Pricing is in naira.",
+      "duplicateImages": [
+        "IMG_3192.JPG.jpeg"
+      ]
+    },
+    {
+      "slug": "denarius",
+      "name": "Denarius",
+      "originalBrand": "monee",
+      "category": "Landing Pages",
+      "batch": 2,
+      "complexity": "L",
+      "images": [
+        "IMG_3259.JPG.jpeg",
+        "IMG_3260.JPG.jpeg",
+        "IMG_3261.JPG.jpeg",
+        "IMG_3262.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3259.JPG.jpeg",
+      "description": "Near-complete landing page for a personal-finance app. Light grey and white, thin display serif headlines, mono uppercase labels and buttons, classical statues and painted temple scenes, grey/champagne bank card, black UI widgets, dark illustrated footer.",
+      "sections": [
+        "Nav (Features, Personal, Solutions, Log In, Sign Up)",
+        "Hero with statues, card and logo row",
+        "'Manage every payment' with card stack and currency icons",
+        "'Secure your finances' three cards with widgets",
+        "'Smart finance platform' numbered list + phone statistics mock",
+        "Testimonial slider (1 of 5)",
+        "Footer with menu, contact, socials and giant logo"
+      ],
+      "missing": [
+        "Small gap possible between the payments section and the security section",
+        "Statue cut-outs, temple paintings, bank-card render",
+        "Testimonials 2-5"
+      ],
+      "notes": "IMG_3261 overlaps both neighbours, confirming one continuous page. Footer shows a different brand's email address, a phone number and a street address: replace all contact details.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "wexcombe",
+      "name": "Wexcombe Partners",
+      "originalBrand": "Ardley",
+      "category": "Web Design",
+      "batch": 2,
+      "complexity": "M",
+      "images": [
+        "IMG_3263.JPG.jpeg",
+        "IMG_3264.JPG.jpeg",
+        "IMG_3265.JPG.jpeg",
+        "IMG_3266.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3263.JPG.jpeg",
+      "description": "Corporate site home page for an executive-search firm. Warm off-white, condensed serif headings in black with a grey second line, bracketed mono section labels, deep green accent, white rounded cards, hairline tables, pale green chips.",
+      "sections": [
+        "Nav (Practices, Partners, About, Insights) + pill CTA",
+        "Hero with two buttons and portrait",
+        "Four-promise bento",
+        "Founder quote band",
+        "Four practices cards",
+        "Five-stage process table",
+        "Four partner cards",
+        "Sector chips",
+        "Recent appointments table",
+        "Three client quotes",
+        "Insights article cards (top edge only)"
+      ],
+      "missing": [
+        "Insights card text, closing CTA, footer",
+        "Inner pages linked from the home page (practice, team, insights)",
+        "Five professional portraits and three article images"
+      ],
+      "notes": "Text-led and photo-light, so a quick, faithful rebuild. Lowest asset risk of any multi-image group.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "runemark",
+      "name": "Runemark",
+      "originalBrand": "Sigil",
+      "category": "Landing Pages",
+      "batch": 2,
+      "complexity": "L",
+      "images": [
+        "IMG_3246.JPG.jpeg",
+        "IMG_3247.JPG.jpeg",
+        "IMG_3248.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3246.JPG.jpeg",
+      "description": "Landing page for an agent-infrastructure platform. Off-white and near-black alternating bands inside an orange frame, numbered section gutter, hairline grid, grotesk headings with pixel-font orange accent words, mono labels, isometric line illustrations.",
+      "sections": [
+        "Nav with boxed mono links",
+        "Ticker bar",
+        "Hero with install command and two CTAs",
+        "Pipeline diagram with pixel dissolve",
+        "Logo row",
+        "'The problem' stat grid + isometric cubes",
+        "'Reliability' stack illustration + checklist",
+        "Code block section",
+        "Four-stat band",
+        "Testimonial carousel",
+        "FAQ accordion (last two items)",
+        "Final CTA with concentric squares",
+        "Link-grid footer with pixel wordmark"
+      ],
+      "missing": [
+        "Sections 06-07 and 12 (section numbers show the gaps; nav suggests features and pricing)",
+        "First four FAQ questions",
+        "Isometric illustrations (SVG redraw)"
+      ],
+      "notes": "Section numbers in the left gutter make the gaps exact. Footer carries a design-studio credit; do not reproduce it.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "guilder",
+      "name": "Guilder",
+      "originalBrand": "Florin",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "L",
+      "images": [
+        "IMG_3332.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3332.JPG.jpeg",
+      "description": "Landing page for a stablecoin business account. Deep green with halftone banknote portrait, cream body, serif headings with gold or green italic second line, gold pill buttons, four product panels with realistic banking UI.",
+      "sections": [
+        "Nav (Product, Developers, Pricing, About, Journal)",
+        "Hero with two buttons",
+        "Four compliance badges",
+        "'A bank account that speaks USDC': Send form, Receive account details with tabs, Hold balances, Spend cards table"
+      ],
+      "missing": [
+        "Bottom of the product panels and all later sections",
+        "Halftone portrait artwork"
+      ],
+      "notes": "The four panels are close to a working banking UI and could be extended into a Web Applications demo.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "swiftlet",
+      "name": "Swiftlet",
+      "originalBrand": "KESTREL",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "L",
+      "images": [
+        "IMG_3329.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3329.JPG.jpeg",
+      "description": "Landing page for a keyboard-first mail, docs and agents workspace. Off-white page in a purple/pink gradient frame, large tight grotesk two-tone headline, key-cap chips, mail-client mock on a vivid purple gradient panel.",
+      "sections": [
+        "Nav (Mail, Agents, Docs, Pricing, Blog)",
+        "Split hero with headline, buttons and key hints",
+        "Tabbed product mock (Mail / Agents / Docs) with inbox list and draft popover",
+        "Logo row",
+        "'Agents' feature section, two cards (cut off)"
+      ],
+      "missing": [
+        "Agents and Docs tab states of the mock",
+        "Rest of the feature cards and all later sections"
+      ],
+      "notes": "Mail-client mock is a natural Web Applications demo.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "sixseat",
+      "name": "Sixseat",
+      "originalBrand": "Roundtable",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3330.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3330.JPG.jpeg",
+      "description": "Landing page for shared live agent sessions. Cool off-white page in a green felt-textured frame, bookish serif headings, sans body, isometric cubes with coloured tops and named cursor labels.",
+      "sections": [
+        "Nav (Product, Use cases, Pricing, Changelog, Blog)",
+        "Hero with orbiting cubes and two buttons",
+        "Logo marquee",
+        "'Audience of one' comparison: 1 of 6 seats vs 6 of 6",
+        "'Three layers, one shared run' (heading only)"
+      ],
+      "missing": [
+        "Three-layers section and everything after",
+        "Cube SVGs (simple to draw)"
+      ],
+      "notes": "Cursor labels imply animated multiplayer cursors. One logo in the marquee reads 'Kestrel', linking it to IMG_3329's series.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "agentway",
+      "name": "Agentway",
+      "originalBrand": "opero",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3328.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3328.JPG.jpeg",
+      "description": "Landing page styled as a field guide for building software that agents use. One-colour system: electric blue on white inside a blue gradient frame, light grotesk headlines, mono uppercase labels, hairline grid, large isometric city illustration.",
+      "sections": [
+        "Nav with mono links, Log in, Get started",
+        "Masthead strip (title, volume, date)",
+        "Hero with two buttons and three inline stats",
+        "Isometric illustration with callout label",
+        "Logo cells",
+        "'Four ideas' intro",
+        "Idea 01 row with proof panel (cut off)"
+      ],
+      "missing": [
+        "Ideas 02-04, pricing, footer",
+        "Isometric city illustration (large SVG job)"
+      ],
+      "notes": "Single-colour palette makes theming trivial; the illustration is the cost.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "substrata",
+      "name": "Substrata",
+      "originalBrand": "kernal",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3331.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3331.JPG.jpeg",
+      "description": "Landing page for persistent virtual machines for agents. Black page, ASCII/dot-matrix textures, bold white grotesk headline, white buttons, orange mono badge, terminal window mock.",
+      "sections": [
+        "Nav (Features, Pricing, Changelog, Blog, Log in, Get started)",
+        "Badge + hero + two buttons",
+        "Terminal mock with boot sequence",
+        "Monochrome logo row",
+        "'Autonomy' section with two dot-matrix cards (cut off)"
+      ],
+      "missing": [
+        "Card contents and all later sections",
+        "Dot-matrix textures (canvas or generated)"
+      ],
+      "notes": "One line of the terminal mock names a third-party product; use a neutral placeholder. Terminal should type out on load.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "closient",
+      "name": "Closient",
+      "originalBrand": "Salea (badge says Nimbusly)",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "L",
+      "images": [
+        "IMG_2517.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_2517.JPG.jpeg",
+      "description": "Landing page for a sales platform with assistant agents. Deep maroon hero block on cream, light serif headlines, cream pill buttons, dashboard mock card and portrait card, two-tone serif statement.",
+      "sections": [
+        "Nav (Home, Features, Documentation, Case Studies, Resources, Sign Up)",
+        "Hero with badge, CTA and trust score",
+        "Dashboard mock: sidebar, filters, KPI cards, statistics chart",
+        "Portrait card with insights popover",
+        "Logo row",
+        "About statement with 'How it Works' video thumbnail"
+      ],
+      "missing": [
+        "Everything after the about block",
+        "Portrait photo",
+        "Video content behind 'How it Works'"
+      ],
+      "notes": "Three brand names appear in one screenshot (Salea, Salea.io, Nimbusly). Dashboard mock is detailed enough to seed a Dashboards demo. May belong with IMG_3215: see uncertain groupings.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "leadgrove",
+      "name": "Leadgrove",
+      "originalBrand": "None visible",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3215.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3215.JPG.jpeg",
+      "description": "Mid-page sections of a sales-automation site. Cream page, serif headings, orange pill button and icon discs, green textured image card with frosted stat widgets, near-black rounded process panel.",
+      "sections": [
+        "Feature hero card with stat widgets (leads, bar chart, revenue, Export Data) and vertical timeline of benefits",
+        "'Our Sales Automation Process' three steps",
+        "Two-tone serif statement"
+      ],
+      "missing": [
+        "Nav, true hero, brand, footer: the top and bottom of the page are not in the capture",
+        "Green texture image"
+      ],
+      "notes": "No brand visible. Candidate continuation of IMG_2517: see uncertain groupings. Heading copy is broken ('Turn Data Into Actionable That Drive Growth').",
+      "duplicateImages": []
+    },
+    {
+      "slug": "fiscara",
+      "name": "Fiscara",
+      "originalBrand": "synais.",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_2520.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_2520.JPG.jpeg",
+      "description": "Landing page for finance-management software. Beige hero with circuit-trace line pattern, tight grotesk two-tone headline, square maroon and white buttons, hand-holding-device photo, dark brown about block with three stats.",
+      "sections": [
+        "Nav (logo with menu toggle, Log in, Sign up)",
+        "Backer line + hero + two buttons",
+        "Hero image with two dark finance widgets (donut charts)",
+        "Info statement",
+        "About block with inline icon chips and three stats",
+        "Start of an image band"
+      ],
+      "missing": [
+        "Everything after the stats",
+        "Hand/device cut-out photo",
+        "Menu contents"
+      ],
+      "notes": "Backer line names a real accelerator; remove. Circuit pattern can be SVG.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "indigen",
+      "name": "Indigen",
+      "originalBrand": "Native (serif version)",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3229.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3229.JPG.jpeg",
+      "description": "Landing page for an automation consultancy. White sheet over a blue/green painted backdrop, condensed serif headlines, small sans body, dark rounded-square buttons, hairline rules, amber textured panel holding two UI cards.",
+      "sections": [
+        "Boxed nav (What we build, How we work, Case studies, About, Let's Talk)",
+        "Hero with eyebrow chip and 'Book a call'",
+        "Bar/waveform graphic",
+        "Logo row",
+        "Second pitch block",
+        "Workflow timeline card + agent chat card"
+      ],
+      "missing": [
+        "Everything after the mock panel",
+        "Painted backdrop and amber texture",
+        "Replacement logos (real companies shown)"
+      ],
+      "notes": "Shares the brand name 'Native' and a sentence of copy with IMG_3230: see uncertain groupings.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "arcwright",
+      "name": "Arcwright",
+      "originalBrand": "Native (orange version; copy says Arc)",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3230.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3230.JPG.jpeg",
+      "description": "Landing page for an agent-automation vendor. Off-white page with crop marks and hairline frame, geometric sans headline with orange second line, orange pill button, isometric line illustration, near-black second section.",
+      "sections": [
+        "Nav with mono caps links",
+        "Hero with eyebrow chip and two buttons",
+        "Isometric illustration (systems feeding a core, agent labels)",
+        "Dark section with stacked-plates graphic and three-item checklist"
+      ],
+      "missing": [
+        "Everything after the dark section",
+        "Isometric illustration (SVG)"
+      ],
+      "notes": "Nav has a typo ('Custemers').",
+      "duplicateImages": []
+    },
+    {
+      "slug": "campusmind",
+      "name": "Campusmind",
+      "originalBrand": "Rolai",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3223.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3223.JPG.jpeg",
+      "description": "Landing page for an institutional assistant platform for universities. White page, light serif headings, blue pill button, architectural campus renders, alternating image/text cards.",
+      "sections": [
+        "Nav with dropdowns, Login, Book a demo",
+        "Hero",
+        "Full-width campus image",
+        "Logo marquee",
+        "Feature section with two alternating cards (third cut off)"
+      ],
+      "missing": [
+        "Remaining feature cards and all later sections",
+        "Three or more architectural renders",
+        "Replacement logos (real universities and corporations shown)"
+      ],
+      "notes": "Feature cards carry vendor icons that should be replaced with neutral ones.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "stridehaus",
+      "name": "Stridehaus",
+      "originalBrand": "PEAK",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3222.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3222.JPG.jpeg",
+      "description": "Landing page for an athlete training app. Track-and-field photography, dark floating pill nav, lime-green buttons, white body, grey bento cards with overlaid UI chips, giant condensed black wordmark behind an athlete cut-out.",
+      "sections": [
+        "Floating nav",
+        "Hero with phone mockup and 'Join for free'",
+        "'Built for athletes by athletes' three-card bento",
+        "Wordmark + athlete cut-out band"
+      ],
+      "missing": [
+        "Everything after the wordmark band",
+        "Sports photography with cut-outs",
+        "Phone app screens"
+      ],
+      "notes": "Wearables card lists real device brands; replace with generic labels.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "verdia",
+      "name": "Verdia",
+      "originalBrand": "Viora",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3231.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3231.JPG.jpeg",
+      "description": "Landing page for a blood-test health-insights app. Pale lime canvas, motion-blurred runner hero, white rounded store buttons, emoji-style icons inside the headline, rounded cards with phone mockups.",
+      "sections": [
+        "Minimal nav (logo, language flag, Get app)",
+        "Hero with store buttons and rating",
+        "'3 easy steps' cards",
+        "Feature bento with two phone mock cards (more cut off)"
+      ],
+      "missing": [
+        "Remaining bento cards and all later sections",
+        "Runner photo and lifestyle images",
+        "App screens"
+      ],
+      "notes": "Copy is localised for one country; make it generic.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "nocturn",
+      "name": "Nocturn",
+      "originalBrand": "Exvox",
+      "category": "Landing Pages",
+      "batch": 3,
+      "complexity": "M",
+      "images": [
+        "IMG_3187.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3187.JPG.jpeg",
+      "description": "Landing page for a team workspace assistant. Off-white page, black hero panel with halftone clouds rising from the bottom, grotesk headline, white and grey pill buttons, outlined strips of logos and icon tiles.",
+      "sections": [
+        "Nav with pill active state + Contact",
+        "Hero with two buttons",
+        "Logo strip",
+        "'Workspace' heading with icon-tile strip",
+        "'Modalities' heading with icon tiles over halftone band"
+      ],
+      "missing": [
+        "Everything after the second icon strip",
+        "Halftone cloud artwork"
+      ],
+      "notes": "Same designer's system as Fropp / Ninny 2.0 / Sendly (shared logos and body copy), but its own brand.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "tessera-pay",
+      "name": "Tessera Pay",
+      "originalBrand": "Cuby",
+      "category": "Landing Pages",
+      "batch": 4,
+      "complexity": "M",
+      "images": [
+        "IMG_2510.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_2510.JPG.jpeg",
+      "description": "Hero of a payments landing page (card and crypto). Pale blue grid with soft colour glows, bold grotesk plus italic serif headline, glossy dark pill buttons, floating 3D coin tiles, three phone mockups.",
+      "sections": [
+        "Nav (Features, How it works, Use cases, Pricing, Login, Get Started)",
+        "Hero with certification pill and two buttons",
+        "Three phone mockups",
+        "'Trusted by' logo carousel"
+      ],
+      "missing": [
+        "The whole page below the hero",
+        "3D coin tiles and phone screens",
+        "Replacement logos and removal of real certification / card-network marks"
+      ],
+      "notes": "Low-resolution source (1200 px).",
+      "duplicateImages": []
+    },
+    {
+      "slug": "magmashield",
+      "name": "Magmashield",
+      "originalBrand": "MOSSO",
+      "category": "Landing Pages",
+      "batch": 4,
+      "complexity": "M",
+      "images": [
+        "IMG_3290.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3290.JPG.jpeg",
+      "description": "Full-bleed hero of a cybersecurity product. Grey gradient sky, pixel-font uppercase headline, pink square button, dark boxed nav with hover highlight, 3D wireframe mountain with glowing magenta/orange ridges, dark logo strip.",
+      "sections": [
+        "Logo chip + boxed nav (Platform, Features, Use cases, Pricing)",
+        "Hero headline, sub-copy, 'Start free trial'",
+        "Logo strip"
+      ],
+      "missing": [
+        "The whole page below the hero",
+        "3D mountain render (or a WebGL terrain)",
+        "Replacement logos (real companies shown)"
+      ],
+      "notes": "A cursor is captured mid-hover, so the nav hover state is documented.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "stowbox-pricing",
+      "name": "Stowbox Pricing",
+      "originalBrand": "None visible",
+      "category": "Landing Pages",
+      "batch": 4,
+      "complexity": "S",
+      "images": [
+        "IMG_2496.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_2496.JPG.jpeg",
+      "description": "Stand-alone pricing section for a storage product. Near-white background, neutral sans, three cards with grey header tabs and dashed outlines, highlighted middle card in black with shadow, black pill buttons.",
+      "sections": [
+        "Heading and sub-heading",
+        "Monthly / yearly toggle with discount chip",
+        "Three plan cards with price, blurb, four features, button"
+      ],
+      "missing": [
+        "Any surrounding page",
+        "Yearly prices"
+      ],
+      "notes": "Best used as a component inside another project, or as a small interactive pricing demo. Low-resolution source.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "olivar-auth",
+      "name": "Olivar",
+      "originalBrand": "Nigx",
+      "category": "Web Applications",
+      "batch": 4,
+      "complexity": "S",
+      "images": [
+        "IMG_3190.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3190.JPG.jpeg",
+      "description": "Email-confirmation screen of a sign-up flow. White split layout, serif logo, grotesk heading, six rounded one-digit inputs, black pill button with corner brackets, pixel-art landscape on the right.",
+      "sections": [
+        "Logo",
+        "'Confirm your email' with masked address",
+        "Six-digit code input",
+        "Continue button",
+        "Terms link",
+        "Artwork panel"
+      ],
+      "missing": [
+        "Other steps of the flow (sign up, sign in, success)",
+        "Pixel-art landscape"
+      ],
+      "notes": "Shows what looks like a personal email address; replace with a placeholder. Possibly part of the Ninny 2.0 system: see uncertain groupings.",
+      "duplicateImages": []
+    },
+    {
+      "slug": "fieldcards",
+      "name": "Fieldcards",
+      "originalBrand": "None (one card shows a real sportswear brand)",
+      "category": "Web Design",
+      "batch": 4,
+      "complexity": "S",
+      "images": [
+        "IMG_3219.JPG.jpeg",
+        "IMG_3220.JPG.jpeg",
+        "IMG_3221.JPG.jpeg"
+      ],
+      "primaryImage": "IMG_3220.JPG.jpeg",
+      "description": "Three single-card UI concepts, each a large rounded card centred on a full-bleed nature photograph: a profile/connecting card, an app feature card, a journal card. Neutral sans, dark pills with white inset values, soft blur fades.",
+      "sections": [
+        "Profile card: name, status spinner, portrait, handle, 'Add member'",
+        "App card: rank pill, logo, title, blurb, 'Explore app'",
+        "Journal card: tag, date pill, title, text, image, location"
+      ],
+      "missing": [
+        "No page context: these are component shots",
+        "Three background photos and three card images"
+      ],
+      "notes": "The app card uses a real brand's name and logo: replace entirely. Grouped by format and consecutive capture, not by brand.",
+      "duplicateImages": []
+    }
+  ],
+  "excludedImages": [
+    {
+      "file": "IMG_3112.PNG",
+      "reason": "Portrait photograph, not a website design"
+    }
+  ],
+  "templates": [
+    {
+      "slug": "web-agency",
+      "name": "Web Agency",
+      "category": "Web Design",
+      "businessType": "Digital / web design agency (in-template brand: Webild)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "creative-portfolio",
+      "name": "Creative Portfolio",
+      "category": "Web Design",
+      "businessType": "Freelance designer's personal portfolio (Joseph Alexander)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "saas-platform",
+      "name": "SaaS Platform",
+      "category": "Landing Pages",
+      "businessType": "B2B software product (Flowbase)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "ai-consulting",
+      "name": "AI Consulting",
+      "category": "Landing Pages",
+      "businessType": "Private AI-infrastructure consultancy (MERYDIAN)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "ai-email-platform",
+      "name": "AI Email Platform",
+      "category": "Landing Pages",
+      "businessType": "Email-marketing software (Flashly)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "ai-ugc-creator",
+      "name": "AI UGC Creator",
+      "category": "Landing Pages",
+      "businessType": "Ad-creative generation service (UGCIFY)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "auto-detailing",
+      "name": "Auto Detailing",
+      "category": "Web Design",
+      "businessType": "Car detailing shop (Elite Detail)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "boutique-hotel",
+      "name": "Boutique Hotel",
+      "category": "Web Design",
+      "businessType": "Boutique wellness hotel (Aurion)",
+      "status": "reconstructed, small known differences from original"
+    },
+    {
+      "slug": "coffee-shop",
+      "name": "Coffee Shop",
+      "category": "Web Design",
+      "businessType": "Neighbourhood cafe (Joe's Coffee)",
+      "status": "reconstructed, small known differences from original"
+    },
+    {
+      "slug": "dental-practice",
+      "name": "Dental Practice",
+      "category": "Web Design",
+      "businessType": "Cosmetic dental clinic (Luxury Dental Care)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "hvac-management",
+      "name": "HVAC Management",
+      "category": "Web Design",
+      "businessType": "Heating and cooling contractor (AirPro HVAC)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "landscaping-services",
+      "name": "Landscaping Services",
+      "category": "Web Design",
+      "businessType": "Landscape design and maintenance company (GreenScape)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "luxury-real-estate",
+      "name": "Luxury Real Estate",
+      "category": "Web Design",
+      "businessType": "Luxury villa agency, Marbella",
+      "status": "reconstructed, small known differences from original"
+    },
+    {
+      "slug": "med-spa",
+      "name": "Med Spa",
+      "category": "Web Design",
+      "businessType": "Medical aesthetics clinic (Lumiere Med Spa)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "natural-skincare",
+      "name": "Natural Skincare",
+      "category": "Web Design",
+      "businessType": "Skincare product brand (Lumine)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "perfume-brand",
+      "name": "Perfume Brand",
+      "category": "Branding & Logo Design",
+      "businessType": "Fragrance house (UMBRA)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "personal-blogger",
+      "name": "Personal Blogger",
+      "category": "Web Design",
+      "businessType": "Travel and lifestyle blogger (Anya)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "plumbing-services",
+      "name": "Plumbing Services",
+      "category": "Web Design",
+      "businessType": "Plumbing contractor (FlowRight Plumbing)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "product-showcase",
+      "name": "Product Showcase",
+      "category": "Landing Pages",
+      "businessType": "Single-product furniture showcase (Monoblock chair)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "real-estate-agency",
+      "name": "Real Estate Agency",
+      "category": "Web Design",
+      "businessType": "Property agency, Dubai",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "roofing-company",
+      "name": "Roofing Company",
+      "category": "Web Design",
+      "businessType": "Roofing contractor (Summit Roofing)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "travel-agency",
+      "name": "Travel Agency",
+      "category": "Web Design",
+      "businessType": "Luxury travel planner (Luxuria)",
+      "status": "reconstructed"
+    },
+    {
+      "slug": "wellness-center",
+      "name": "Wellness Center",
+      "category": "Landing Pages",
+      "businessType": "Longevity / diagnostics clinic (SuperHealth)",
+      "status": "reconstructed"
+    }
+  ]
+}

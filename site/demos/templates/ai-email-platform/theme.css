@@ -1,0 +1,83 @@
+:root:where([data-template="ai-email-platform"]) {
+  --background: #f8fafc;
+  --card: #f1f5f9;
+  --foreground: #0f172a;
+  --primary-cta: #106feb;
+  --primary-cta-text: #fff;
+  --secondary-cta: #e2e8f0;
+  --secondary-cta-text: #0f172a;
+  --accent: #b4d4f8;
+  --background-accent: #106feb;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="ai-email-platform"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="ai-email-platform"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #106feb4d #0000;
+}
+
+html:where([data-template="ai-email-platform"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="ai-email-platform"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="ai-email-platform"]) h1,
+:where([data-template="ai-email-platform"]) h2,
+:where([data-template="ai-email-platform"]) h3,
+:where([data-template="ai-email-platform"]) h4,
+:where([data-template="ai-email-platform"]) h5,
+:where([data-template="ai-email-platform"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="ai-email-platform"]) .card {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-card) 100%, var(--color-accent) 5%) -35%,
+    var(--color-card) 65%
+  );
+  box-shadow: 0px 0px 10px 4px color-mix(in srgb, var(--color-accent) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+:where([data-template="ai-email-platform"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-background) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 0.839802px
+      0.503881px -0.3125px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 1.99048px 1.19429px -0.625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 3.63084px 2.1785px -0.9375px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 6.03627px 3.62176px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 9.74808px 5.84885px -1.5625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 15.9566px 9.57398px -1.875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 27.4762px 16.4857px -2.1875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="ai-email-platform"]) .secondary-button {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-secondary-cta) 80%, transparent),
+    var(--color-secondary-cta)
+  );
+  border: 1px solid var(--color-secondary-cta);
+  box-shadow: 0 1px 2px #0000000d;
+}

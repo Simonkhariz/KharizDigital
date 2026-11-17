@@ -1,0 +1,149 @@
+.rph-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--nav);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.rph-bar {
+  display: flex;
+  align-items: center;
+  height: 66px;
+  padding: 0 clamp(16px, 5vw, 72px) 0 clamp(16px, 5.4vw, 78px);
+}
+
+.rph-logo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--ink);
+}
+
+.rph-links {
+  display: flex;
+  gap: clamp(28px, 5.2vw, 76px);
+  margin-left: clamp(40px, 20.3vw, 292px);
+}
+
+.rph-link {
+  font-size: 15px;
+  padding: 8px 0;
+  background: linear-gradient(var(--ink), var(--ink)) no-repeat 0 100% / 0 1px;
+  transition: background-size 0.2s ease;
+}
+
+.rph-link:hover {
+  background-size: 100% 1px;
+}
+
+.rph-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.rph-lang {
+  position: relative;
+}
+
+.rph-langButton {
+  min-width: 44px;
+  height: 39px;
+  padding: 0 8px;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+}
+
+.rph-langButton:hover {
+  color: var(--orange-text);
+}
+
+.rph-langMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: 216px;
+  background: #fff;
+  border: 1px solid var(--ink);
+  box-shadow: 5px 5px 0 rgba(31, 31, 31, 0.1);
+}
+
+.rph-langItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.rph-langItem:hover,
+.rph-langItem[aria-pressed="true"] {
+  background: var(--paper);
+}
+
+.rph-langNote {
+  padding: 10px 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.rph-signin {
+  min-width: 117px;
+}
+
+.rph-menuButton {
+  display: none;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.rph-mobile {
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+.rph-mobileLink {
+  display: block;
+  padding: 16px 20px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 300;
+  border-bottom: 1px solid var(--line);
+}
+
+.rph-mobileActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 16px 20px 20px;
+}
+
+@media (min-width: 861px) {
+  .rph-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .rph-links,
+  .rph-signin {
+    display: none;
+  }
+  .rph-menuButton {
+    display: grid;
+  }
+  .rph-bar {
+    height: 60px;
+  }
+}

@@ -1,0 +1,55 @@
+"use client";
+
+import Button from "@/demos/components/ui/buttons/Button";
+import ScrollReveal from "@/demos/components/ui/ScrollReveal";
+import TextAnimation from "@/demos/components/ui/TextAnimation";
+import type { ButtonLink, TextAnimationVariant } from "@/demos/lib/types";
+
+interface ContactCtaProps {
+  tag: string;
+  text: string;
+  primaryButton: ButtonLink;
+  secondaryButton: ButtonLink;
+  textAnimation: TextAnimationVariant;
+}
+
+/** Contact section with a single call-to-action card: a tag, a headline and two buttons. */
+export default function ContactCta({
+  tag,
+  text,
+  primaryButton,
+  secondaryButton,
+  textAnimation,
+}: ContactCtaProps) {
+  return (
+    <section aria-label="Contact section" className="py-20">
+      <div className="w-content-width mx-auto">
+        <ScrollReveal variant="slide-up">
+          <div className="flex flex-col items-center gap-8 md:gap-10 py-20 px-8 rounded card">
+            <div className="flex flex-col items-center gap-2">
+              <div className="px-3 py-1 mb-1 text-sm card rounded w-fit">
+                <p>{tag}</p>
+              </div>
+              <TextAnimation
+                text={text}
+                variant={textAnimation}
+                gradientText
+                tag="h2"
+                className="md:max-w-8/10 text-5xl 2xl:text-6xl leading-[1.15] font-semibold text-center text-balance"
+              />
+              <div className="flex flex-wrap justify-center gap-3 mt-2 md:mt-3">
+                <Button text={primaryButton.text} href={primaryButton.href} variant="primary" />
+                <Button
+                  text={secondaryButton.text}
+                  href={secondaryButton.href}
+                  variant="secondary"
+                  animationDelay={0.1}
+                />
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}

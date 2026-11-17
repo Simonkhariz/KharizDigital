@@ -1,0 +1,127 @@
+html[data-showcase="meadowline"] {
+  --ml-cream: #fcf8f5;
+  --ml-cream-deep: #f8eee6;
+  --ml-peach: #fbe4d1;
+  --ml-ink: #3a180a;
+  --ml-ink-soft: #5b3b2c;
+  --ml-body: #7d746e;
+  --ml-line: #eadfd6;
+  --ml-orange: #ff7f37;
+  --ml-orange-deep: #e9651c;
+  --ml-orange-text: #c2500f;
+  --ml-char: #2a2827;
+  --ml-white: #ffffff;
+  --ml-serif: var(--ml-font-serif), "Times New Roman", serif;
+  --ml-sans: var(--ml-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --ml-gutter: clamp(20px, 5.5vw, 88px);
+  --ml-max: 1264px;
+  background: var(--ml-cream);
+  color: var(--ml-ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="meadowline"]) *,
+:where(html[data-showcase="meadowline"]) *::before,
+:where(html[data-showcase="meadowline"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="meadowline"]) body {
+  margin: 0;
+  font-family: var(--ml-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--ml-body);
+  background: var(--ml-cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="meadowline"]) h1,
+:where(html[data-showcase="meadowline"]) h2,
+:where(html[data-showcase="meadowline"]) h3,
+:where(html[data-showcase="meadowline"]) h4,
+:where(html[data-showcase="meadowline"]) p,
+:where(html[data-showcase="meadowline"]) ul,
+:where(html[data-showcase="meadowline"]) ol,
+:where(html[data-showcase="meadowline"]) dl,
+:where(html[data-showcase="meadowline"]) dd,
+:where(html[data-showcase="meadowline"]) figure {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="meadowline"]) ul,
+:where(html[data-showcase="meadowline"]) ol {
+  list-style: none;
+}
+
+:where(html[data-showcase="meadowline"]) h1,
+:where(html[data-showcase="meadowline"]) h2,
+:where(html[data-showcase="meadowline"]) h3,
+:where(html[data-showcase="meadowline"]) h4 {
+  font-family: var(--ml-serif);
+  font-weight: 400;
+  color: var(--ml-ink);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+:where(html[data-showcase="meadowline"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="meadowline"]) button,
+:where(html[data-showcase="meadowline"]) input,
+:where(html[data-showcase="meadowline"]) select,
+:where(html[data-showcase="meadowline"]) textarea {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="meadowline"]) button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+:where(html[data-showcase="meadowline"]) svg {
+  display: block;
+}
+
+:where(html[data-showcase="meadowline"]) :focus-visible {
+  outline: 2px solid var(--ml-orange-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:where(html[data-showcase="meadowline"]) ::selection {
+  background: var(--ml-orange);
+  color: var(--ml-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(html[data-showcase="meadowline"]) {
+    scroll-behavior: auto;
+  }
+  :where(html[data-showcase="meadowline"]) *,
+  :where(html[data-showcase="meadowline"]) *::before,
+  :where(html[data-showcase="meadowline"]) *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Landscape photographs: each section sizes and places its own. */
+html[data-showcase="meadowline"] .ml-scene {
+  display: block;
+  max-width: none;
+  object-fit: cover;
+}

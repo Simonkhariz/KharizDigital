@@ -1,0 +1,107 @@
+.dl-intro {
+  padding: 168px 0 0;
+  text-align: center;
+}
+.dl-intro .dl-wrap {
+  display: grid;
+  justify-items: center;
+}
+.dl-intro .dl-h2 {
+  margin-top: 28px;
+  max-width: 16em;
+}
+.dl-intro .dl-h2 em {
+  display: block;
+}
+.dl-intro__body {
+  margin: 30px 0 34px;
+  max-width: 26em;
+  font-size: 19px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.dl-principles {
+  padding: 150px 0 120px;
+}
+.dl-principles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.dl-principles__grid li {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--sky);
+  color: #fff;
+}
+.dl-principles__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.dl-principles__grid li:hover img {
+  transform: scale(1.04);
+}
+.dl-principles__num {
+  position: absolute;
+  top: 34px;
+  left: 34px;
+  display: grid;
+  place-items: center;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  font-size: 15px;
+  font-weight: 600;
+}
+.dl-principles__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 80px 34px 32px;
+  background: linear-gradient(180deg, transparent, rgba(11, 23, 48, 0.72));
+}
+.dl-principles__caption h3 {
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: -0.03em;
+}
+.dl-principles__caption p {
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #eaf2fd;
+}
+@media (max-width: 959px) {
+  .dl-intro {
+    padding-top: 96px;
+  }
+  .dl-principles {
+    padding: 96px 0 76px;
+  }
+  .dl-principles__grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .dl-principles__grid li {
+    aspect-ratio: 1;
+  }
+}
+@media (max-width: 479px) {
+  .dl-principles__grid li {
+    aspect-ratio: 4 / 5;
+  }
+  .dl-principles__num {
+    top: 22px;
+    left: 22px;
+  }
+  .dl-principles__caption {
+    padding: 60px 22px 24px;
+  }
+}

@@ -1,0 +1,108 @@
+html[data-showcase="magmashield"] {
+  --ms-sky: #b4bcc4;
+  --ms-sky-light: #cfd5da;
+  --ms-ink: #0c2733;
+  --ms-text: #45535c;
+  --ms-night: #05070b;
+  --ms-box: #15181b;
+  --ms-box-2: #2a2e31;
+  --ms-line: #24292e;
+  --ms-pink: #ff3d6e;
+  --ms-pink-deep: #c2184a;
+  --ms-amber: #ffb01f;
+  --ms-teal: #2aa8d8;
+  --ms-mist: #a8b3bc;
+  --ms-sans: var(--ms-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --ms-pixel: var(--ms-font-pixel), ui-monospace, Menlo, monospace;
+  --ms-gutter: clamp(18px, 3.05vw, 44px);
+  background: var(--ms-night);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="magmashield"]) *,
+:where(html[data-showcase="magmashield"]) *::before,
+:where(html[data-showcase="magmashield"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="magmashield"]) body {
+  margin: 0;
+  background: var(--ms-night);
+  color: var(--ms-text);
+  font-family: var(--ms-sans);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="magmashield"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="magmashield"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="magmashield"]) :is(h1, h2) {
+  font-family: var(--ms-pixel);
+  font-weight: 400;
+  -webkit-text-stroke: 0.018em currentColor;
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  text-transform: uppercase;
+  color: var(--ms-ink);
+}
+
+:where(html[data-showcase="magmashield"]) h3 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+:where(html[data-showcase="magmashield"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="magmashield"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+:where(html[data-showcase="magmashield"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="magmashield"]) svg {
+  display: block;
+}
+
+html[data-showcase="magmashield"] :focus-visible {
+  outline: 2px solid var(--ms-pink);
+  outline-offset: 3px;
+}
+
+html[data-showcase="magmashield"] ::selection {
+  background: var(--ms-pink);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="magmashield"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="magmashield"] *,
+  html[data-showcase="magmashield"] *::before,
+  html[data-showcase="magmashield"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

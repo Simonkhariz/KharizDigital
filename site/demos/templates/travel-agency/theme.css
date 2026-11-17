@@ -1,0 +1,89 @@
+:root:where([data-template="travel-agency"]) {
+  --background: #f6f0e9;
+  --card: #efe7dd;
+  --foreground: #3d1f2a;
+  --primary-cta: #3d1f2a;
+  --primary-cta-text: #f6f0e9;
+  --secondary-cta: #efe7dd;
+  --secondary-cta-text: #3d1f2a;
+  --accent: #8c4a5c;
+  --background-accent: #a86b7c;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="travel-agency"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="travel-agency"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #2b180a4d #fff0;
+}
+
+html:where([data-template="travel-agency"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="travel-agency"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="travel-agency"]) h1,
+:where([data-template="travel-agency"]) h2,
+:where([data-template="travel-agency"]) h3,
+:where([data-template="travel-agency"]) h4,
+:where([data-template="travel-agency"]) h5,
+:where([data-template="travel-agency"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="travel-agency"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="travel-agency"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-background) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 0.839802px
+      0.503881px -0.3125px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 1.99048px 1.19429px -0.625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 3.63084px 2.1785px -0.9375px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 6.03627px 3.62176px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 9.74808px 5.84885px -1.5625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 15.9566px 9.57398px -1.875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 27.4762px 16.4857px -2.1875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="travel-agency"]) .secondary-button {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    var(--color-secondary-cta);
+  box-shadow: 2.10837px 3.16256px 9.48767px color-mix(in srgb, var(--color-accent) 10%, transparent);
+}

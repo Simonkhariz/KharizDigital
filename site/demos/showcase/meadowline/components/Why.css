@@ -1,0 +1,180 @@
+.ml-why-section {
+  width: min(100% - 2 * var(--ml-gutter), var(--ml-max));
+  margin-inline: auto;
+  padding: clamp(40px, 5vw, 72px) 0 clamp(80px, 9vw, 130px);
+}
+
+.ml-why-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ml-why-header h2 {
+  margin-top: 26px;
+  font-size: clamp(42px, 5.7vw, 84px);
+  letter-spacing: -0.035em;
+}
+
+.ml-why-header h2 em {
+  color: var(--ml-orange);
+}
+
+.ml-why-header p {
+  max-width: 440px;
+  margin-top: 26px;
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+
+.ml-why-orbit {
+  --card-h: clamp(260px, 23.5vw, 340px);
+  --lift: calc(var(--card-h) * 0.52);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: calc(var(--lift) + 64px);
+  margin-bottom: var(--lift);
+}
+
+.ml-why-column {
+  display: grid;
+  gap: 30px;
+  z-index: 1;
+}
+
+.ml-why-centre {
+  gap: calc(30px + var(--card-h));
+  margin-block: calc(var(--lift) * -1);
+}
+
+.ml-why-rings {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.ml-why-rings span {
+  position: absolute;
+  width: min(78%, 900px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 127, 55, 0.07);
+}
+
+.ml-why-rings span + span {
+  width: min(46%, 520px);
+  border-width: 1px;
+  border-color: rgba(255, 127, 55, 0.18);
+  border-style: dashed;
+}
+
+.ml-why-medallion {
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, #fff5ec, #fbe0cc);
+  box-shadow:
+    inset 0 -10px 18px rgba(255, 127, 55, 0.16),
+    0 18px 40px rgba(255, 127, 55, 0.18);
+  opacity: 0.9;
+}
+
+.ml-why-card {
+  position: relative;
+  height: var(--card-h);
+  overflow: hidden;
+}
+
+.ml-why-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+
+.ml-why-card:hover .ml-why-scene {
+  transform: scale(1.05);
+}
+
+.ml-why-panel {
+  position: absolute;
+  inset: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(18px, 2vw, 28px);
+  color: var(--ml-white);
+  background: linear-gradient(180deg, rgba(40, 30, 30, 0.1), rgba(40, 30, 30, 0.34));
+  backdrop-filter: blur(16px) saturate(1.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.ml-why-solid {
+  background: var(--ml-orange);
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.ml-why-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--ml-orange);
+  color: var(--ml-white);
+}
+
+.ml-why-icon svg {
+  fill: currentColor;
+  fill-opacity: 0.25;
+}
+
+.ml-why-solid .ml-why-icon {
+  background: var(--ml-white);
+  color: var(--ml-orange);
+}
+
+.ml-why-panel h3 {
+  font-size: clamp(24px, 2.2vw, 31px);
+  color: var(--ml-white);
+  text-shadow: 0 1px 12px rgba(30, 20, 10, 0.25);
+}
+
+.ml-why-panel p {
+  max-width: 16em;
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 900px) {
+  .ml-why-orbit {
+    --card-h: 250px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+  .ml-why-column,
+  .ml-why-centre {
+    display: contents;
+  }
+  .ml-why-rings {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .ml-why-orbit {
+    grid-template-columns: 1fr;
+  }
+}

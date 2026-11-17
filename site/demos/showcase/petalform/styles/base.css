@@ -1,0 +1,99 @@
+html[data-showcase="petalform"] {
+  --pf-white: #ffffff;
+  --pf-ink: #1a1a1a;
+  --pf-text: #6f6f6f;
+  --pf-muted: #8c8c8c;
+  --pf-mist: #f8f8f8;
+  --pf-panel: #f2f2f2;
+  --pf-line: #e4e4e4;
+  --pf-blue: #3f82da;
+  --pf-blue-deep: #2a63b8;
+  --pf-display: var(--pf-font-display), "Helvetica Neue", Arial, sans-serif;
+  --pf-sans: var(--pf-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --pf-gutter: clamp(14px, 3.5vw, 50px);
+  --pf-max: 1340px;
+  background: var(--pf-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="petalform"]) *,
+:where(html[data-showcase="petalform"]) *::before,
+:where(html[data-showcase="petalform"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="petalform"]) body {
+  margin: 0;
+  background: var(--pf-white);
+  color: var(--pf-text);
+  font-family: var(--pf-sans);
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="petalform"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="petalform"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="petalform"]) :is(h1, h2, h3) {
+  font-family: var(--pf-display);
+  font-weight: 500;
+  color: var(--pf-ink);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+:where(html[data-showcase="petalform"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="petalform"]) :is(button, input, select, textarea) {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="petalform"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="petalform"]) svg {
+  display: block;
+}
+
+html[data-showcase="petalform"] :focus-visible {
+  outline: 2px solid var(--pf-ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+html[data-showcase="petalform"] ::selection {
+  background: var(--pf-blue);
+  color: var(--pf-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="petalform"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="petalform"] *,
+  html[data-showcase="petalform"] *::before,
+  html[data-showcase="petalform"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

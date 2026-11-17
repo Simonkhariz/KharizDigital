@@ -1,0 +1,108 @@
+html[data-showcase="indigen"] {
+  --ig-ink: #121212;
+  --ig-text: #1d1d1d;
+  --ig-muted: #7d7d7d;
+  --ig-faint: #b4b4b4;
+  --ig-line: #d6d6d6;
+  --ig-soft: #f5f5f3;
+  --ig-white: #ffffff;
+  --ig-blue: #2a7fd4;
+  --ig-amber: #c98a34;
+  --ig-display: var(--ig-font-display), "Times New Roman", serif;
+  --ig-sans: var(--ig-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --ig-frame: clamp(10px, 2.65vw, 38px);
+  --ig-pad: clamp(18px, 3.1vw, 44px);
+  background: #3a86c8;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="indigen"]) *,
+:where(html[data-showcase="indigen"]) *::before,
+:where(html[data-showcase="indigen"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="indigen"]) body {
+  margin: 0;
+  padding: var(--ig-frame) var(--ig-frame) 0;
+  background: none;
+  color: var(--ig-text);
+  font-family: var(--ig-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* The painted backdrop stays still while the sheet scrolls over it. */
+html[data-showcase="indigen"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #3a86c8 url("/showcase/indigen/painted-backdrop.webp") center / cover;
+}
+
+:where(html[data-showcase="indigen"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="indigen"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="indigen"]) :is(h1, h2) {
+  font-family: var(--ig-display);
+  font-weight: 400;
+  color: var(--ig-ink);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+:where(html[data-showcase="indigen"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="indigen"]) :is(button, input, select, textarea) {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="indigen"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="indigen"]) svg {
+  display: block;
+}
+
+html[data-showcase="indigen"] :focus-visible {
+  outline: 2px solid var(--ig-blue);
+  outline-offset: 3px;
+}
+
+html[data-showcase="indigen"] ::selection {
+  background: var(--ig-ink);
+  color: var(--ig-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="indigen"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="indigen"] *,
+  html[data-showcase="indigen"] *::before,
+  html[data-showcase="indigen"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

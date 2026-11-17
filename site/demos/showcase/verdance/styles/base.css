@@ -1,0 +1,79 @@
+html[data-showcase="verdance"] {
+  --page: #ececec;
+  --panel: #f6f6f6;
+  --ink: #232323;
+  --dark: #2e2e2e;
+  --muted: #6c6c6c;
+  --rule: #8d8d8d;
+  --rule-soft: #cfcfcf;
+  --blue: #2f6fd8;
+  --edge: clamp(14px, 3.7vw, 53px);
+  --display: var(--font-verdance-display), "Helvetica Neue", Arial, sans-serif;
+  --body: var(--font-verdance-body), "Helvetica Neue", Arial, sans-serif;
+  --mono: var(--font-verdance-mono), ui-monospace, Menlo, monospace;
+  background: #d9d9d9;
+  color: var(--ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="verdance"]) *,
+:where(html[data-showcase="verdance"]) *::before,
+:where(html[data-showcase="verdance"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="verdance"]) body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(html[data-showcase="verdance"]) :is(h1, h2, h3, p, ul, ol, dl, dd, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="verdance"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="verdance"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="verdance"]) :is(button, input) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="verdance"]) button {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="verdance"]) :focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="verdance"] {
+    scroll-behavior: auto;
+  }
+  :where(html[data-showcase="verdance"]) *,
+  :where(html[data-showcase="verdance"]) *::before,
+  :where(html[data-showcase="verdance"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,88 @@
+:root:where([data-template="personal-blogger"]) {
+  --background: #f5f3f0;
+  --foreground: #1a1a1a;
+  --primary-cta: #1a1a1a;
+  --primary-cta-text: #f5f3f0;
+  --secondary-cta: #f5f3f0;
+  --secondary-cta-text: #1a1a1a;
+  --accent: #4caf50;
+  --background-accent: #ebe7e1;
+  --width-content-width: clamp(30rem, 60vw, 60rem);
+  --default-font-family: var(--font-inter-tight), sans-serif;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="personal-blogger"]) {
+    --width-content-width: 75vw;
+  }
+}
+
+@media (width < 768px) {
+  :root:where([data-template="personal-blogger"]) {
+    --width-content-width: 85vw;
+  }
+}
+
+:where([data-template="personal-blogger"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #1a1a1a26 #0000;
+}
+
+html:where([data-template="personal-blogger"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="personal-blogger"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter-tight), sans-serif;
+  position: relative;
+}
+
+:where([data-template="personal-blogger"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 95%, transparent),
+    color-mix(in srgb, var(--color-card) 80%, transparent)
+  );
+  box-shadow:
+    0 1px 3px 0 color-mix(in srgb, var(--color-foreground) 6%, transparent),
+    0 1px 2px -1px color-mix(in srgb, var(--color-foreground) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
+}
+
+:where([data-template="personal-blogger"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow: none;
+}
+
+:where([data-template="personal-blogger"]) .secondary-button {
+  background: var(--color-secondary-cta);
+  box-shadow: none;
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+}
+
+:where([data-template="personal-blogger"]) .font-serif {
+  font-family:
+    Messy Handwritten,
+    sans-serif !important;
+}
+
+:where([data-template="personal-blogger"]) .font-semibold,
+:where([data-template="personal-blogger"]) .font-medium {
+  font-weight: 400 !important;
+}
+
+@layer utilities {
+  :where([data-template="personal-blogger"]) .font-serif {
+    font-family:
+      Messy Handwritten,
+      sans-serif;
+  }
+}

@@ -1,0 +1,102 @@
+html[data-showcase="arcwright"] {
+  --aw-paper: #f7f7f3;
+  --aw-outer: #e5e5e5;
+  --aw-ink: #111111;
+  --aw-text: #2a2a2a;
+  --aw-muted: #6d6d6a;
+  --aw-line: #cfcfcb;
+  --aw-dark: #1a1b1e;
+  --aw-dark-line: #3c3d41;
+  --aw-dark-muted: #9b9b9b;
+  --aw-orange: #f04e23;
+  --aw-orange-deep: #c93a12;
+  --aw-white: #ffffff;
+  --aw-sans: var(--aw-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --aw-frame: clamp(0px, 2.65vw, 38px);
+  --aw-rail: clamp(14px, 3.5vw, 50px);
+  --aw-pad: clamp(8px, 2vw, 28px);
+  background: var(--aw-outer);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="arcwright"]) *,
+:where(html[data-showcase="arcwright"]) *::before,
+:where(html[data-showcase="arcwright"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="arcwright"]) body {
+  margin: 0;
+  padding: var(--aw-frame);
+  background: var(--aw-outer);
+  color: var(--aw-text);
+  font-family: var(--aw-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="arcwright"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="arcwright"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="arcwright"]) :is(h1, h2, h3) {
+  color: var(--aw-ink);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+:where(html[data-showcase="arcwright"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="arcwright"]) :is(button, input, select, textarea) {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="arcwright"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="arcwright"]) svg {
+  display: block;
+}
+
+html[data-showcase="arcwright"] :focus-visible {
+  outline: 2px solid var(--aw-orange);
+  outline-offset: 3px;
+}
+
+html[data-showcase="arcwright"] ::selection {
+  background: var(--aw-orange);
+  color: var(--aw-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="arcwright"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="arcwright"] *,
+  html[data-showcase="arcwright"] *::before,
+  html[data-showcase="arcwright"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

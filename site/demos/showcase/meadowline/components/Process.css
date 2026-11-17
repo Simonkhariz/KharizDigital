@@ -1,0 +1,365 @@
+.ml-process-section {
+  width: min(100% - 2 * var(--ml-gutter), var(--ml-max));
+  margin-inline: auto;
+  padding: clamp(60px, 7vw, 100px) 0 clamp(70px, 8vw, 110px);
+}
+
+.ml-process-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ml-process-header h2 {
+  margin-top: 26px;
+  font-size: clamp(42px, 5.7vw, 84px);
+  letter-spacing: -0.035em;
+}
+
+.ml-process-header h2 em {
+  color: var(--ml-orange);
+}
+
+.ml-process-header p {
+  max-width: 440px;
+  margin-top: 26px;
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+
+.ml-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: clamp(48px, 5.4vw, 76px);
+}
+
+.ml-process-card {
+  background: var(--ml-white);
+  box-shadow: 0 1px 0 var(--ml-line);
+}
+
+.ml-process-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 2;
+  padding: 7% 9%;
+  overflow: hidden;
+  isolation: isolate;
+  font-size: 12.5px;
+  color: #5a514c;
+}
+
+.ml-process-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.ml-process-caption {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  padding: 28px 28px 30px;
+}
+
+.ml-process-number {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin-top: 4px;
+  background: var(--ml-orange);
+  color: var(--ml-white);
+  font-family: var(--ml-serif);
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.ml-process-caption h3 {
+  font-size: clamp(25px, 2.2vw, 31px);
+}
+
+.ml-process-caption p {
+  max-width: 17em;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Step 1: connect */
+.ml-process-connect {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ml-process-wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ml-process-wires path {
+  fill: none;
+  stroke: rgba(255, 127, 55, 0.35);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
+}
+
+.ml-process-linked .ml-process-wires path {
+  stroke: rgba(255, 127, 55, 0.9);
+  animation: ml-flow 1.2s linear infinite;
+}
+
+@keyframes ml-flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+.ml-process-source {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 23%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff, #f1f4f8);
+  box-shadow: 0 6px 16px rgba(58, 24, 10, 0.1);
+}
+
+.ml-process-source svg {
+  fill: currentColor;
+  fill-opacity: 0.25;
+}
+
+.ml-process-cloud {
+  top: 3%;
+  left: 6%;
+  color: #2f8fe6;
+}
+
+.ml-process-drive {
+  top: 3%;
+  right: 6%;
+  color: #e0a11b;
+}
+
+.ml-process-data {
+  bottom: 3%;
+  left: 6%;
+  color: #9b6fe0;
+}
+
+.ml-process-sheet {
+  bottom: 3%;
+  right: 6%;
+  color: #2c9a57;
+}
+
+.ml-process-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: -19px;
+  border-radius: 50%;
+  background: var(--ml-white);
+  color: #b9aea6;
+  box-shadow: 0 4px 12px rgba(58, 24, 10, 0.12);
+  transition: color 0.2s ease;
+}
+
+.ml-process-link[aria-pressed="true"] {
+  color: var(--ml-orange);
+}
+
+.ml-process-link-state {
+  position: absolute;
+  left: 50%;
+  bottom: -2%;
+  transform: translateX(-50%);
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ml-ink-soft);
+}
+
+/* Step 2: pass rate */
+.ml-process-pass,
+.ml-process-inbox {
+  position: relative;
+  width: 100%;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255, 247, 240, 0.78);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
+    0 16px 36px rgba(58, 24, 10, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.ml-process-pass > span:first-of-type {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b3531;
+}
+
+.ml-process-pass p {
+  margin-top: 6px;
+  font-size: 11.500px;
+  color: #a0958e;
+}
+
+.ml-process-pass p strong {
+  margin-right: 4px;
+  font-family: var(--ml-serif);
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ml-ink);
+}
+
+.ml-process-trend {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  color: var(--ml-orange);
+  opacity: 0.55;
+}
+
+.ml-process-bar {
+  display: block;
+  width: 52%;
+  height: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #f08a52 0%, #f8b48e 80%, #eadfd6 80%);
+}
+
+.ml-process-pass ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ml-process-pass li {
+  padding: 9px 10px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.ml-process-pass li span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: #8d827b;
+}
+
+.ml-process-pass li strong {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--ml-serif);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1;
+  color: var(--ml-ink);
+}
+
+/* Step 3: inbox */
+.ml-process-inbox {
+  display: grid;
+  gap: 10px;
+}
+
+.ml-process-inbox > strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b3531;
+}
+
+.ml-process-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ml-process-spark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--ml-orange);
+  color: var(--ml-white);
+}
+
+.ml-process-from-ai,
+.ml-process-from-user {
+  flex: 1;
+  padding: 8px 11px;
+  border-radius: 7px;
+  line-height: 1.35;
+}
+
+.ml-process-from-ai {
+  background: #fbdcc6;
+  color: #6b5a50;
+}
+
+.ml-process-from-ai b {
+  display: block;
+  font-weight: 700;
+  color: #3b3531;
+}
+
+.ml-process-from-user {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.ml-process-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+  min-width: 46%;
+  padding: 8px 12px;
+  border-radius: 7px;
+  background: #e3ecf8;
+  color: #2f4f7a;
+  font-weight: 600;
+}
+
+.ml-process-review[aria-pressed="true"] {
+  background: #dcefd9;
+  color: #2f6b3a;
+}
+
+@media (max-width: 1000px) {
+  .ml-process-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+}

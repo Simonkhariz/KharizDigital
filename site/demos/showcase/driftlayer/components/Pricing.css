@@ -1,0 +1,109 @@
+.dl-pricing {
+  background: var(--wash);
+}
+.dl-pricing__switch {
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 999px;
+  background: #fff;
+}
+.dl-pricing__switch button {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: background-color 0.2s, color 0.2s;
+}
+.dl-pricing__switch button[aria-pressed="true"] {
+  background: var(--blue);
+  color: #06162f;
+}
+.dl-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.dl-pricing__grid > li {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 34px 34px;
+  border-radius: var(--radius-card);
+  background: #fff;
+}
+.dl-pricing__grid > li[data-featured] {
+  background: linear-gradient(165deg, #2f66bd, #4d8fd6);
+  color: #eaf2fd;
+  box-shadow: 0 40px 70px -40px rgba(42, 98, 196, 0.8);
+}
+.dl-pricing__grid h3 {
+  font-family: var(--font-round), sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--navy);
+}
+.dl-pricing__grid [data-featured] h3,
+.dl-pricing__grid [data-featured] strong {
+  color: #fff;
+}
+.dl-pricing__blurb {
+  margin-top: 4px;
+}
+.dl-pricing__price {
+  display: grid;
+  gap: 4px;
+  margin: 32px 0 28px;
+  font-size: 15px;
+}
+.dl-pricing__price strong {
+  font-weight: 600;
+  font-size: 68px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--navy);
+}
+.dl-pricing__grid ul {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.dl-pricing__grid [data-featured] ul {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+.dl-pricing__grid ul li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 500;
+  color: var(--navy);
+}
+.dl-pricing__grid [data-featured] ul li {
+  color: #fff;
+}
+.dl-pricing__grid ul svg {
+  flex: none;
+  margin-top: 5px;
+  color: var(--blue);
+}
+.dl-pricing__grid [data-featured] ul svg {
+  color: #fff;
+}
+.dl-pricing__grid .dl-btn {
+  margin-top: auto;
+}
+.dl-pricing__grid [data-featured] :focus-visible {
+  outline-color: #fff;
+}
+.dl-pricing__note {
+  margin-top: 24px;
+  font-size: 14.5px;
+}
+@media (max-width: 959px) {
+  .dl-pricing__grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 520px;
+  }
+}

@@ -1,0 +1,94 @@
+html[data-showcase="agentway"] {
+  --aw-blue: #2a1cf0;
+  --aw-blue-deep: #1a10c8;
+  --aw-white: #ffffff;
+  --aw-tint: #eeeeff;
+  --aw-tint-2: #dcdcff;
+  --aw-line: #cdccfb;
+  --aw-sans: var(--aw-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --aw-mono: var(--aw-font-mono), ui-monospace, Menlo, monospace;
+  --aw-frame: clamp(6px, 3.2vw, 46px);
+  --aw-gut: clamp(14px, 4.2%, 58px);
+  --aw-pad: clamp(16px, 2.9vw, 40px);
+  background: #1a10dc;
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="agentway"]) *,
+:where(html[data-showcase="agentway"]) *::before,
+:where(html[data-showcase="agentway"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="agentway"]) body {
+  margin: 0;
+  padding: clamp(6px, 3vw, 44px) var(--aw-frame);
+  background: linear-gradient(180deg, #1a10dc 0%, #2a1cf0 12%, #6f66f6 45%, #b3b0fa 100%);
+  color: var(--aw-blue);
+  font-family: var(--aw-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="agentway"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="agentway"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="agentway"]) :is(h1, h2, h3) {
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+:where(html[data-showcase="agentway"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="agentway"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+:where(html[data-showcase="agentway"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="agentway"]) svg {
+  display: block;
+}
+
+html[data-showcase="agentway"] :focus-visible {
+  outline: 2px solid var(--aw-blue);
+  outline-offset: 3px;
+}
+
+html[data-showcase="agentway"] ::selection {
+  background: var(--aw-blue);
+  color: var(--aw-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="agentway"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="agentway"] *,
+  html[data-showcase="agentway"] *::before,
+  html[data-showcase="agentway"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

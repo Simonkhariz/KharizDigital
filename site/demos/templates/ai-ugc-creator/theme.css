@@ -1,0 +1,78 @@
+:root:where([data-template="ai-ugc-creator"]) {
+  --background: snow;
+  --foreground: #1a0000;
+  --primary-cta: #e63946;
+  --primary-cta-text: snow;
+  --secondary-cta-text: #1a0000;
+  --accent: #f5c4c7;
+  --background-accent: #f09ca1;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="ai-ugc-creator"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="ai-ugc-creator"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff0;
+}
+
+html:where([data-template="ai-ugc-creator"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="ai-ugc-creator"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="ai-ugc-creator"]) h1,
+:where([data-template="ai-ugc-creator"]) h2,
+:where([data-template="ai-ugc-creator"]) h3,
+:where([data-template="ai-ugc-creator"]) h4,
+:where([data-template="ai-ugc-creator"]) h5,
+:where([data-template="ai-ugc-creator"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="ai-ugc-creator"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="ai-ugc-creator"]) .primary-button {
+  background: radial-gradient(
+    ellipse at 50% -20%,
+    color-mix(in srgb, var(--color-primary-cta) 70%, var(--color-background)) 0%,
+    var(--color-primary-cta) 70%
+  );
+  box-shadow:
+    0 8px 24px -6px color-mix(in srgb, var(--color-primary-cta) 35%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--color-background) 20%, transparent);
+}
+
+:where([data-template="ai-ugc-creator"]) .secondary-button {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-secondary-cta) 80%, transparent),
+    var(--color-secondary-cta)
+  );
+  border: 1px solid var(--color-secondary-cta);
+  box-shadow: 0 1px 2px #0000000d;
+}

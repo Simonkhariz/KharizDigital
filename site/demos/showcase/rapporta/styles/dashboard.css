@@ -1,0 +1,997 @@
+.rpd-app {
+  --d-line: #ecebe8;
+  --d-muted: #6f6c68;
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr);
+  height: 640px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #262524;
+  box-shadow: 0 1px 2px rgba(31, 31, 31, 0.04);
+}
+
+.rpd-srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rpd-empty {
+  padding: 10px;
+  color: var(--d-muted);
+}
+
+/* Sidebar */
+.rpd-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 4px 14px 5px;
+}
+
+.rpd-workspace {
+  padding: 6px 7px 7px;
+  border: 1px solid var(--d-line);
+  border-radius: 12px;
+}
+
+.rpd-workspaceButton {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 3px 4px 3px 0;
+  border-radius: 6px;
+}
+
+.rpd-workspaceMark {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 5px;
+}
+
+.rpd-workspaceName {
+  flex: 1;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rpd-search,
+.rpd-topSearch {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 8px;
+  color: var(--d-muted);
+  background: #faf9f8;
+  border-radius: 7px;
+}
+
+.rpd-search {
+  margin-top: 7px;
+  border: 1px solid var(--d-line);
+  background: #fff;
+}
+
+.rpd-search input,
+.rpd-topSearch input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  font-size: 10.5px;
+  background: none;
+  border: 0;
+  outline-offset: 4px;
+  appearance: none;
+}
+
+.rpd-search input::placeholder,
+.rpd-topSearch input::placeholder {
+  color: #8d8a85;
+}
+
+.rpd-sideNav {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 0 3px;
+}
+
+.rpd-sideItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 26px;
+  padding: 0 9px;
+  color: #4d4b48;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+
+.rpd-sideItem:hover {
+  background: #faf9f8;
+}
+
+.rpd-sideItemActive {
+  color: #1f1f1f;
+  font-weight: 500;
+  border-color: var(--d-line);
+  box-shadow: 0 2px 6px rgba(31, 31, 31, 0.05);
+}
+
+.rpd-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 0 14px;
+}
+
+.rpd-user strong,
+.rpd-user small {
+  display: block;
+  font-weight: 500;
+}
+
+.rpd-user small {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--d-muted);
+}
+
+.rpd-userDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ff7a00;
+  box-shadow: 0 4px 10px rgba(255, 122, 0, 0.35);
+}
+
+/* Main */
+.rpd-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 5px 5px 0 0;
+  border: 1px solid var(--d-line);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.rpd-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--d-line);
+}
+
+.rpd-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.rpd-topSearch {
+  flex: 0 1 380px;
+  margin-right: auto;
+}
+
+.rpd-bellWrap,
+.rpd-menuWrap {
+  position: relative;
+}
+
+.rpd-menuWrap {
+  margin-left: auto;
+}
+
+.rpd-iconButton {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--d-line);
+  border-radius: 6px;
+}
+
+.rpd-iconButton:hover,
+.rpd-dots:hover,
+.rpd-columnHead button:hover {
+  background: #f4f3f0;
+}
+
+.rpd-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 5;
+  width: 220px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #dddbd7;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(31, 31, 31, 0.12);
+}
+
+.rpd-popover li {
+  padding: 7px 8px;
+  border-radius: 5px;
+}
+
+.rpd-popoverMenu li {
+  padding: 0;
+}
+
+.rpd-popoverMenu button {
+  width: 100%;
+  padding: 7px 8px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.rpd-popoverMenu button:hover,
+.rpd-popoverMenu button[aria-pressed="true"] {
+  background: #f4f3f0;
+}
+
+.rpd-newButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #fff;
+  background: #d94f00;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.rpd-newButton:hover {
+  background: #c24600;
+}
+
+.rpd-content {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 14px 0;
+  overflow: hidden;
+}
+
+/* KPIs */
+.rpd-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--d-line);
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 17px;
+  background:
+    linear-gradient(#fff, #fff) top / 100% calc(100% - 17px) no-repeat,
+    repeating-linear-gradient(120deg, #fff 0 9px, #ecebe8 9px 10px);
+}
+
+.rpd-kpi {
+  padding: 11px 11px 12px;
+  border-bottom: 1px solid var(--d-line);
+}
+
+.rpd-kpi + .rpd-kpi {
+  border-left: 1px solid var(--d-line);
+}
+
+.rpd-kpi dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4d4b48;
+}
+
+.rpd-kpi dd {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.rpd-kpiValue {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.rpd-kpiDelta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #4d4b48;
+}
+
+.rpd-kpiDelta svg,
+.rpd-kpiDelta b {
+  color: #23784a;
+  font-weight: 400;
+}
+
+/* Chart */
+.rpd-chart {
+  margin-top: 15px;
+  padding: 14px 14px 10px;
+  border: 1px solid var(--d-line);
+  border-radius: 10px;
+}
+
+.rpd-chartHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rpd-chartHead h3 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rpd-chartIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--d-line);
+  border-radius: 6px;
+}
+
+.rpd-dots {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.rpd-chartTotal {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 12px;
+  color: #4d4b48;
+}
+
+.rpd-chartTotal strong {
+  min-width: 34px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: #262524;
+}
+
+.rpd-bars {
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rpd-barSlot {
+  display: grid;
+  grid-template-rows: 104px auto;
+  align-items: end;
+  justify-items: center;
+  gap: 9px;
+}
+
+.rpd-bar {
+  position: relative;
+  width: 30px;
+  border-radius: 5px;
+  background: repeating-linear-gradient(135deg, #f6f5f3 0 5px, #efeeeb 5px 6px);
+  transition: height 0.35s ease, background-color 0.2s ease;
+}
+
+.rpd-bar:hover {
+  background: repeating-linear-gradient(135deg, #eeede9 0 5px, #e4e2de 5px 6px);
+}
+
+.rpd-bar span {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  font-size: 9px;
+  color: #4d4b48;
+  writing-mode: vertical-rl;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.rpd-barActive,
+.rpd-barActive:hover {
+  background: repeating-linear-gradient(135deg, #e85600 0 5px, #dc5100 5px 6px);
+  box-shadow: 0 4px 10px rgba(255, 92, 0, 0.3);
+}
+
+.rpd-barActive span {
+  color: #fff;
+}
+
+.rpd-barEmpty {
+  width: 1px;
+  height: 5px;
+  margin-bottom: 8px;
+  background: repeating-linear-gradient(#b5b2ad 0 2px, transparent 2px 3px);
+}
+
+.rpd-barDay {
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  color: #8d8a85;
+}
+
+/* Views */
+.rpd-views {
+  margin-top: 16px;
+}
+
+.rpd-viewBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #dddbd7;
+}
+
+.rpd-tabs {
+  display: flex;
+}
+
+.rpd-tab {
+  padding: 8px 20px 9px 10px;
+  color: #77746f;
+  border-bottom: 1.5px solid transparent;
+  margin-bottom: -1px;
+}
+
+.rpd-tab:hover {
+  color: #262524;
+}
+
+.rpd-tabActive {
+  color: #262524;
+  font-weight: 500;
+  border-bottom-color: #262524;
+}
+
+.rpd-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.rpd-filterCount {
+  display: inline-flex;
+  gap: 8px;
+  height: 22px;
+  align-items: center;
+  padding: 0 9px;
+  background: #faf9f8;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.rpd-filterCount:disabled {
+  cursor: default;
+}
+
+.rpd-filterCount span {
+  font-weight: 400;
+}
+
+.rpd-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rpd-select select {
+  height: 22px;
+  max-width: 128px;
+  padding: 0 20px 0 7px;
+  font-size: 10px;
+  background: #fff;
+  border: 1px solid #dddbd7;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.rpd-selectActive select {
+  border-color: #d94f00;
+  color: #b84300;
+}
+
+.rpd-select svg {
+  position: absolute;
+  right: 6px;
+  pointer-events: none;
+}
+
+.rpd-panel {
+  padding-top: 12px;
+}
+
+.rpd-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.rpd-column {
+  padding: 0 6px;
+  border-right: 1px solid var(--d-line);
+  min-width: 0;
+}
+
+.rpd-column:first-child {
+  padding-left: 0;
+}
+
+.rpd-columnHead {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+}
+
+.rpd-columnHead h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: auto;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 400;
+  border-radius: 6px;
+  background: #faf9f8;
+}
+
+.rpd-columnHead h4 span {
+  margin-left: 4px;
+  font-size: 9.5px;
+}
+
+.rpd-columnHead button {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+}
+
+.rpd-cards {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.rpd-card {
+  padding: 8px 8px 9px;
+  background: #faf9f8;
+  border-radius: 8px;
+  animation: rpd-cardIn 0.3s ease;
+}
+
+@keyframes rpd-cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.rpd-cardHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.rpd-cardHead p {
+  flex: 1;
+  min-width: 0;
+}
+
+.rpd-cardHead strong {
+  display: block;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rpd-cardHead small,
+.rpd-table small {
+  font-size: 9px;
+  color: var(--d-muted);
+}
+
+.rpd-cardMark {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: #fff;
+  background: #ee6a45;
+  border-radius: 5px;
+}
+
+.rpd-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  font-size: 7.5px;
+  font-weight: 500;
+  border-radius: 50%;
+  color: #33312f;
+}
+
+.rpd-cardMeta {
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding: 9px 9px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.rpd-cardMeta div {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  align-items: center;
+}
+
+.rpd-cardMeta dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4d4b48;
+}
+
+.rpd-cardMeta dd {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rpd-cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 3px 7px;
+  font-size: 10px;
+  color: #4d4b48;
+  border: 1px solid #dddbd7;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.rpd-cardAction:hover {
+  color: #b84300;
+  border-color: #d94f00;
+}
+
+/* List */
+.rpd-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.rpd-table th,
+.rpd-table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--d-line);
+  font-weight: 400;
+}
+
+.rpd-table thead th {
+  color: var(--d-muted);
+  font-size: 10px;
+}
+
+.rpd-table tbody th {
+  font-weight: 500;
+}
+
+/* Roadmap + calendar */
+.rpd-weekHead,
+.rpd-roadRow,
+.rpd-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.rpd-weekHead {
+  margin-bottom: 6px;
+  font-size: 9px;
+  color: #77746f;
+}
+
+.rpd-weekHead span {
+  padding-left: 6px;
+  border-left: 1px solid var(--d-line);
+}
+
+.rpd-today {
+  color: #b84300;
+}
+
+.rpd-roadRow {
+  margin-bottom: 4px;
+}
+
+.rpd-roadBar {
+  position: relative;
+  padding: 3px 7px;
+  font-size: 10px;
+  background: #f1f0ed;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rpd-roadBarHigh {
+  background: #ffe3d2;
+  color: #8a3200;
+}
+
+.rpd-calendar {
+  border: 1px solid var(--d-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rpd-calendar li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 150px;
+  padding: 7px 5px;
+  color: #262524;
+}
+
+.rpd-calendar li + li {
+  border-left: 1px solid var(--d-line);
+}
+
+.rpd-calendar .rpd-today {
+  background: #fff8f4;
+}
+
+.rpd-calDay {
+  font-size: 9px;
+  color: #77746f;
+}
+
+.rpd-today .rpd-calDay {
+  color: #b84300;
+}
+
+.rpd-calItem {
+  padding: 3px 5px;
+  font-size: 9.5px;
+  line-height: 1.25;
+  background: #f4f3f0;
+  border-radius: 4px;
+}
+
+/* Other sections */
+.rpd-sectionPanel {
+  max-width: 460px;
+  padding: 16px;
+  border: 1px solid var(--d-line);
+  border-radius: 10px;
+}
+
+.rpd-sectionIntro {
+  font-size: 12px;
+  color: #4d4b48;
+}
+
+.rpd-sectionPanel dl {
+  margin: 12px 0;
+}
+
+.rpd-sectionRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--d-line);
+}
+
+.rpd-sectionRow dd {
+  font-weight: 500;
+}
+
+.rpd-backButton {
+  padding: 5px 10px;
+  border: 1px solid #dddbd7;
+  border-radius: 6px;
+}
+
+.rpd-backButton:hover {
+  border-color: #262524;
+}
+
+@media (max-width: 1100px) {
+  .rpd-filters .rpd-select:nth-of-type(n + 3) {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .rpd-app {
+    grid-template-columns: minmax(0, 1fr);
+    height: 660px;
+  }
+  /* The sidebar becomes a strip of section chips that scrolls sideways. */
+  .rpd-app {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .rpd-sidebar {
+    min-width: 0;
+    padding: 6px 5px 2px;
+  }
+  .rpd-workspace,
+  .rpd-user {
+    display: none;
+  }
+  .rpd-sideNav {
+    display: flex;
+    gap: 6px;
+    margin-top: 0;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .rpd-sideItem {
+    flex: none;
+    gap: 7px;
+    height: 34px;
+    padding: 0 12px;
+  }
+  .rpd-main {
+    margin: 5px 5px 0;
+  }
+  .rpd-board {
+    grid-template-columns: repeat(3, 240px);
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rpd-app {
+    height: auto;
+    font-size: 12px;
+  }
+  .rpd-content {
+    padding-bottom: 14px;
+  }
+  .rpd-barDay {
+    font-size: 9.5px;
+  }
+  .rpd-topSearch {
+    display: none;
+  }
+  /* Touch sizes for the controls, with the filters on their own row under the view tabs. */
+  .rpd-iconButton,
+  .rpd-dots,
+  .rpd-columnHead button {
+    width: 32px;
+    height: 32px;
+  }
+  .rpd-newButton,
+  .rpd-filterCount {
+    height: 32px;
+    font-size: 12px;
+  }
+  .rpd-columnHead {
+    height: 36px;
+  }
+  .rpd-columnHead h4,
+  .rpd-cardAction {
+    font-size: 12px;
+  }
+  .rpd-cardAction {
+    padding: 7px 10px;
+  }
+  .rpd-viewBar {
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: 0;
+  }
+  .rpd-tabs {
+    width: 100%;
+    border-bottom: 1px solid #dddbd7;
+  }
+  .rpd-tab {
+    padding: 10px 10px 11px;
+  }
+  .rpd-filters {
+    width: 100%;
+    padding: 8px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  /* The week calendar restacks as an agenda: one row per day. */
+  .rpd-calendar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rpd-calendar li {
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+  .rpd-calendar li + li {
+    border-left: 0;
+    border-top: 1px solid var(--d-line);
+  }
+  .rpd-calDay {
+    width: 34px;
+    font-size: 10.5px;
+  }
+  .rpd-calItem {
+    padding: 5px 8px;
+    font-size: 11.5px;
+  }
+  .rpd-weekHead {
+    font-size: 10px;
+  }
+  .rpd-select select {
+    height: 32px;
+    max-width: none;
+    font-size: 16px;
+  }
+  .rpd-title {
+    margin-right: auto;
+  }
+  .rpd-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rpd-kpi:nth-child(3) {
+    border-left: 0;
+  }
+  .rpd-barSlot {
+    grid-template-rows: 80px auto;
+  }
+  .rpd-table th:nth-child(4),
+  .rpd-table td:nth-child(4) {
+    display: none;
+  }
+}

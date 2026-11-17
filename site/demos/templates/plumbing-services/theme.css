@@ -1,0 +1,92 @@
+:root:where([data-template="plumbing-services"]) {
+  --background: #020617;
+  --card: #0f172a;
+  --foreground: #f1f5f9;
+  --primary-cta: #0ea5e9;
+  --primary-cta-text: #fff;
+  --secondary-cta: #334155;
+  --secondary-cta-text: #f1f5f9;
+  --accent: #38bdf8;
+  --background-accent: #0284c7;
+  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="plumbing-services"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+@media (width < 768px) {
+  :root:where([data-template="plumbing-services"]) {
+    --width-content-width: 88vw;
+  }
+}
+
+:where([data-template="plumbing-services"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff0;
+}
+
+html:where([data-template="plumbing-services"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="plumbing-services"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="plumbing-services"]) h1,
+:where([data-template="plumbing-services"]) h2,
+:where([data-template="plumbing-services"]) h3,
+:where([data-template="plumbing-services"]) h4,
+:where([data-template="plumbing-services"]) h5,
+:where([data-template="plumbing-services"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="plumbing-services"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="plumbing-services"]) .primary-button {
+  background: radial-gradient(
+    ellipse at 50% -20%,
+    color-mix(in srgb, var(--color-primary-cta) 70%, var(--color-foreground)) 0%,
+    var(--color-primary-cta) 70%
+  );
+  box-shadow:
+    0 8px 24px -6px color-mix(in srgb, var(--color-primary-cta) 35%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+:where([data-template="plumbing-services"]) .secondary-button {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    var(--color-secondary-cta);
+  box-shadow: 2.10837px 3.16256px 9.48767px color-mix(in srgb, var(--color-accent) 10%, transparent);
+}

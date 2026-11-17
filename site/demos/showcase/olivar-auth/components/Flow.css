@@ -1,0 +1,546 @@
+/* Olivar sign-up flow. Every class is prefixed with ol-. */
+
+.ol-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 47.300%);
+  gap: 28px;
+  width: min(1332px, 100% - clamp(24px, 7.500vw, 108px));
+  min-height: min(947px, 100vh - 132px);
+  margin: clamp(12px, 6vw, 86px) auto;
+  padding: 35px 28px 35px 0;
+  background: var(--ol-paper);
+}
+
+.ol-art {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: 30% 60%;
+  image-rendering: pixelated;
+}
+
+.ol-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 0 28px;
+}
+
+.ol-logo {
+  margin-top: 62px;
+  font-family: var(--ol-serif);
+  font-size: 47px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #4a4a4a;
+}
+
+.ol-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: min(100%, 418px);
+  padding: 40px 0;
+  animation: ol-in 0.4s ease both;
+}
+
+@keyframes ol-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.ol-stage form,
+.ol-ready {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  justify-items: center;
+}
+
+.ol-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--ol-faint);
+}
+
+.ol-progress span {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.ol-progress i {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ol-line);
+}
+
+.ol-progress i[data-on="true"] {
+  background: var(--ol-ink);
+}
+
+.ol-stage h1 {
+  font-size: 32px;
+  line-height: 1.15;
+  text-align: center;
+  outline: none;
+}
+
+.ol-sub {
+  margin-top: -10px;
+  margin-bottom: 4px;
+  font-size: 14.500px;
+  text-align: center;
+  color: var(--ol-muted);
+}
+
+.ol-sub strong {
+  font-weight: 500;
+  color: var(--ol-ink);
+}
+
+/* fields */
+
+.ol-field {
+  display: grid;
+  gap: 7px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.ol-field > label,
+.ol-field > legend {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ol-ink);
+}
+
+.ol-field > legend {
+  margin-bottom: 7px;
+}
+
+.ol-field input[type="text"],
+.ol-field input[type="email"],
+.ol-field input[type="password"] {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid var(--ol-line);
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 16px;
+  color: var(--ol-ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ol-field input:hover {
+  border-color: #b9b9bd;
+}
+
+.ol-field input[aria-invalid="true"],
+.ol-code[data-invalid="true"] input {
+  border-color: var(--ol-danger);
+}
+
+.ol-password {
+  position: relative;
+}
+
+.ol-password input {
+  padding-right: 52px !important;
+}
+
+.ol-password button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--ol-text);
+}
+
+.ol-password button:hover {
+  background: var(--ol-page);
+}
+
+.ol-hint {
+  font-size: 13px;
+  color: var(--ol-faint);
+}
+
+.ol-error {
+  width: 100%;
+  font-size: 13.500px;
+  color: var(--ol-danger);
+}
+
+.ol-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.500px;
+  color: var(--ol-text);
+  cursor: pointer;
+}
+
+.ol-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ol-ink);
+}
+
+/* code boxes */
+
+.ol-code {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 1.100vw, 16px);
+  width: 100%;
+  margin-top: 6px;
+}
+
+.ol-code[data-invalid="true"] {
+  animation: ol-shake 0.35s ease;
+}
+
+@keyframes ol-shake {
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.ol-code input {
+  flex: 0 1 58px;
+  width: 58px;
+  min-width: 0;
+  height: 64px;
+  padding: 0;
+  border: 1px solid var(--ol-line);
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 27px;
+  text-align: center;
+  color: var(--ol-ink);
+  caret-color: var(--ol-ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ol-code input:focus-visible,
+.ol-field input[type="text"]:focus-visible,
+.ol-field input[type="email"]:focus-visible,
+.ol-field input[type="password"]:focus-visible {
+  outline: none;
+  border-color: var(--ol-ink);
+  box-shadow: 0 0 0 3px rgba(30, 30, 30, 0.14);
+}
+
+.ol-code input:disabled {
+  color: var(--ol-muted);
+}
+
+/* primary button with corner brackets */
+
+.ol-primary {
+  position: relative;
+  display: block;
+  width: min(100%, 394px);
+  margin-top: 12px;
+}
+
+.ol-primary i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: solid #1e1e1e;
+  border-width: 0;
+}
+
+.ol-primary i:nth-child(1) { top: -2px; left: -2px; border-top-width: 1.500px; border-left-width: 1.500px; }
+.ol-primary i:nth-child(2) { top: -2px; right: -2px; border-top-width: 1.500px; border-right-width: 1.500px; }
+.ol-primary i:nth-child(3) { bottom: -2px; left: -2px; border-bottom-width: 1.500px; border-left-width: 1.500px; }
+.ol-primary i:nth-child(4) { bottom: -2px; right: -2px; border-bottom-width: 1.500px; border-right-width: 1.500px; }
+
+.ol-primary button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 999px;
+  background: #1f1f1f;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.ol-primary button:hover:not(:disabled) {
+  background: #3a3a3a;
+}
+
+.ol-primary button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.ol-primary button:disabled {
+  background: #6f6f6f;
+  cursor: progress;
+}
+
+.ol-demo {
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--ol-cream);
+  font-size: 13.500px;
+  text-align: center;
+  color: #5b4a22;
+}
+
+.ol-demo strong {
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ol-ink);
+}
+
+.ol-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 26px;
+  font-size: 14px;
+}
+
+.ol-links button {
+  padding: 6px 2px;
+  color: var(--ol-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ol-links button:disabled {
+  color: var(--ol-faint);
+  text-decoration: none;
+  cursor: default;
+}
+
+.ol-status {
+  min-height: 20px;
+  font-size: 13.500px;
+  text-align: center;
+  color: var(--ol-good);
+}
+
+/* welcome */
+
+.ol-badge {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--ol-cream);
+  color: var(--ol-olive);
+}
+
+.ol-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ol-choices label {
+  position: relative;
+  cursor: pointer;
+}
+
+.ol-choices input {
+  position: absolute;
+  opacity: 0;
+}
+
+.ol-choices span {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 0 10px;
+  border: 1px solid var(--ol-line);
+  border-radius: 14px;
+  font-size: 14.500px;
+  text-align: center;
+  color: var(--ol-ink);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.ol-choices label:hover span {
+  border-color: #b9b9bd;
+}
+
+.ol-choices input:checked + span {
+  border-color: var(--ol-ink);
+  background: var(--ol-cream);
+  box-shadow: inset 0 0 0 1px var(--ol-ink);
+}
+
+.ol-choices input:focus-visible + span {
+  outline: 2px solid var(--ol-ink);
+  outline-offset: 3px;
+}
+
+.ol-ready dl {
+  width: 100%;
+  margin: 4px 0;
+  border-top: 1px solid var(--ol-line);
+}
+
+.ol-ready dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--ol-line);
+  font-size: 15px;
+}
+
+.ol-ready dt {
+  color: var(--ol-faint);
+}
+
+.ol-ready dd {
+  color: var(--ol-ink);
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+/* footer + terms */
+
+.ol-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px 20px;
+  width: 100%;
+  padding-left: 12px;
+  font-size: 13.500px;
+  color: var(--ol-faint);
+}
+
+.ol-foot button {
+  padding: 6px 0;
+  font-size: 15px;
+  color: var(--ol-faint);
+}
+
+.ol-foot button:hover {
+  color: var(--ol-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ol-terms {
+  width: min(100% - 24px, 460px);
+  padding: 0;
+  border: 0;
+  background: #ffffff;
+  color: var(--ol-text);
+}
+
+.ol-terms::backdrop {
+  background: rgba(30, 30, 30, 0.45);
+}
+
+.ol-terms > div {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  padding: 34px 30px 30px;
+}
+
+.ol-terms h2 {
+  font-size: 26px;
+}
+
+.ol-terms ol {
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+  list-style: decimal;
+  font-size: 15px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .ol-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: min(100% - 24px, 560px);
+    min-height: 0;
+    margin-bottom: 76px;
+    padding: 12px 12px 24px;
+  }
+
+  .ol-art {
+    order: -1;
+    height: 180px;
+    min-height: 0;
+    object-position: 50% 62%;
+  }
+
+  .ol-flow {
+    padding: 0 8px;
+  }
+
+  .ol-logo {
+    margin-top: 30px;
+    font-size: 40px;
+  }
+
+  .ol-stage {
+    padding: 28px 0 36px;
+  }
+
+  .ol-foot {
+    padding-left: 0;
+    font-size: 14px;
+  }
+
+  /* Taller tap areas for the small text controls. */
+  .ol-check {
+    min-height: 40px;
+  }
+
+  .ol-links button,
+  .ol-foot button {
+    padding-block: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ol-stage h1 {
+    font-size: 28px;
+  }
+
+  .ol-code input {
+    height: 58px;
+    font-size: 24px;
+    border-radius: 12px;
+  }
+}

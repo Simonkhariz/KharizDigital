@@ -1,0 +1,42 @@
+:root:where([data-template="boutique-hotel"]) {
+  --background: #0f1010;
+  --card: #3d3d3d;
+  --foreground: #f5f0eb;
+  --primary-cta: #fff;
+  --primary-cta-text: #0a0a0a;
+  --secondary-cta: #1a1a1a;
+  --secondary-cta-text: #f5f0eb;
+  --accent: #d4b896;
+  --background-accent: #4f402d;
+  --radius: 1rem;
+  --width-content-width: clamp(40rem, 80vw, 100rem);
+  --vw-1_5: 1.35rem;
+  --width-x-padding-mask-fade: 4.5rem;
+  --text-2xs: 0.62rem;
+  --text-xs: 0.72rem;
+  --text-sm: 0.82rem;
+  --text-base: 0.92rem;
+  --text-lg: 1rem;
+  --text-xl: 1.1rem;
+  --text-2xl: 1.3rem;
+  --text-3xl: 1.6rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.75rem;
+  --text-6xl: 3.3rem;
+  --text-7xl: 4rem;
+  --text-8xl: 4.5rem;
+  --text-9xl: 7rem;
+  --default-font-family: var(--font-inter-tight), sans-serif;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="boutique-hotel"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+@layer utilities {
+  :where([data-template="boutique-hotel"]) .font-serif {
+    font-family: var(--font-playfair-display), serif;
+  }
+}

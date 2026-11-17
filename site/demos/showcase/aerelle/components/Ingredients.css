@@ -1,0 +1,124 @@
+.ae-ingredients {
+  position: relative;
+  padding-block: 112px;
+  color: #e6f2fb;
+  background:
+    radial-gradient(60% 80% at 100% 100%, rgba(182, 230, 253, 0.35), transparent 70%),
+    linear-gradient(180deg, #015595 0%, #0f65a2 55%, #2f85c0 100%);
+}
+.ae-ingredients__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: center;
+}
+.ae-ingredients .ae-h2 {
+  color: #fff;
+}
+.ae-ingredients .ae-lede {
+  margin-top: 18px;
+  color: #e6f2fb;
+}
+.ae-ingredients__list {
+  margin-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.ae-ingredients__list button {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  width: 100%;
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--font-head), sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s, padding-left 0.25s;
+}
+.ae-ingredients__list button span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.ae-ingredients__list button:hover {
+  color: #fff;
+}
+.ae-ingredients__list button[aria-pressed="true"] {
+  color: #fff;
+  padding-left: 14px;
+}
+.ae-ingredients__card {
+  padding: 44px;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 30px 60px -30px rgba(1, 40, 80, 0.6);
+  animation: ae-card-in 0.4s ease-out;
+}
+@keyframes ae-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.ae-ingredients__strength {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-accent), serif;
+  font-style: italic;
+  font-size: 84px;
+  line-height: 1;
+  color: var(--blue-ink);
+}
+.ae-ingredients__strength span {
+  font-family: var(--font-body), sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--text);
+}
+.ae-ingredients__card h3 {
+  margin-top: 26px;
+  font-family: var(--font-head), sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--navy);
+}
+.ae-ingredients__source {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #6f7f8f;
+}
+.ae-ingredients__found {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--navy);
+}
+.ae-ingredients__found a {
+  color: var(--blue-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ae-ingredients__card :focus-visible {
+  outline-color: var(--blue-ink);
+}
+@media (max-width: 899px) {
+  .ae-ingredients {
+    padding-block: 72px;
+  }
+  .ae-ingredients__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .ae-ingredients__card {
+    padding: 28px;
+  }
+  .ae-ingredients__strength {
+    font-size: 64px;
+  }
+  .ae-ingredients__list button {
+    font-size: 21px;
+  }
+}

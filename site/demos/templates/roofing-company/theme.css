@@ -1,0 +1,92 @@
+:root:where([data-template="roofing-company"]) {
+  --background: #1c1917;
+  --card: #292524;
+  --foreground: #fafaf9;
+  --primary-cta: #ea6720;
+  --primary-cta-text: #fff;
+  --secondary-cta: #44403c;
+  --secondary-cta-text: #fafaf9;
+  --accent: #f97316;
+  --background-accent: #fb923c;
+  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="roofing-company"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+@media (width < 768px) {
+  :root:where([data-template="roofing-company"]) {
+    --width-content-width: 88vw;
+  }
+}
+
+:where([data-template="roofing-company"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff0;
+}
+
+html:where([data-template="roofing-company"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="roofing-company"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="roofing-company"]) h1,
+:where([data-template="roofing-company"]) h2,
+:where([data-template="roofing-company"]) h3,
+:where([data-template="roofing-company"]) h4,
+:where([data-template="roofing-company"]) h5,
+:where([data-template="roofing-company"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="roofing-company"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="roofing-company"]) .primary-button {
+  background: radial-gradient(
+    ellipse at 50% -20%,
+    color-mix(in srgb, var(--color-primary-cta) 70%, var(--color-foreground)) 0%,
+    var(--color-primary-cta) 70%
+  );
+  box-shadow:
+    0 8px 24px -6px color-mix(in srgb, var(--color-primary-cta) 35%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+:where([data-template="roofing-company"]) .secondary-button {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent) 0%,
+      transparent 40%
+    ),
+    var(--color-secondary-cta);
+  box-shadow: 2.10837px 3.16256px 9.48767px color-mix(in srgb, var(--color-accent) 10%, transparent);
+}

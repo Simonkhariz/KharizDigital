@@ -1,0 +1,96 @@
+html[data-showcase="helmdeck"] {
+  --hd-paper: #f6f6f2;
+  --hd-ink: #1e1e1e;
+  --hd-muted: #8f8f8a;
+  --hd-text: #6f6f6a;
+  --hd-line: #bdbdb8;
+  --hd-white: #ffffff;
+  --hd-blue: #2f5fd0;
+  --hd-display: var(--hd-font-display), "Helvetica Neue", Arial, sans-serif;
+  --hd-sans: var(--hd-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --hd-mono: var(--hd-font-mono), ui-monospace, Menlo, monospace;
+  --hd-gutter: clamp(16px, 3.6vw, 50px);
+  --hd-max: 1240px;
+  background: var(--hd-paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="helmdeck"]) *,
+:where(html[data-showcase="helmdeck"]) *::before,
+:where(html[data-showcase="helmdeck"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="helmdeck"]) body {
+  margin: 0;
+  background: var(--hd-paper);
+  color: var(--hd-text);
+  font-family: var(--hd-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="helmdeck"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="helmdeck"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="helmdeck"]) :is(h1, h2, h3) {
+  font-family: var(--hd-display);
+  font-weight: 500;
+  color: var(--hd-ink);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+:where(html[data-showcase="helmdeck"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="helmdeck"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+:where(html[data-showcase="helmdeck"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="helmdeck"]) svg {
+  display: block;
+}
+
+html[data-showcase="helmdeck"] :focus-visible {
+  outline: 2px solid var(--hd-blue);
+  outline-offset: 3px;
+}
+
+html[data-showcase="helmdeck"] ::selection {
+  background: var(--hd-ink);
+  color: var(--hd-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="helmdeck"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="helmdeck"] *,
+  html[data-showcase="helmdeck"] *::before,
+  html[data-showcase="helmdeck"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

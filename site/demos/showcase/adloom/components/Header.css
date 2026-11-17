@@ -1,0 +1,180 @@
+.al-header-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(14px);
+}
+.al-header-inner {
+  display: flex;
+  align-items: center;
+  height: 68px;
+  gap: 40px;
+}
+.al-header-brand {
+  display: inline-flex;
+  align-items: center;
+}
+.al-header-nav {
+  flex: 1;
+}
+.al-header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.al-header-nav-item {
+  position: relative;
+}
+.al-header-nav-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  font-size: 15px;
+  color: var(--ink);
+}
+.al-header-nav-button:hover {
+  color: #000;
+}
+.al-header-chev,
+.al-header-chev-open {
+  transition: transform 0.2s;
+}
+.al-header-chev-open {
+  transform: rotate(180deg);
+}
+.al-header-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -18px;
+  width: 340px;
+  padding: 8px;
+  background: var(--surface);
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px var(--line), 0 18px 40px -12px rgba(34, 27, 21, 0.18);
+  animation: drop 0.18s ease-out;
+}
+.al-header-menu[hidden] {
+  display: none;
+}
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+.al-header-menu-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.al-header-menu-link:hover {
+  background: var(--tint);
+}
+.al-header-menu-label {
+  font-size: 15px;
+  font-weight: 500;
+}
+.al-header-menu-note {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.al-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.al-header-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  margin-right: 8px;
+  font-size: 15px;
+}
+.al-header-login:hover {
+  color: #000;
+}
+.al-header-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: auto;
+}
+.al-header-mobile {
+  display: none;
+}
+@media (max-width: 1099px) {
+  .al-header-nav,
+  .al-header-actions {
+    display: none;
+  }
+  .al-header-toggle {
+    display: inline-flex;
+  }
+  .al-header-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: absolute;
+    inset: 68px 0 auto 0;
+    height: calc(100dvh - 68px);
+    overflow-y: auto;
+    padding: 16px var(--gutter) 32px;
+    background: var(--page);
+    border-top: 1px solid var(--line);
+  }
+  .al-header-mobile[hidden] {
+    display: none;
+  }
+  .al-header-mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+  .al-header-mobile-heading {
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .al-header-mobile-group a {
+    display: block;
+    padding: 8px 0;
+    font-size: 17px;
+  }
+  .al-header-mobile-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+  }
+  .al-header-mobile-actions .al-btn {
+    height: 48px;
+    width: 100%;
+  }
+}
+@media (max-width: 479px) {
+  .al-header-mobile-nav {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1099px) {
+  .al-header-header {
+    background: var(--page);
+    backdrop-filter: none;
+  }
+  /* Pinned to the top while the menu is open, so the menu fills the screen
+     even when the announcement bar is still pushing the header down. */
+  .al-header-header[data-menu-open] {
+    position: fixed;
+    inset: 0 0 auto 0;
+  }
+}

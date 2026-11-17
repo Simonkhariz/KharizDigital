@@ -1,0 +1,57 @@
+.ae-hero {
+  position: relative;
+  height: clamp(760px, 69.5vw, 1040px);
+  color: #fff;
+  isolation: isolate;
+}
+.ae-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-top: clamp(150px, 13vw, 196px);
+}
+.ae-hero h1 {
+  font-family: var(--font-head), sans-serif;
+  font-weight: 400;
+  font-size: clamp(44px, 4.35vw, 66px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.ae-hero h1 em {
+  font-family: var(--font-accent), serif;
+  font-style: italic;
+  font-size: 1.1em;
+  letter-spacing: -0.02em;
+}
+.ae-hero__copy p {
+  margin-top: 22px;
+  max-width: 25em;
+  font-size: clamp(17px, 1.45vw, 21px);
+  line-height: 1.55;
+  color: #f1f8fe;
+}
+.ae-hero__copy .ae-btn {
+  margin-top: 32px;
+}
+@media (max-width: 599px) {
+  .ae-hero {
+    height: 780px;
+  }
+  .ae-hero__copy {
+    padding-top: 128px;
+  }
+  .ae-hero h1 {
+    font-size: 40px;
+  }
+  .ae-hero__copy p {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .ae-hero__copy .ae-btn {
+    margin-top: 22px;
+    min-height: 44px;
+    font-size: 16px;
+  }
+}

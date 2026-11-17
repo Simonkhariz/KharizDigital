@@ -1,0 +1,74 @@
+.ml-trusted-section {
+  position: relative;
+  padding: 56px var(--ml-gutter) clamp(120px, 12vw, 170px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ml-trusted-scene {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 210px;
+  z-index: -1;
+  opacity: 0.6;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 55%, transparent 100%);
+}
+
+.ml-trusted-title {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.ml-trusted-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 44px clamp(32px, 5vw, 76px);
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.ml-trusted-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #a39c97;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ml-trusted-heavy {
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.ml-trusted-script {
+  font-family: var(--ml-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 27px;
+  transform: rotate(-6deg);
+}
+
+.ml-trusted-slant {
+  font-style: italic;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  transform: skewX(-12deg);
+}
+
+.ml-trusted-stack {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+}

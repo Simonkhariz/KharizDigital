@@ -1,0 +1,89 @@
+:root:where([data-template="dental-practice"]) {
+  --background: #f7f6f7;
+  --foreground: #0c1325;
+  --primary-cta: #0798ff;
+  --primary-cta-text: #f7f6f7;
+  --secondary-cta-text: #0c1325;
+  --accent: #93c7ff;
+  --background-accent: #a8cde8;
+  --width-content-width: clamp(40rem, 67.5vw, 100rem);
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="dental-practice"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+@media (width < 768px) {
+  :root:where([data-template="dental-practice"]) {
+    --width-content-width: 88vw;
+  }
+}
+
+:where([data-template="dental-practice"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #0000004d #0000;
+}
+
+html:where([data-template="dental-practice"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="dental-practice"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="dental-practice"]) h1,
+:where([data-template="dental-practice"]) h2,
+:where([data-template="dental-practice"]) h3,
+:where([data-template="dental-practice"]) h4,
+:where([data-template="dental-practice"]) h5,
+:where([data-template="dental-practice"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="dental-practice"]) .card {
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-accent) 6%, transparent) 0%, transparent 59.26%),
+    linear-gradient(var(--color-card) 0%, var(--color-card) 100%), var(--color-card);
+  box-shadow:
+    20px 18px 7px color-mix(in srgb, var(--color-accent) 0%, transparent),
+    2px 2px 2px color-mix(in srgb, var(--color-accent) 6.5%, transparent),
+    1px 1px 2px color-mix(in srgb, var(--color-accent) 2%, transparent);
+  border: 2px solid var(--color-secondary-cta);
+}
+
+:where([data-template="dental-practice"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-background) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 0.839802px
+      0.503881px -0.3125px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 1.99048px 1.19429px -0.625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 3.63084px 2.1785px -0.9375px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 6.03627px 3.62176px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 9.74808px 5.84885px -1.5625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 15.9566px 9.57398px -1.875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 27.4762px 16.4857px -2.1875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="dental-practice"]) .secondary-button {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-secondary-cta) 80%, transparent),
+    var(--color-secondary-cta)
+  );
+  border: 1px solid var(--color-secondary-cta);
+  box-shadow: 0 1px 2px #0000000d;
+}

@@ -1,0 +1,113 @@
+html[data-showcase="tessera-pay"] {
+  --tp-ink: #0c0d10;
+  --tp-text: #4b5060;
+  --tp-muted: #6b7080;
+  --tp-page: #f5f6fb;
+  --tp-paper: #ffffff;
+  --tp-line: #e3e6ef;
+  --tp-grid: rgba(110, 140, 215, 0.16);
+  --tp-sky: #c9d8ff;
+  --tp-lilac: #d9ccff;
+  --tp-mint: #bfeede;
+  --tp-honey: #ffe7b0;
+  --tp-lime: #c9f27a;
+  --tp-green: #0f7a4d;
+  --tp-danger: #c2281d;
+  --tp-display: var(--tp-font-display), "Helvetica Neue", Arial, sans-serif;
+  --tp-serif: var(--tp-font-serif), "Times New Roman", serif;
+  --tp-sans: var(--tp-font-sans), "Helvetica Neue", Arial, sans-serif;
+  background: var(--tp-page);
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="tessera-pay"]) *,
+:where(html[data-showcase="tessera-pay"]) *::before,
+:where(html[data-showcase="tessera-pay"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="tessera-pay"]) body {
+  margin: 0;
+  background: var(--tp-page);
+  color: var(--tp-text);
+  font-family: var(--tp-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="tessera-pay"]) :is(h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote, pre) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="tessera-pay"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="tessera-pay"]) :is(h1, h2, h3) {
+  font-family: var(--tp-display);
+  font-weight: 650;
+  color: var(--tp-ink);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+:where(html[data-showcase="tessera-pay"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="tessera-pay"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="tessera-pay"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="tessera-pay"]) :is(svg, img) {
+  display: block;
+}
+
+html[data-showcase="tessera-pay"] :focus-visible {
+  outline: 2px solid var(--tp-ink);
+  outline-offset: 3px;
+}
+
+html[data-showcase="tessera-pay"] .tp-on-dark :focus-visible {
+  outline-color: #ffffff;
+}
+
+html[data-showcase="tessera-pay"] ::selection {
+  background: var(--tp-ink);
+  color: #ffffff;
+}
+
+html[data-showcase="tessera-pay"] .tp-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="tessera-pay"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="tessera-pay"] *,
+  html[data-showcase="tessera-pay"] *::before,
+  html[data-showcase="tessera-pay"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

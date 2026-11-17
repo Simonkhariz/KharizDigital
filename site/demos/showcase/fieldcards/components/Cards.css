@@ -1,0 +1,570 @@
+/* Fieldcards: the three cards */
+
+.fc-card {
+  position: relative;
+  width: 100%;
+  color: var(--fc-ink);
+  box-shadow: 0 30px 80px rgba(20, 30, 10, 0.28);
+}
+
+.fc-card h3 {
+  font-weight: 400;
+}
+
+.fc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 34px;
+  padding: 3px;
+  border-radius: 11px;
+  background: var(--fc-pill);
+  color: var(--fc-white);
+  font-size: 13px;
+  letter-spacing: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fc-pill span {
+  padding: 0 9px 0 11px;
+}
+
+.fc-pill b {
+  display: grid;
+  place-items: center;
+  min-width: 46px;
+  height: 100%;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--fc-white);
+  color: var(--fc-ink);
+  font-weight: 400;
+}
+
+.fc-pill-button {
+  transition: transform 0.15s ease;
+}
+
+.fc-pill-button:hover b {
+  background: #ecece8;
+}
+
+.fc-pill-button:active {
+  transform: scale(0.96);
+}
+
+/* 1. Profile */
+.fc-profile {
+  max-width: 440px;
+  padding: 18px;
+  border-radius: 36px;
+  background: var(--fc-white);
+}
+
+.fc-profile-panel {
+  position: relative;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  height: 462px;
+  padding-top: 30px;
+  border-radius: 22px;
+  background: #e3e2e4;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fc-profile-panel h3 {
+  font-size: clamp(34px, 9.6vw, 44px);
+  letter-spacing: -0.06em;
+}
+
+.fc-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  margin-top: 4px;
+  color: #2d2d30;
+  font-size: 19px;
+  letter-spacing: -0.04em;
+}
+
+.fc-status button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #55555a;
+}
+
+.fc-status button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.fc-spinner {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(40, 40, 44, 0.05), rgba(40, 40, 44, 0.9));
+  -webkit-mask: repeating-conic-gradient(#000 0 14deg, transparent 14deg 45deg), radial-gradient(circle, transparent 4px, #000 4.5px);
+  -webkit-mask-composite: source-in;
+  mask: repeating-conic-gradient(#000 0 14deg, transparent 14deg 45deg) intersect, radial-gradient(circle, transparent 4px, #000 4.5px);
+  animation: fc-spin 1s steps(8) infinite;
+}
+
+@keyframes fc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2fbf5b;
+  box-shadow: 0 0 0 4px rgba(47, 191, 91, 0.2);
+}
+
+.fc-profile-panel img {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  width: 100%;
+  height: 76%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 26%);
+}
+
+.fc-profile footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 26px 4px 6px;
+}
+
+.fc-avatar {
+  position: relative;
+  flex: none;
+  width: 46px;
+  height: 46px;
+}
+
+.fc-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+
+.fc-avatar i {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid var(--fc-white);
+  border-radius: 50%;
+  background: #b9b9bd;
+  transition: background-color 0.3s ease;
+}
+
+.fc-avatar i[data-on="true"] {
+  background: #2fbf5b;
+}
+
+.fc-profile footer p {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.fc-profile footer strong {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.fc-profile footer p span {
+  color: var(--fc-faint);
+  font-size: 15px;
+  letter-spacing: -0.03em;
+}
+
+.fc-profile .fc-dark-button {
+  padding: 0 18px;
+}
+
+.fc-profile .fc-dark-button[aria-pressed="true"] {
+  background: #1f7a43;
+}
+
+/* 2. App */
+.fc-app {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  height: 586px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 36px;
+  background: #cfdcdf;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fc-app > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 100%;
+  transition: filter 0.3s ease, transform 0.5s ease;
+}
+
+.fc-app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(205, 222, 228, 0.97) 0%, rgba(205, 222, 228, 0.92) 34%, rgba(205, 222, 228, 0) 62%);
+  transition: background-color 0.3s ease;
+}
+
+.fc-app[data-open="true"] > img {
+  filter: blur(14px);
+  transform: scale(1.1);
+}
+
+.fc-app[data-open="true"]::before {
+  background-color: rgba(205, 222, 228, 0.6);
+}
+
+.fc-app-top {
+  display: grid;
+  justify-items: center;
+  padding: 30px 28px 0;
+  text-align: center;
+}
+
+.fc-app-top .fc-pill {
+  justify-self: start;
+  margin-left: 2px;
+}
+
+.fc-app-mark {
+  margin-top: 6px;
+  color: var(--fc-ink);
+}
+
+.fc-app-top h3 {
+  margin-top: 14px;
+  font-size: clamp(32px, 9vw, 42px);
+  letter-spacing: -0.06em;
+}
+
+.fc-app-top > p:last-child {
+  max-width: 320px;
+  margin-top: 16px;
+  color: #6c7477;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+
+.fc-app-sheet {
+  display: grid;
+  gap: 14px;
+  margin: 18px 22px 0;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  animation: fc-rise 0.25s ease-out;
+}
+
+.fc-app-sheet[hidden] {
+  display: none;
+}
+
+@keyframes fc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.fc-app-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  color: #5d6366;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.fc-app-stats strong {
+  display: block;
+  color: var(--fc-ink);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.fc-app-features {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  letter-spacing: -0.025em;
+}
+
+.fc-app-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fc-app-sheet .fc-dark-button {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.fc-app-sheet .fc-dark-button[aria-pressed="true"] {
+  background: #1f7a43;
+}
+
+.fc-app-sheet > p {
+  color: #5d6366;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.fc-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-end;
+  height: 50px;
+  margin: auto 28px 28px 0;
+  padding: 3px 18px 3px 3px;
+  border-radius: 999px;
+  background: var(--fc-white);
+  color: var(--fc-ink);
+  font-size: 18px;
+  letter-spacing: -0.04em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.fc-explore span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--fc-pill);
+  color: var(--fc-white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.fc-explore:hover span {
+  transform: translateX(2px);
+}
+
+.fc-explore:active {
+  transform: scale(0.97);
+}
+
+/* 3. Journal */
+.fc-journal {
+  max-width: 562px;
+  padding: 24px;
+  border-radius: clamp(36px, 10vw, 60px);
+  background: var(--fc-white);
+}
+
+.fc-journal > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 24px 0;
+}
+
+.fc-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 11px;
+  background: var(--fc-pill);
+  color: var(--fc-white);
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fc-journal .fc-pill {
+  height: 38px;
+}
+
+.fc-journal-text {
+  min-height: 196px;
+  padding: 36px 24px 0;
+  animation: fc-rise 0.3s ease-out;
+}
+
+.fc-journal-text h3 {
+  color: #3a3a3c;
+  font-size: clamp(30px, 8vw, 38px);
+  letter-spacing: -0.055em;
+}
+
+.fc-journal-text p {
+  margin-top: 16px;
+  color: #a9a9ac;
+  font-size: clamp(18px, 5vw, 23px);
+  letter-spacing: -0.045em;
+  line-height: 1.38;
+}
+
+.fc-journal-image {
+  position: relative;
+  height: 370px;
+  margin-top: 8px;
+  border-radius: 0 0 36px 36px;
+  overflow: hidden;
+}
+
+.fc-journal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: object-position 0.6s ease;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 100%, #000 52%, transparent 78%);
+  mask-image: radial-gradient(120% 100% at 50% 100%, #000 52%, transparent 78%);
+}
+
+.fc-journal-image::after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(180deg, rgba(20, 40, 10, 0), rgba(20, 40, 10, 0.55));
+  pointer-events: none;
+}
+
+.fc-place {
+  position: absolute;
+  left: 30px;
+  bottom: 34px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px 6px 4px;
+  border-radius: 12px;
+  color: var(--fc-white);
+  font-size: clamp(18px, 5vw, 23px);
+  letter-spacing: -0.04em;
+  line-height: 1.35;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.fc-place:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.fc-place svg {
+  margin-top: 5px;
+}
+
+.fc-place small {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  opacity: 0.92;
+}
+
+.fc-journal-dots {
+  position: absolute;
+  right: 48px;
+  bottom: 52px;
+  z-index: 1;
+  display: flex;
+  gap: 2px;
+}
+
+.fc-journal-dots button {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.fc-journal-dots button::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.fc-journal-dots button[aria-current="true"]::before {
+  background: var(--fc-white);
+  transform: scale(1.3);
+}
+
+@media (max-width: 480px) {
+  .fc-profile {
+    padding: 14px;
+    border-radius: 30px;
+  }
+  .fc-profile-panel {
+    height: 400px;
+  }
+  .fc-profile footer {
+    flex-wrap: wrap;
+    padding-top: 18px;
+  }
+  .fc-profile .fc-dark-button {
+    flex: 1 1 100%;
+  }
+  .fc-journal {
+    padding: 14px;
+  }
+  .fc-journal > header {
+    padding: 14px 12px 0;
+  }
+  .fc-journal-text {
+    padding: 26px 12px 0;
+  }
+  .fc-journal-image {
+    height: 300px;
+    border-radius: 0 0 26px 26px;
+  }
+  .fc-place {
+    left: 16px;
+    bottom: 22px;
+  }
+  .fc-journal-dots {
+    right: 26px;
+    bottom: 32px;
+  }
+  .fc-app-top {
+    padding-inline: 18px;
+  }
+  .fc-app-sheet {
+    margin-inline: 14px;
+  }
+}

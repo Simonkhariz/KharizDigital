@@ -1,0 +1,805 @@
+/* Fiscara: hero, finance widgets and the About band. Pixel values follow the reference at 1440 px. */
+
+.fs-hero {
+  position: relative;
+  height: 1062px;
+  background: var(--fs-beige);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ---------- Circuit ---------- */
+
+.fs-circuit {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fs-circuit svg {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  overflow: visible;
+}
+
+.fs-circuit-left {
+  left: 0;
+}
+
+.fs-circuit-right {
+  right: 0;
+}
+
+.fs-signals path {
+  stroke: #c49a5c;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 2.4 97.6;
+  stroke-dashoffset: 3;
+  opacity: 0.85;
+  animation: fs-signal 11s linear infinite;
+}
+
+@keyframes fs-signal {
+  to {
+    stroke-dashoffset: -97;
+  }
+}
+
+.fs-tile {
+  position: absolute;
+  top: 371px;
+  right: 186px;
+  display: grid;
+  place-items: center;
+  width: 61px;
+  height: 61px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #dfdbce, #d7d3c6);
+  box-shadow:
+    inset 0 1px 0 #f2efe5,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 18px 18px -8px rgba(108, 98, 76, 0.42),
+    0 3px 5px rgba(108, 98, 76, 0.16);
+  color: #050100;
+  animation: fs-float 7s ease-in-out infinite;
+}
+
+@keyframes fs-float {
+  50% {
+    transform: translateY(-5px);
+    box-shadow:
+      inset 0 1px 0 #f2efe5,
+      inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+      0 24px 22px -10px rgba(108, 98, 76, 0.36),
+      0 3px 5px rgba(108, 98, 76, 0.12);
+  }
+}
+
+/* ---------- Copy ---------- */
+
+.fs-hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 115px;
+  text-align: center;
+}
+
+.fs-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f0c0a;
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+}
+
+.fs-hero-kicker span {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--fs-amber);
+  color: #fff;
+}
+
+.fs-hero h1 {
+  margin-top: 36px;
+  color: var(--fs-ink);
+  font-size: 66px;
+  font-weight: 380;
+  line-height: 61px;
+  letter-spacing: -0.04em;
+}
+
+.fs-hero h1 span {
+  color: var(--fs-grey);
+}
+
+.fs-hero-sub {
+  margin-top: 21px;
+  color: var(--fs-soft);
+  font-size: 17.5px;
+  line-height: 25px;
+  letter-spacing: -0.01em;
+}
+
+.fs-hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 21px;
+}
+
+.fs-hero-actions .fs-button {
+  width: 153px;
+  padding: 0;
+}
+
+.fs-hero-actions .fs-button-white {
+  width: 146px;
+}
+
+/* ---------- Hand and device ---------- */
+
+.fs-hero-figure {
+  position: absolute;
+  left: calc(50% - 252px);
+  top: 466px;
+  z-index: 1;
+  width: 470px;
+  pointer-events: none;
+}
+
+.fs-hand {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.fs-hand-cast {
+  mix-blend-mode: screen;
+}
+
+.fs-hand-glow,
+.fs-hand-cast {
+  animation: fs-breathe 5.5s ease-in-out infinite;
+}
+
+@keyframes fs-breathe {
+  50% {
+    opacity: 0.72;
+  }
+}
+
+/* ---------- Info statement ---------- */
+
+.fs-hero-info {
+  position: absolute;
+  left: 23px;
+  bottom: 24px;
+  z-index: 2;
+  width: 500px;
+}
+
+.fs-hero-statement {
+  margin-top: 35px;
+  color: #0d0a08;
+  font-size: 30.5px;
+  font-weight: 400;
+  line-height: 32.4px;
+  letter-spacing: -0.027em;
+}
+
+.fs-hero-statement span {
+  color: #827d73;
+}
+
+/* ---------- Finance widgets ---------- */
+
+.fs-widgets {
+  position: absolute;
+  right: 13px;
+  bottom: 19px;
+  z-index: 3;
+  display: flex;
+  gap: 9px;
+}
+
+.fs-widget {
+  width: 276px;
+  border-radius: 6px;
+  background: var(--fs-brown);
+  color: #f3ede2;
+  font-family: var(--fs-ui);
+  container-type: inline-size;
+}
+
+/* Everything inside is sized in em, so the card keeps its proportions at any width. */
+.fs-widget-in {
+  position: relative;
+  padding: 1.3em 1.25em 1.1em 1.4em;
+  font-size: 3.623cqw;
+}
+
+.fs-widget header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.fs-widget h3 {
+  padding-top: 0.4em;
+  font-size: 0.97em;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.fs-widget header p {
+  margin-top: 0.32em;
+  color: #a39390;
+  font-size: 0.74em;
+  line-height: 1.3;
+}
+
+.fs-widget-tools {
+  display: flex;
+  gap: 0.3em;
+}
+
+.fs-toggle {
+  display: flex;
+  gap: 0.1em;
+  padding: 0.2em;
+  border-radius: 0.4em;
+  background: var(--fs-maroon);
+}
+
+.fs-toggle button {
+  display: grid;
+  place-items: center;
+  width: 1.65em;
+  height: 1.6em;
+  border-radius: 0.28em;
+  color: #e9d6cf;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.fs-toggle button[aria-pressed="true"] {
+  background: #ede8dc;
+  color: #2c1512;
+}
+
+.fs-toggle svg {
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.fs-select {
+  position: relative;
+}
+
+.fs-select > button {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  height: 2em;
+  padding: 0 0.8em 0 0.95em;
+  border-radius: 0.4em;
+  background: var(--fs-maroon);
+  color: #f1e3dc;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.fs-select > button {
+  font-size: 0.8em;
+  height: 2.5em;
+  padding: 0 0.95em 0 1.15em;
+  border-radius: 0.5em;
+}
+
+.fs-select > button svg {
+  width: 1em;
+  height: 1em;
+}
+
+.fs-select ul {
+  position: absolute;
+  top: calc(100% + 0.3em);
+  right: 0;
+  z-index: 4;
+  min-width: 7.4em;
+  padding: 0.3em;
+  border-radius: 0.4em;
+  background: #f0ebe0;
+  box-shadow: 0 0.8em 1.6em rgba(20, 8, 6, 0.45);
+}
+
+.fs-select ul[hidden] {
+  display: none;
+}
+
+.fs-select li button {
+  display: block;
+  width: 100%;
+  padding: 0.55em 0.7em;
+  border-radius: 0.28em;
+  color: #2c1512;
+  font-size: 0.82em;
+  text-align: left;
+}
+
+.fs-select li button:hover,
+.fs-select li[aria-selected="true"] button {
+  background: #ddd6c8;
+}
+
+.fs-widget-amount {
+  margin-top: 0.66em;
+  font-size: 1.9em;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.fs-widget-amount small {
+  margin-left: 0.6em;
+  color: #a39390;
+  font-size: 0.37em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.fs-widget-change {
+  display: flex;
+  align-items: center;
+  gap: 0.85em;
+  margin-top: 0.85em;
+  color: #d7ccc6;
+  font-size: 0.86em;
+  line-height: 1;
+}
+
+.fs-widget-change span {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  height: 2.3em;
+  padding: 0 0.95em 0 0.8em;
+  border-radius: 0.38em;
+  background: var(--fs-maroon);
+  color: #f6ebe4;
+  font-family: var(--fs-mono);
+  font-size: 0.84em;
+  font-weight: 700;
+}
+
+.fs-widget-change svg {
+  width: 1.45em;
+  height: 1.45em;
+}
+
+.fs-widget-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 5.3em;
+  margin-top: 1.4em;
+}
+
+.fs-donut {
+  flex: none;
+  width: 6.4em;
+  height: 6.4em;
+  margin-top: 0.3em;
+  overflow: visible;
+}
+
+.fs-donut :is(circle, rect) {
+  transition: opacity 0.25s;
+}
+
+.fs-donut-share {
+  fill: #f3ede2;
+  font-family: var(--fs-mono);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.fs-legend {
+  padding-top: 0.55em;
+}
+
+.fs-legend h4 {
+  font-size: 0.76em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.fs-legend ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.95em 1.2em;
+  margin-top: 1.1em;
+}
+
+.fs-legend li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.45em;
+  align-items: center;
+  transition: opacity 0.25s;
+}
+
+.fs-legend li[data-dim="true"] {
+  opacity: 0.35;
+}
+
+.fs-legend i {
+  width: 0.38em;
+  height: 0.38em;
+  border-radius: 50%;
+}
+
+.fs-legend span {
+  color: #a39390;
+  font-size: 0.62em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.fs-legend b {
+  grid-column: 2;
+  margin-top: 0.3em;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- About ---------- */
+
+.fs-about {
+  position: relative;
+  padding: 101px 23px 178px;
+  background: var(--fs-brown);
+  color: var(--fs-cream);
+  text-align: center;
+}
+
+.fs-about h2 {
+  max-width: 940px;
+  margin: 69px auto 0;
+  color: #e7e3d5;
+  font-size: 59px;
+  font-weight: 380;
+  line-height: 60px;
+  letter-spacing: -0.041em;
+}
+
+.fs-about h2 em {
+  color: var(--fs-on-brown-mute);
+}
+
+.fs-about-icons {
+  display: inline-flex;
+  margin: 0 8px 0 6px;
+  vertical-align: 0.02em;
+}
+
+.fs-about-icons i {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(10, 3, 2, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  transition: transform 0.45s var(--fs-ease);
+}
+
+.fs-about-icons i + i {
+  margin-left: -10px;
+}
+
+.fs-about-icons i:nth-child(1) {
+  background: linear-gradient(160deg, #3b3a37, #222120);
+  color: #f3f1ea;
+}
+
+.fs-about-icons i:nth-child(2) {
+  background: linear-gradient(160deg, #9a9692, #7b7773);
+  color: #f6f4ee;
+}
+
+.fs-about-icons i:nth-child(3) {
+  background: linear-gradient(160deg, #f0ede1, #dcd8cb);
+  color: #1d1512;
+}
+
+.fs-about h2:hover .fs-about-icons i:nth-child(1) {
+  transform: translateX(-4px) rotate(-6deg);
+}
+
+.fs-about h2:hover .fs-about-icons i:nth-child(3) {
+  transform: translateX(4px) rotate(6deg);
+}
+
+.fs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 106px -23px 0;
+}
+
+.fs-stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 13px;
+  min-height: 110px;
+  padding: 0 16px;
+}
+
+.fs-stats > div + div {
+  border-left: 1px solid #94817c;
+}
+
+.fs-stats dd {
+  color: #e7e3d5;
+  font-size: 54px;
+  font-weight: 380;
+  line-height: 56px;
+  letter-spacing: -0.032em;
+}
+
+.fs-stats dt {
+  color: #a69c98;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.005em;
+}
+
+/* ---------- Narrower screens ---------- */
+
+/* Below 1240 px the hero stacks: copy, hand, the two widgets (which cover the lower edge of the
+   photograph), then the statement. */
+@media (max-width: 1239px) {
+  .fs-hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 56px;
+  }
+  .fs-hero-statement br {
+    display: none;
+  }
+  .fs-circuit {
+    bottom: auto;
+    height: 860px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(#000 78%, transparent);
+    mask-image: linear-gradient(#000 78%, transparent);
+  }
+  .fs-hero-figure {
+    position: relative;
+    left: auto;
+    top: auto;
+    order: 2;
+    width: 460px;
+    height: 520px;
+    margin: 26px auto 0;
+    overflow: hidden;
+    transform: translateX(-22px);
+  }
+  .fs-widgets {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    order: 3;
+    justify-content: center;
+    margin: -64px 14px 0;
+  }
+  .fs-widget {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 400px;
+    box-shadow: 0 24px 40px -24px rgba(40, 16, 12, 0.55);
+  }
+  .fs-hero-info {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    order: 4;
+    width: auto;
+    margin: 64px 23px 0;
+  }
+  .fs-hero-statement {
+    max-width: 19em;
+    margin-top: 24px;
+    font-size: clamp(25px, 4.1vw, 36px);
+    line-height: 1.06;
+  }
+}
+
+@media (max-width: 899px) {
+  .fs-circuit {
+    height: 760px;
+  }
+  .fs-circuit svg {
+    top: 40px;
+    transform: scale(0.72);
+  }
+  .fs-circuit-left {
+    transform-origin: 0 0;
+  }
+  .fs-circuit-right {
+    transform-origin: 100% 0;
+  }
+  .fs-tile {
+    top: 308px;
+    right: 9%;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+  .fs-tile svg {
+    width: 32px;
+    height: 32px;
+  }
+  .fs-about {
+    padding: 84px 20px 120px;
+  }
+  .fs-about h2 {
+    margin-top: 48px;
+    font-size: clamp(31px, 6.4vw, 50px);
+    line-height: 1.04;
+  }
+  .fs-about-icons i {
+    width: 0.66em;
+    height: 0.66em;
+    border-radius: 0.17em;
+  }
+  .fs-about-icons i + i {
+    margin-left: -0.17em;
+  }
+  .fs-about-icons svg {
+    width: 0.42em;
+    height: 0.42em;
+  }
+  .fs-stats {
+    margin: 76px -20px 0;
+  }
+  .fs-stats dd {
+    font-size: clamp(34px, 6vw, 48px);
+    line-height: 1.05;
+  }
+  .fs-stats dt {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fs-hero {
+    padding-bottom: 44px;
+  }
+  .fs-hero-copy {
+    padding-top: 96px;
+  }
+  .fs-hero-kicker {
+    font-size: 15px;
+  }
+  .fs-hero h1 {
+    margin-top: 22px;
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.95;
+  }
+  .fs-hero-sub {
+    margin-top: 18px;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .fs-hero-sub br {
+    display: none;
+  }
+  .fs-hero-actions {
+    gap: 9px;
+  }
+  .fs-hero-actions .fs-button {
+    width: 150px;
+    height: 52px;
+    font-size: 15px;
+  }
+  .fs-hero-actions .fs-button-white {
+    width: 146px;
+  }
+  /* The traces start under the buttons, so they never run behind the headline. */
+  .fs-circuit {
+    top: 214px;
+    height: 560px;
+  }
+  .fs-circuit svg {
+    top: 0;
+    transform: scale(0.56);
+  }
+  .fs-tile {
+    top: 196px;
+    right: 16px;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+  }
+  .fs-tile svg {
+    width: 28px;
+    height: 28px;
+  }
+  .fs-hero-figure {
+    width: min(410px, 106vw);
+    height: 440px;
+    margin-top: 24px;
+    transform: translateX(-5%);
+  }
+  .fs-widgets {
+    flex-direction: column;
+    align-items: stretch;
+    margin: -58px 10px 0;
+    gap: 8px;
+  }
+  .fs-widget {
+    flex: none;
+    max-width: none;
+  }
+  .fs-widget-in {
+    font-size: 3.4cqw;
+  }
+  /* The legend is sized for a row of four desktop cards; on a phone it gets room and a readable size. */
+  .fs-widget header p {
+    font-size: 0.86em;
+  }
+  .fs-widget-body {
+    gap: 2.2em;
+  }
+  .fs-legend h4 {
+    font-size: 0.92em;
+  }
+  .fs-legend span {
+    font-size: 0.84em;
+  }
+  .fs-legend b {
+    font-size: 0.94em;
+  }
+  .fs-toggle button {
+    width: 2.3em;
+    height: 2.2em;
+  }
+  .fs-select > button {
+    height: 3.1em;
+  }
+  .fs-hero-info {
+    margin: 48px 16px 0;
+  }
+  .fs-hero-statement {
+    margin-top: 18px;
+  }
+  .fs-stats {
+    grid-template-columns: 1fr;
+    margin: 64px 0 0;
+  }
+  .fs-stats > div {
+    min-height: 0;
+    padding: 26px 0;
+  }
+  .fs-stats > div + div {
+    border-left: 0;
+    border-top: 1px solid #6b4f4a;
+  }
+}

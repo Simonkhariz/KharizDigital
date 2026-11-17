@@ -1,0 +1,109 @@
+html[data-showcase="closient"] {
+  --cl-maroon: #44020e;
+  --cl-maroon-soft: #5c0f1d;
+  --cl-rose: #ac424f;
+  --cl-cream: #f3eadb;
+  --cl-cream-deep: #eadfcd;
+  --cl-button: #f0e6dc;
+  --cl-ink: #1d1a19;
+  --cl-text: #3c3634;
+  --cl-muted: #7b736c;
+  --cl-faint: #a79f94;
+  --cl-white: #ffffff;
+  --cl-panel: #f1f1f1;
+  --cl-line: #e3e1de;
+  --cl-green: #1c7a5c;
+  --cl-green-bg: #e8f6ef;
+  --cl-red: #b3261e;
+  --cl-red-bg: #fbeceb;
+  --cl-series-a: #a3238e;
+  --cl-series-b: #4a45c4;
+  --cl-series-c: #1c7a6c;
+  --cl-serif: var(--cl-font-serif), "Iowan Old Style", Georgia, serif;
+  --cl-sans: var(--cl-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --cl-ui: var(--cl-font-ui), "Helvetica Neue", Arial, sans-serif;
+  --cl-mono: var(--cl-font-mono), ui-monospace, Menlo, monospace;
+  background: var(--cl-cream);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="closient"]) *,
+:where(html[data-showcase="closient"]) *::before,
+:where(html[data-showcase="closient"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="closient"]) body {
+  margin: 0;
+  background: var(--cl-cream);
+  color: var(--cl-text);
+  font-family: var(--cl-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="closient"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="closient"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="closient"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="closient"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="closient"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="closient"]) :is(svg, img) {
+  display: block;
+  max-width: 100%;
+}
+
+html[data-showcase="closient"] :focus-visible {
+  outline: 2px solid var(--cl-series-b);
+  outline-offset: 2px;
+}
+
+html[data-showcase="closient"] ::selection {
+  background: var(--cl-maroon);
+  color: var(--cl-cream);
+}
+
+html[data-showcase="closient"] .cl-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="closient"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="closient"] *,
+  html[data-showcase="closient"] *::before,
+  html[data-showcase="closient"] *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

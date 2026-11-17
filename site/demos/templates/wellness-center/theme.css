@@ -1,0 +1,89 @@
+:root:where([data-template="wellness-center"]) {
+  --background: #fafaf9;
+  --card: #f5f5f4;
+  --foreground: #0c0a09;
+  --primary-cta: #ea6720;
+  --primary-cta-text: #fff;
+  --secondary-cta: #e7e5e4;
+  --secondary-cta-text: #fff;
+  --accent: #f59e0b;
+  --background-accent: #d97706;
+  --default-font-family: var(--font-inter-tight), sans-serif;
+}
+
+:where([data-template="wellness-center"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-primary-cta) 30%, transparent) transparent;
+}
+
+html:where([data-template="wellness-center"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="wellness-center"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter-tight), sans-serif;
+  position: relative;
+}
+
+:where([data-template="wellness-center"]) h1 {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 580;
+}
+
+:where([data-template="wellness-center"]) h2 {
+  font-weight: 520;
+}
+
+:where([data-template="wellness-center"]) h2,
+:where([data-template="wellness-center"]) h3,
+:where([data-template="wellness-center"]) h4,
+:where([data-template="wellness-center"]) h5,
+:where([data-template="wellness-center"]) h6 {
+  font-family: var(--font-inter-tight), sans-serif;
+}
+
+:where([data-template="wellness-center"]) .card {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-card) 100%, var(--color-accent) 5%) -35%,
+    var(--color-card) 65%
+  );
+  box-shadow: 0px 0px 10px 4px color-mix(in srgb, var(--color-accent) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+:where([data-template="wellness-center"]) nav .card {
+  background: color-mix(in srgb, var(--color-background) 12%, transparent);
+  backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in srgb, var(--color-background) 18%, transparent);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-foreground) 8%, transparent);
+}
+
+:where([data-template="wellness-center"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-primary-cta-text) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 0.839802px
+      0.503881px -0.3125px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 1.99048px 1.19429px -0.625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 3.63084px 2.1785px -0.9375px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 6.03627px 3.62176px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 9.74808px 5.84885px -1.5625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 15.9566px 9.57398px -1.875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 27.4762px 16.4857px -2.1875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="wellness-center"]) .secondary-button {
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--color-background) 8%, transparent);
+  box-shadow: 0 1px 2px 0 color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-background) 15%, transparent);
+}

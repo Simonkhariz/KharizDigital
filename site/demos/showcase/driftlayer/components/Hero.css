@@ -1,0 +1,141 @@
+.dl-hero {
+  position: relative;
+  height: clamp(700px, 60vw, 900px);
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+}
+.dl-hero__sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 50% at 100% 0%, #2553b8 0%, transparent 70%),
+    linear-gradient(180deg, #2f66bd 0%, #3773bc 40%, #3f84c9 75%, #5b9ddd 100%);
+}
+.dl-hero__rainbow {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 2100px;
+  height: 2100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    transparent 93.4%,
+    rgba(160, 120, 255, 0.55) 94.2%,
+    rgba(90, 170, 255, 0.55) 95.2%,
+    rgba(120, 230, 200, 0.5) 96.2%,
+    rgba(255, 235, 140, 0.5) 97.2%,
+    rgba(255, 170, 120, 0.5) 98.2%,
+    rgba(255, 120, 150, 0.45) 99.2%,
+    transparent 100%
+  );
+  filter: blur(7px);
+  mask-image: linear-gradient(125deg, #000 0%, #000 20%, transparent 31%);
+}
+.dl-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 75%;
+  filter: saturate(1.2) contrast(1.04);
+}
+/* Keeps the white copy readable where it crosses the clouds. */
+.dl-hero__sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(31, 72, 168, 0.45) 0%, transparent 20%),
+    radial-gradient(30% 26% at 16% 35%, rgba(37, 83, 184, 0.45) 0%, transparent 100%),
+    radial-gradient(32% 30% at 80% 30%, rgba(37, 83, 184, 0.5) 0%, transparent 100%);
+}
+.dl-hero__copy {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  align-items: start;
+  height: 100%;
+  padding-top: clamp(190px, 17.4vw, 252px);
+}
+.dl-hero h1 {
+  font-weight: 600;
+  font-size: clamp(36px, 3.3vw, 48px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+.dl-hero__side {
+  margin-top: -56px;
+}
+.dl-hero__side p {
+  font-size: 17.5px;
+  line-height: 1.5;
+  color: #eaf2fd;
+}
+.dl-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.dl-hero__wordmark {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(6px, 1.7vw, 26px);
+  transform: translateX(-50%);
+  font-family: var(--font-round), sans-serif;
+  font-weight: 600;
+  font-size: min(19.3vw, 288px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: #fff;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 959px) {
+  .dl-hero {
+    height: 860px;
+  }
+  .dl-hero__rainbow {
+    opacity: 0.55;
+  }
+  .dl-hero__copy {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 18px;
+    padding-top: 128px;
+    max-width: 560px;
+    text-align: center;
+  }
+  .dl-hero__side {
+    margin-top: 0;
+  }
+  .dl-hero__actions {
+    justify-content: center;
+  }
+  .dl-hero__photo {
+    top: auto;
+    bottom: 0;
+    height: 66%;
+    object-position: 50% 30%;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 26%);
+  }
+  .dl-hero__sky::after {
+    background: linear-gradient(180deg, rgba(31, 72, 168, 0.5) 0%, transparent 30%);
+  }
+}
+@media (max-width: 479px) {
+  .dl-hero {
+    height: 800px;
+  }
+  .dl-hero__copy {
+    padding-top: 104px;
+  }
+  .dl-hero__side p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,82 @@
+.al-logo-row-section {
+  padding: 104px 0 72px;
+}
+.al-logo-row-caption {
+  text-align: center;
+  font-size: 16.5px;
+  color: #3b3530;
+  margin-bottom: 44px;
+  text-wrap: balance;
+}
+.al-logo-row-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px 40px;
+  padding-inline: 32px;
+  color: #77736f;
+}
+.al-logo-row-row li {
+  font-size: 28px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.al-logo-row-brand0 {
+  font-family: var(--font-display), sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+.al-logo-row-brand1 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.al-logo-row-brand2 {
+  font-size: 17px !important;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+}
+.al-logo-row-brand3 {
+  font-family: var(--font-app), sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.al-logo-row-brand4 {
+  font-family: var(--font-app), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.al-logo-row-brand5 {
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.al-logo-row-brand5::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  border: 3px solid currentColor;
+  transform: rotate(45deg);
+}
+.al-logo-row-brand6 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 1023px) {
+  .al-logo-row-row {
+    justify-content: center;
+    padding-inline: 0;
+  }
+  .al-logo-row-row li {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .al-logo-row-section {
+    padding: 72px 0 40px;
+  }
+}

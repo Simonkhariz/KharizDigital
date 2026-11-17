@@ -1,0 +1,49 @@
+.ml-butterfly-butterfly {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  animation: ml-drift 9s ease-in-out infinite;
+}
+
+.ml-butterfly-butterfly svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ml-butterfly-wing,
+.ml-butterfly-wing-right {
+  transform-origin: 24px 24px;
+  animation: ml-flap 0.9s ease-in-out infinite;
+}
+
+@keyframes ml-flap {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.45);
+  }
+}
+
+@keyframes ml-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(10px, -14px);
+  }
+  70% {
+    transform: translate(-8px, -4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ml-butterfly-butterfly,
+  .ml-butterfly-wing,
+  .ml-butterfly-wing-right {
+    animation: none;
+  }
+}

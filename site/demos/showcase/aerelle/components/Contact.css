@@ -1,0 +1,105 @@
+.ae-contact {
+  padding-block: 112px;
+  background:
+    radial-gradient(50% 70% at 0% 100%, rgba(217, 250, 255, 0.55), transparent 70%),
+    radial-gradient(40% 60% at 100% 100%, rgba(182, 230, 253, 0.45), transparent 70%),
+    linear-gradient(180deg, #015595 0%, #1670ad 60%, #49a0da 100%);
+  color: #e6f2fb;
+}
+.ae-contact__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 72px;
+  align-items: center;
+}
+.ae-contact .ae-h2 {
+  color: #fff;
+}
+.ae-contact .ae-lede {
+  margin-top: 18px;
+  color: #eef7fd;
+}
+.ae-contact__card {
+  padding: 36px;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 30px 60px -30px rgba(1, 40, 80, 0.6);
+}
+.ae-contact__card :focus-visible {
+  outline-color: var(--blue-ink);
+}
+.ae-contact__card form {
+  display: grid;
+  gap: 16px;
+}
+.ae-contact__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.ae-contact__card label {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--navy);
+}
+.ae-contact__card :is(input, select, textarea) {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #c5dbea;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 17px;
+  color: var(--navy-deep);
+}
+.ae-contact__card select {
+  appearance: none;
+  padding-right: 40px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%232c4969' stroke-width='1.6'%3E%3Cpath d='m1 1.500 5 5 5-5'/%3E%3C/svg%3E")
+    right 14px center no-repeat;
+}
+.ae-contact__card textarea {
+  resize: vertical;
+}
+.ae-contact__card [aria-invalid="true"] {
+  border-color: #b3261e;
+}
+.ae-contact__error {
+  font-size: 14px;
+  color: #b3261e;
+}
+.ae-contact__card form .ae-btn {
+  justify-self: start;
+  margin-top: 4px;
+}
+.ae-contact__done {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+.ae-contact__done h3 {
+  font-family: var(--font-head), sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--navy);
+}
+@media (max-width: 899px) {
+  .ae-contact {
+    padding-block: 72px;
+  }
+  .ae-contact__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+@media (max-width: 599px) {
+  .ae-contact__card {
+    padding: 24px 20px;
+  }
+  .ae-contact__pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

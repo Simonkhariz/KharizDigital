@@ -1,0 +1,86 @@
+:root:where([data-template="med-spa"]) {
+  --background: #fdf8f8;
+  --card: #feeaee;
+  --foreground: #2d1f2b;
+  --primary-cta: #d5799b;
+  --primary-cta-text: #fff;
+  --secondary-cta: #f5e8ec;
+  --secondary-cta-text: #2d1f2b;
+  --accent: #d5799b;
+  --background-accent: #d4a0b5;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="med-spa"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="med-spa"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #2d4a6f4d #fff0;
+}
+
+html:where([data-template="med-spa"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="med-spa"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="med-spa"]) h1,
+:where([data-template="med-spa"]) h2,
+:where([data-template="med-spa"]) h3,
+:where([data-template="med-spa"]) h4,
+:where([data-template="med-spa"]) h5,
+:where([data-template="med-spa"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="med-spa"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="med-spa"]) .primary-button {
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-cta) 0%,
+    color-mix(in srgb, var(--color-primary-cta) 90%, var(--color-background)) 100%
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-accent) 60%, transparent),
+    0 4px 12px -2px color-mix(in srgb, var(--color-accent) 35%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+:where([data-template="med-spa"]) .secondary-button {
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-accent) 5%, transparent) 0%, transparent 59.26%),
+    linear-gradient(var(--color-secondary-cta), var(--color-secondary-cta)),
+    linear-gradient(var(--color-secondary-cta), var(--color-secondary-cta)),
+    linear-gradient(color-mix(in srgb, var(--color-accent) 5%, transparent) 0%, transparent 59.26%),
+    linear-gradient(
+      color-mix(in srgb, var(--color-secondary-cta) 60%, transparent),
+      color-mix(in srgb, var(--color-secondary-cta) 60%, transparent)
+    ),
+    var(--color-secondary-cta);
+  box-shadow: 2.10837px 3.16256px 9.48767px
+    color-mix(in srgb, var(--color-primary-cta) 10%, transparent);
+  border: 1px solid var(--color-secondary-cta);
+}

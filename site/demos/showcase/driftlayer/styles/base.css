@@ -1,0 +1,199 @@
+html[data-showcase="driftlayer"] {
+  --navy: #0b1730;
+  --navy-soft: #16264a;
+  --blue: #3d97f7;
+  --blue-deep: #2a62c4;
+  --sky-top: #2b5fc0;
+  --sky: #3773bc;
+  --sky-low: #4d8fd6;
+  --text: #5b6577;
+  --line: #e3e8f0;
+  --wash: #f3f7fd;
+  --pink: #f7b9c2;
+  --white: #ffffff;
+  --radius-card: 36px;
+  --gutter: 24px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 104px;
+  -webkit-text-size-adjust: 100%;
+}
+:where(html[data-showcase="driftlayer"]) *,
+:where(html[data-showcase="driftlayer"]) *::before,
+:where(html[data-showcase="driftlayer"]) *::after {
+  box-sizing: border-box;
+}
+html[data-showcase="driftlayer"] body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+:where(html[data-showcase="driftlayer"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+:where(html[data-showcase="driftlayer"]) :is(ul, ol) {
+  list-style: none;
+}
+:where(html[data-showcase="driftlayer"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+:where(html[data-showcase="driftlayer"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+:where(html[data-showcase="driftlayer"]) button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+:where(html[data-showcase="driftlayer"]) svg {
+  display: block;
+}
+:where(html[data-showcase="driftlayer"]) :focus-visible {
+  outline: 2px solid var(--blue-deep);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+:where(html[data-showcase="driftlayer"]) .dl-on-sky :focus-visible {
+  outline-color: #fff;
+}
+:where(html[data-showcase="driftlayer"]) .dl-wrap {
+  width: min(100% - 2 * var(--gutter), 1212px);
+  margin-inline: auto;
+}
+:where(html[data-showcase="driftlayer"]) .dl-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+:where(html[data-showcase="driftlayer"]) .dl-h2 {
+  font-weight: 600;
+  font-size: clamp(34px, 4.1vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  text-wrap: balance;
+}
+:where(html[data-showcase="driftlayer"]) .dl-h2 em {
+  font-style: normal;
+  color: var(--blue);
+}
+:where(html[data-showcase="driftlayer"]) .dl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--wash);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+:where(html[data-showcase="driftlayer"]) .dl-pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn svg {
+  transition: transform 0.2s;
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn:hover svg {
+  transform: translateX(3px);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn:active {
+  transform: translateY(1px);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--navy {
+  background: var(--navy);
+  color: #fff;
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--navy:hover {
+  background: var(--navy-soft);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--white {
+  background: #fff;
+  color: var(--navy);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--white:hover {
+  box-shadow: 0 10px 24px -10px rgba(11, 23, 48, 0.5);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--glass {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--soft {
+  background: var(--wash);
+  color: var(--navy);
+}
+:where(html[data-showcase="driftlayer"]) .dl-btn--soft:hover {
+  background: #e6eefb;
+}
+:where(html[data-showcase="driftlayer"]) .dl-section {
+  padding-block: 120px;
+}
+:where(html[data-showcase="driftlayer"]) .dl-split-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 48px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+:where(html[data-showcase="driftlayer"]) .dl-split-head > p {
+  max-width: 21em;
+  padding-bottom: 8px;
+}
+@media (max-width: 767px) {
+  html[data-showcase="driftlayer"] {
+    --gutter: 16px;
+    --radius-card: 28px;
+  }
+  :where(html[data-showcase="driftlayer"]) .dl-section {
+    padding-block: 76px;
+  }
+  :where(html[data-showcase="driftlayer"]) .dl-split-head {
+    margin-bottom: 36px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="driftlayer"] {
+    scroll-behavior: auto;
+  }
+  :where(html[data-showcase="driftlayer"]) *,
+  :where(html[data-showcase="driftlayer"]) *::before,
+  :where(html[data-showcase="driftlayer"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

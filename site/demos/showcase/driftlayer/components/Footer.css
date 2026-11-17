@@ -1,0 +1,39 @@
+.dl-footer {
+  padding-top: 88px;
+}
+.dl-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+}
+.dl-footer__inner p {
+  margin-top: 14px;
+  max-width: 24em;
+}
+.dl-footer nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 30px;
+}
+.dl-footer nav a {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.dl-footer nav a:hover {
+  color: var(--blue-deep);
+}
+.dl-footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 24px;
+  margin-top: 56px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14.5px;
+}

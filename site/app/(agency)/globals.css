@@ -1,0 +1,249 @@
+/* Styles for the agency website. Only the agency folders are scanned for class names; the demo
+   sites under /demos have their own stylesheets. */
+@import "tailwindcss" source(none);
+@source "../../components";
+@source "../../content";
+@source "./";
+
+/* ---------- Theme tokens ---------- */
+:root {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #fff;
+  --card-foreground: #0a0a0a;
+  --popover: #fff;
+  --popover-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #fafafa;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #0a0a0a;
+  --radius: 0rem;
+
+  /* Khariz orange, taken from khariz.vercel.app. Use sparingly: small
+     indicators, active states and focus rings. */
+  --brand: #f05a3c;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #262626;
+  --input: #262626;
+  --ring: #fafafa;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist), "Geist", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  /* Keyboard focus: a thin orange outline on every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+}
+
+/* Visitors who ask for less motion get no smooth scrolling and no looping or
+   entrance animation from CSS. (Scripted animations check the same setting.) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Layout helpers ---------- */
+
+/* Page gutter: the space left and right of all content. It grows with the
+   screen (20px on phones, about 5% of the width on tablets and laptops, up to
+   96px), and content is capped at 1728px on very wide screens. */
+.container-x {
+  padding-left: clamp(1.25rem, 5vw, 6rem);
+  padding-right: clamp(1.25rem, 5vw, 6rem);
+}
+@media (min-width: 1920px) {
+  .container-x {
+    padding-left: max(6rem, 50% - 864px);
+    padding-right: max(6rem, 50% - 864px);
+  }
+}
+
+/* Hide the native play button iOS draws over autoplaying video. */
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls {
+  -webkit-appearance: none;
+  display: none !important;
+}
+
+/* ---------- Animations ---------- */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+@keyframes slide-progress {
+  0% { width: 0; }
+  to { width: 100%; }
+}
+@keyframes type-reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+@keyframes shadow-drift-a {
+  0% { transform: translate(-3%, -1.5%) rotate(0.5deg) scale(1.04); }
+  33% { transform: translate(1.5%, 1%) rotate(-0.4deg) scale(1.07); }
+  66% { transform: translate(3%, -0.5%) rotate(0.7deg) scale(1.05); }
+  to { transform: translate(-3%, -1.5%) rotate(0.5deg) scale(1.04); }
+}
+@keyframes shadow-drift-b {
+  0% { transform: translate(2%, 1%) rotate(-0.8deg) skew(0.6deg); }
+  40% { transform: translate(-2.5%, -1.5%) rotate(0.9deg) skew(-0.8deg); }
+  75% { transform: translate(-0.5%, 2%) rotate(-0.3deg) skew(0.4deg); }
+  to { transform: translate(2%, 1%) rotate(-0.8deg) skew(0.6deg); }
+}
+@keyframes shadow-drift-c {
+  0% { transform: translate(-1.5%, 2%) rotate(1deg) scale(1.02); }
+  50% { transform: translate(2.5%, -2%) rotate(-1.2deg) scale(1.06); }
+  to { transform: translate(-1.5%, 2%) rotate(1deg) scale(1.02); }
+}
+@keyframes sun-shadow {
+  0% { text-shadow: 26px 12px 26px #ffffff17; }
+  50% { text-shadow: -22px 16px 30px #ffffff1f; }
+  to { text-shadow: 26px 12px 26px #ffffff17; }
+}
+@keyframes marquee-track {
+  0% { transform: translate(0); }
+  to { transform: translate(-33.333%); }
+}
+@keyframes wave-letter {
+  0%, to { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.72; transform: translateY(-0.055em); }
+}
+@keyframes dawn-breathe {
+  0%, to { opacity: 0.5; transform: translateY(14%) scale(1); }
+  50% { opacity: 0.85; transform: translateY(4%) scale(1.06); }
+}
+@keyframes blob-a {
+  0% { transform: translate(-12%, 8%) scale(1); }
+  50% { transform: translate(18%, -6%) scale(1.25); }
+  to { transform: translate(-12%, 8%) scale(1); }
+}
+@keyframes blob-b {
+  0% { transform: translate(24%, -10%) scale(1.15); }
+  50% { transform: translate(-16%, 12%) scale(0.95); }
+  to { transform: translate(24%, -10%) scale(1.15); }
+}
+@keyframes blob-c {
+  0% { transform: translate(6%, 14%) scale(0.9); }
+  50% { transform: translate(-10%, -12%) scale(1.3); }
+  to { transform: translate(6%, 14%) scale(0.9); }
+}
+@keyframes gradient-flow {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  to { background-position: 0%; }
+}
+@keyframes ping-slow {
+  0% { opacity: 0.6; transform: scale(1); }
+  75%, to { opacity: 0; transform: scale(2.6); }
+}
+@keyframes stamp-in {
+  0% { opacity: 0; transform: scale(1.35); }
+  60% { opacity: 1; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@layer utilities {
+  .animate-kenburns { will-change: transform; animation: 6.5s linear forwards kenburns; }
+  .animate-slide-progress { animation: 5s linear forwards slide-progress; }
+  .animate-ping-slow { animation: 2.4s cubic-bezier(0, 0, 0.2, 1) infinite ping-slow; }
+  .shadow-layer-a { will-change: transform; animation: 71s ease-in-out infinite shadow-drift-a; }
+  .shadow-layer-b { will-change: transform; animation: 47s ease-in-out infinite shadow-drift-b; }
+  .shadow-layer-c { will-change: transform; animation: 29s ease-in-out infinite shadow-drift-c; }
+  .footer-sun-shadow { animation: 26s ease-in-out infinite sun-shadow; }
+  .footer-wave-letter { animation: 4.6s ease-in-out infinite wave-letter; }
+  .footer-dawn {
+    background: radial-gradient(70% 100% at 50% 100%, #ffffff2b, #0000 72%);
+    animation: 14s ease-in-out infinite dawn-breathe;
+  }
+  .marquee-track { will-change: transform; animation: 38s linear infinite marquee-track; }
+  .blob-a { animation: 34s cubic-bezier(0.19, 1, 0.22, 1) infinite blob-a; }
+  .blob-b { animation: 46s cubic-bezier(0.19, 1, 0.22, 1) infinite blob-b; }
+  .blob-c { animation: 28s cubic-bezier(0.19, 1, 0.22, 1) infinite blob-c; }
+  .gradient-flow { background-size: 300% 300%; animation: 12s ease-in-out infinite gradient-flow; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shadow-layer-a, .shadow-layer-b, .shadow-layer-c { animation: none; }
+  }
+}

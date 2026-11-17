@@ -1,0 +1,105 @@
+html[data-showcase="campusmind"] {
+  --cm-ink: #121417;
+  --cm-text: #34383f;
+  --cm-muted: #60656d;
+  --cm-line: #e6e7ea;
+  --cm-soft: #f5f6f8;
+  --cm-white: #ffffff;
+  --cm-blue: #3a76f0;
+  --cm-blue-deep: #2a5fd0;
+  --cm-blue-soft: #e8effd;
+  --cm-navy: #14213d;
+  --cm-serif: var(--cm-font-serif), Georgia, "Times New Roman", serif;
+  --cm-sans: var(--cm-font-sans), "Helvetica Neue", Arial, sans-serif;
+  --cm-gutter: clamp(16px, 2.6vw, 38px);
+  --cm-max: 1047px;
+  background: var(--cm-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(html[data-showcase="campusmind"]) *,
+:where(html[data-showcase="campusmind"]) *::before,
+:where(html[data-showcase="campusmind"]) *::after {
+  box-sizing: border-box;
+}
+
+:where(html[data-showcase="campusmind"]) body {
+  margin: 0;
+  background: var(--cm-white);
+  color: var(--cm-text);
+  font-family: var(--cm-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:where(html[data-showcase="campusmind"]) :is(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(html[data-showcase="campusmind"]) :is(ul, ol) {
+  list-style: none;
+}
+
+:where(html[data-showcase="campusmind"]) :is(h1, h2) {
+  color: var(--cm-ink);
+  font-family: var(--cm-serif);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+}
+
+:where(html[data-showcase="campusmind"]) :is(h3, h4) {
+  color: var(--cm-ink);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+:where(html[data-showcase="campusmind"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(html[data-showcase="campusmind"]) :is(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(html[data-showcase="campusmind"]) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:where(html[data-showcase="campusmind"]) :is(svg, img) {
+  display: block;
+}
+
+html[data-showcase="campusmind"] :focus-visible {
+  outline: 2px solid var(--cm-blue);
+  outline-offset: 3px;
+}
+
+html[data-showcase="campusmind"] ::selection {
+  background: var(--cm-blue);
+  color: var(--cm-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-showcase="campusmind"] {
+    scroll-behavior: auto;
+  }
+  html[data-showcase="campusmind"] *,
+  html[data-showcase="campusmind"] *::before,
+  html[data-showcase="campusmind"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

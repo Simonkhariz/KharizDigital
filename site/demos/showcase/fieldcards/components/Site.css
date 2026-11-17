@@ -1,0 +1,254 @@
+/* Fieldcards: page shell */
+
+.fc-page {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--fc-gutter);
+}
+
+.fc-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-block: 22px;
+}
+
+.fc-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fc-ink);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.fc-header nav,
+.fc-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.fc-header nav a,
+.fc-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  color: var(--fc-ink);
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  transition: background-color 0.15s ease;
+}
+
+.fc-header nav a:hover,
+.fc-footer nav a:hover {
+  background: #e6e5df;
+}
+
+.fc-dark-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 13px;
+  background: var(--fc-pill);
+  color: var(--fc-white);
+  font-size: 18px;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 2px 6px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.fc-dark-button:hover {
+  background: #3a3a3d;
+}
+
+.fc-dark-button:active {
+  transform: scale(0.98);
+}
+
+.fc-intro {
+  display: grid;
+  justify-items: start;
+  gap: 22px;
+  padding-block: clamp(48px, 9vw, 120px) clamp(40px, 6vw, 80px);
+}
+
+.fc-kicker {
+  padding: 5px 12px;
+  border-radius: 9px;
+  background: var(--fc-pill);
+  color: var(--fc-white);
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+
+.fc-intro h1 {
+  max-width: 12em;
+  font-size: clamp(42px, 6.4vw, 92px);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.fc-intro > p:not(.fc-kicker) {
+  max-width: 560px;
+  font-size: clamp(18px, 1.6vw, 22px);
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+}
+
+.fc-stage-section {
+  padding-bottom: clamp(48px, 7vw, 96px);
+  scroll-margin-top: 12px;
+}
+
+.fc-stage-head {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 18px 0 22px;
+  border-top: 1px solid var(--fc-line);
+}
+
+.fc-stage-head span {
+  font-size: 15px;
+  color: var(--fc-faint);
+}
+
+.fc-stage-head h2,
+.fc-notes h2 {
+  font-size: clamp(28px, 2.8vw, 40px);
+}
+
+.fc-stage-head p {
+  max-width: 460px;
+  font-size: 17px;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+}
+
+.fc-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: min(920px, max(760px, 66vw));
+  padding: 56px 16px;
+  border-radius: 28px;
+  background-color: #8a9a6a;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fc-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Lettered texture over the sky, as if the photograph were printed in type. */
+.fc-stage[data-texture="glyphs"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='60' font-family='monospace' font-size='9' fill='white'%3E%3Ctext y='9'%3E88X0%23S$S00X8XX%23%23S0$8X%3C/text%3E%3Ctext y='19'%3EX%23%230S8$XX08%23S$0X8%23%2300%3C/text%3E%3Ctext y='29'%3E0S$%238XX0%23%23S88$0XS%230X%3C/text%3E%3Ctext y='39'%3E%23X08S$0%23X8%23%23S0$XX80S%3C/text%3E%3Ctext y='49'%3ES$0X%23%238X0S8$%230XX%23S0%3C/text%3E%3Ctext y='59'%3E8%23XS0$X0%23%238S0X$8%23X0%3C/text%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
+  -webkit-mask-image: radial-gradient(90% 70% at 70% 30%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(90% 70% at 70% 30%, #000 30%, transparent 75%);
+}
+
+/* Fine hatching and dashed guides, like a layout grid left visible. */
+.fc-stage[data-texture="hatch"]::before {
+  inset: 0 6%;
+  background: repeating-linear-gradient(35deg, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px 9px);
+  border-inline: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.fc-stage[data-texture="hatch"]::after {
+  content: "";
+  position: absolute;
+  inset: 13% 0;
+  z-index: -1;
+  border-block: 1px dashed rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.fc-notes {
+  padding: 18px 0 clamp(56px, 8vw, 110px);
+  border-top: 1px solid var(--fc-line);
+  scroll-margin-top: 12px;
+}
+
+.fc-notes ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.fc-notes li {
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--fc-white);
+}
+
+.fc-notes h3 {
+  margin-bottom: 44px;
+  font-size: 24px;
+}
+
+.fc-notes p {
+  font-size: 17px;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+}
+
+.fc-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 24px 0 84px;
+  border-top: 1px solid var(--fc-line);
+}
+
+.fc-footer p {
+  grid-column: 1 / -1;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .fc-stage-head {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .fc-stage-head p {
+    grid-column: 2;
+  }
+  .fc-stage {
+    min-height: 0;
+    padding: 36px 12px;
+    border-radius: 22px;
+  }
+  .fc-notes ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fc-notes h3 {
+    margin-bottom: 16px;
+  }
+  .fc-footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fc-header nav a {
+    padding: 0 10px;
+  }
+}

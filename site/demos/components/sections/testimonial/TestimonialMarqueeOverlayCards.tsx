@@ -1,0 +1,124 @@
+"use client";
+
+import { Star } from "lucide-react";
+import Button from "@/demos/components/ui/buttons/Button";
+import ImageOrVideo from "@/demos/components/ui/ImageOrVideo";
+import ScrollReveal from "@/demos/components/ui/ScrollReveal";
+import TextAnimation from "@/demos/components/ui/TextAnimation";
+import type { ButtonLink, TextAnimationVariant } from "@/demos/lib/types";
+import { cn } from "@/demos/lib/utils";
+
+interface Testimonial {
+  name: string;
+  role: string;
+  company: string;
+  rating: number;
+  imageSrc?: string;
+  videoSrc?: string;
+}
+
+interface TestimonialMarqueeOverlayCardsProps {
+  tag: string;
+  title: string;
+  description: string;
+  primaryButton?: ButtonLink;
+  secondaryButton?: ButtonLink;
+  testimonials: Testimonial[];
+  textAnimation: TextAnimationVariant;
+}
+
+/** Testimonial section with a horizontal marquee of media cards overlaid with a rating, name, role and company. */
+export default function TestimonialMarqueeOverlayCards({
+  tag,
+  title,
+  description,
+  primaryButton,
+  secondaryButton,
+  testimonials,
+  textAnimation,
+}: TestimonialMarqueeOverlayCardsProps) {
+  const repeatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
+
+  return (
+    <section aria-label="Testimonials section" className="pt-20 pb-10">
+      <div className="flex flex-col gap-8 md:gap-10">
+        <div className="flex flex-col items-center w-content-width mx-auto gap-2">
+          <div className="px-3 py-1 mb-1 text-sm card rounded w-fit">
+            <p>{tag}</p>
+          </div>
+          <TextAnimation
+            text={title}
+            variant={textAnimation}
+            gradientText
+            tag="h2"
+            className="md:max-w-8/10 text-6xl 2xl:text-7xl leading-[1.15] font-semibold text-center text-balance"
+          />
+          <TextAnimation
+            text={description}
+            variant={textAnimation}
+            gradientText={false}
+            tag="p"
+            className="md:max-w-7/10 text-lg md:text-xl leading-snug text-center text-balance"
+          />
+          {(primaryButton || secondaryButton) && (
+            <div className="flex flex-wrap justify-center gap-3 mt-2 md:mt-3">
+              {primaryButton && (
+                <Button text={primaryButton.text} href={primaryButton.href} variant="primary" />
+              )}
+              {secondaryButton && (
+                <Button
+                  text={secondaryButton.text}
+                  href={secondaryButton.href}
+                  variant="secondary"
+                  animationDelay={0.1}
+                />
+              )}
+            </div>
+          )}
+        </div>
+        <ScrollReveal variant="slide-up">
+          <div className="w-content-width mx-auto overflow-hidden mask-fade-x-medium">
+            <div
+              className="flex w-max animate-marquee-horizontal"
+              style={{ animationDuration: "60s" }}
+            >
+              {repeatedTestimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="relative shrink-0 w-60 md:w-75 2xl:w-80 aspect-4/5 mb-10 mr-3 md:mr-5 rounded overflow-hidden"
+                >
+                  <ImageOrVideo
+                    imageSrc={testimonial.imageSrc}
+                    videoSrc={testimonial.videoSrc}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-x-4 bottom-4 xl:inset-x-5 xl:bottom-5 2xl:inset-x-6 2xl:bottom-6 flex flex-col gap-1 xl:gap-2 2xl:gap-3 p-4 xl:p-5 2xl:p-6 card rounded backdrop-blur-sm">
+                    <div className="flex gap-1.5 mb-1">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star
+                          key={starIndex}
+                          className={cn(
+                            "size-5 text-accent",
+                            starIndex < testimonial.rating ? "fill-accent" : "fill-transparent",
+                          )}
+                          strokeWidth={1.5}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-2xl font-semibold leading-snug truncate">
+                      {testimonial.name}
+                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-base leading-snug truncate">{testimonial.role}</span>
+                      <span className="text-base leading-snug truncate">{testimonial.company}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}

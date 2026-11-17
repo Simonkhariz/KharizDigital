@@ -1,0 +1,223 @@
+.aw-scene {
+  width: 100%;
+  margin-top: clamp(20px, 3vw, 44px);
+}
+
+.aw-scene-svg {
+  width: min(100%, 900px);
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  color: #2b2b2b;
+  stroke-width: 1.15;
+}
+
+.aw-scene-svg * {
+  vector-effect: non-scaling-stroke;
+}
+
+.aw-scene-grid {
+  fill: none;
+  stroke: #dcdcd7;
+  stroke-width: 1;
+}
+
+.aw-scene-detail {
+  fill: none;
+  stroke: #9a9a95;
+  stroke-width: 1;
+}
+
+.aw-scene-dash {
+  fill: none;
+  stroke: #8a8a86;
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.aw-scene-label {
+  fill: #1c1c1c;
+  stroke: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.aw-scene-label-small {
+  font-size: 10.5px;
+}
+
+.aw-scene-label-large {
+  font-size: 15px;
+}
+
+.aw-scene-label-tiny {
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+/* Wires */
+.aw-scene-wires path {
+  stroke: #2b2b2b;
+}
+
+.aw-scene-wires circle {
+  fill: #2b2b2b;
+  stroke: none;
+}
+
+.aw-scene-wires .aw-wire-pulse {
+  stroke: transparent;
+}
+
+.aw-scene-wires .aw-wire-active path {
+  stroke: var(--aw-orange);
+}
+
+.aw-scene-wires .aw-wire-active circle {
+  fill: var(--aw-orange);
+}
+
+.aw-scene-wires .aw-wire-active .aw-wire-pulse {
+  stroke: #fff;
+  stroke-width: 2.4;
+  stroke-dasharray: 8 92;
+  animation: aw-flow 1.6s linear infinite;
+}
+
+@keyframes aw-flow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Floating layers of the core */
+.aw-float-a {
+  animation: aw-float 5s ease-in-out infinite;
+}
+
+.aw-float-b {
+  animation: aw-float 5s ease-in-out -2.5s infinite;
+}
+
+@keyframes aw-float {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Agent bars are buttons */
+.aw-scene-agent {
+  cursor: pointer;
+  color: #2b2b2b;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.aw-scene-agent:hover,
+.aw-scene-agent[data-active="true"] {
+  transform: translateY(-5px);
+}
+
+.aw-scene-agent[data-active="true"],
+.aw-scene-agent:focus-visible {
+  color: var(--aw-orange);
+}
+
+/* The page-wide focus ring would box the whole group; a bar shows focus with its own outline instead. */
+.aw-scene-svg .aw-scene-agent:focus-visible {
+  outline: none;
+}
+
+.aw-scene-agent:focus-visible rect {
+  stroke-width: 2.4;
+}
+
+.aw-scene-screen > g {
+  animation: aw-screen-in 0.4s ease both;
+}
+
+@keyframes aw-screen-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Caption under the drawing */
+.aw-scene-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.aw-scene-picker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--aw-line);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.aw-scene-picker button {
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--aw-muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.aw-scene-picker button:hover {
+  color: var(--aw-ink);
+}
+
+.aw-scene-picker button[aria-pressed="true"] {
+  background: var(--aw-ink);
+  color: #fff;
+}
+
+.aw-scene-caption p {
+  min-height: 3em;
+  max-width: 460px;
+  padding: 0 12px;
+  color: var(--aw-muted);
+  font-size: 15px;
+}
+
+/* Below 700 px the wide drawing gives way to the compact one, which runs edge to edge up to its cap. */
+.aw-scene-compact {
+  display: none;
+}
+
+.aw-scene-label-task {
+  font-weight: 500;
+}
+
+@media (max-width: 699.98px) {
+  .aw-scene {
+    --aw-scene-width: min(100% + 2 * var(--aw-inset), 440px);
+  }
+  .aw-scene-wide {
+    display: none;
+  }
+  .aw-scene-compact {
+    display: block;
+    width: var(--aw-scene-width);
+    margin-inline: calc((100% - var(--aw-scene-width)) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .aw-scene-picker {
+    border-radius: 24px;
+  }
+}

@@ -1,0 +1,38 @@
+:root:where([data-template="luxury-real-estate"]) {
+  --background: #faf8f5;
+  --foreground: #1a1a1a;
+  --primary-cta: #1a1a1a;
+  --primary-cta-text: #faf8f5;
+  --secondary-cta: #f0ece6;
+  --secondary-cta-text: #1a1a1a;
+  --accent: #c9a96e;
+  --background-accent: #f0ece6;
+  --radius: 0.75rem;
+  --text-2xs: clamp(0.465rem, 0.67vw, 0.62rem);
+  --text-xs: clamp(0.54rem, 0.77vw, 0.72rem);
+  --text-sm: clamp(0.615rem, 0.88vw, 0.83rem);
+  --text-base: clamp(0.69rem, 0.98vw, 0.93rem);
+  --text-lg: clamp(0.75rem, 1.06vw, 1.01rem);
+  --text-xl: clamp(0.825rem, 1.16vw, 1.11rem);
+  --text-2xl: clamp(0.975rem, 1.38vw, 1.31rem);
+  --text-3xl: clamp(1.2rem, 1.7vw, 1.62rem);
+  --text-4xl: clamp(1.5rem, 2.12vw, 2.02rem);
+  --text-5xl: clamp(2.025rem, 2.9vw, 2.78rem);
+  --text-6xl: clamp(2.475rem, 3.48vw, 3.33rem);
+  --text-7xl: clamp(3rem, 4.24vw, 4.05rem);
+  --text-8xl: clamp(3.5rem, 4.76vw, 4.55rem);
+  --text-9xl: clamp(5.25rem, 7.4vw, 7.1rem);
+  --default-font-family: var(--font-inter-tight), sans-serif;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="luxury-real-estate"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+@layer utilities {
+  :where([data-template="luxury-real-estate"]) .font-serif {
+    font-family: Argon, sans-serif;
+  }
+}

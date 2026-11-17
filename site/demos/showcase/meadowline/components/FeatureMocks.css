@@ -1,0 +1,533 @@
+.ml-feature-mocks-mock {
+  --tone: #6f8f52;
+  --tone-soft: rgba(111, 143, 82, 0.14);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(58, 24, 10, 0.05),
+    0 18px 40px rgba(58, 24, 10, 0.07);
+  backdrop-filter: blur(10px);
+  font-size: 12.5px;
+  line-height: 1.3;
+  color: #4b4541;
+}
+
+.ml-feature-mocks-green {
+  --tone: #6f8f52;
+  --tone-soft: rgba(111, 143, 82, 0.14);
+}
+
+.ml-feature-mocks-blue {
+  --tone: #3f7cc4;
+  --tone-soft: rgba(63, 124, 196, 0.12);
+  padding-top: 26px;
+}
+
+.ml-feature-mocks-lilac {
+  --tone: #8a63b8;
+  --tone-soft: rgba(138, 99, 184, 0.14);
+  padding-top: 26px;
+}
+
+.ml-feature-mocks-peach {
+  --tone: #e9651c;
+  --tone-soft: rgba(255, 127, 55, 0.14);
+}
+
+.ml-feature-mocks-bare {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.ml-feature-mocks-mock small {
+  font-size: 11px;
+  color: #8d857f;
+}
+
+.ml-feature-mocks-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ml-feature-mocks-badge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-left: -26px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff, var(--tone-soft)), #ffffff;
+  color: var(--tone);
+  box-shadow:
+    0 0 0 1px rgba(58, 24, 10, 0.06),
+    0 8px 18px rgba(58, 24, 10, 0.08);
+}
+
+/* Goals */
+.ml-feature-mocks-goal-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #86a468, #6f8f52);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ml-feature-mocks-goal-head span:nth-child(2) {
+  flex: 1;
+}
+
+.ml-feature-mocks-goal-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #6f8f52;
+}
+
+.ml-feature-mocks-views {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 5px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.ml-feature-mocks-views button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 30px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #9a938d;
+}
+
+.ml-feature-mocks-views button i {
+  width: 30px;
+  height: 7px;
+  border-radius: 4px;
+  background: #e6e1dc;
+}
+
+.ml-feature-mocks-views button[aria-pressed="true"] {
+  background: #e9eedd;
+  color: #3f4a30;
+}
+
+.ml-feature-mocks-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 6px 4px 2px;
+  font-weight: 700;
+  color: #5f8a3a;
+}
+
+.ml-feature-mocks-group svg {
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.ml-feature-mocks-group[aria-expanded="false"] svg {
+  transform: rotate(-90deg);
+}
+
+.ml-feature-mocks-task {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-inline: 2px;
+  color: #6f6862;
+}
+
+.ml-feature-mocks-task span {
+  flex: 1;
+}
+
+.ml-feature-mocks-goal-list {
+  display: grid;
+  gap: 8px;
+}
+
+.ml-feature-mocks-goal-list.ml-feature-mocks-board {
+  grid-template-columns: 1fr 1fr;
+}
+
+.ml-feature-mocks-goal-list li {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.ml-feature-mocks-goal-list li:first-child {
+  background: linear-gradient(180deg, #edf1e2, #f7f8f1);
+}
+
+.ml-feature-mocks-goal-list strong {
+  font-weight: 700;
+  color: #33302d;
+}
+
+.ml-feature-mocks-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ml-feature-mocks-progress {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e9e3c9;
+  overflow: hidden;
+}
+
+.ml-feature-mocks-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #8fb04a, #b9c95a);
+}
+
+.ml-feature-mocks-goal-list li + li .ml-feature-mocks-progress span {
+  background: linear-gradient(90deg, #f3c3a6, #f09a6c);
+}
+
+/* Assistant */
+.ml-feature-mocks-chat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ml-feature-mocks-chat-head span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--tone);
+}
+
+.ml-feature-mocks-chat-head small {
+  color: #4f9a55;
+}
+
+.ml-feature-mocks-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 104px;
+}
+
+.ml-feature-mocks-asked,
+.ml-feature-mocks-answered {
+  max-width: 84%;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-weight: 500;
+}
+
+.ml-feature-mocks-asked {
+  align-self: flex-start;
+  background: #e7eff9;
+  color: #3d4b5f;
+}
+
+.ml-feature-mocks-answered {
+  align-self: flex-end;
+  background: #d6e5f6;
+  color: #2f4460;
+}
+
+.ml-feature-mocks-suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #6f86a3;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.ml-feature-mocks-suggest:hover {
+  background: var(--tone-soft);
+}
+
+.ml-feature-mocks-ask {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 4px 4px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(63, 124, 196, 0.12);
+}
+
+.ml-feature-mocks-ask input {
+  flex: 1;
+  min-width: 0;
+  height: 34px;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+.ml-feature-mocks-ask:focus-within {
+  box-shadow: 0 0 0 2px var(--tone);
+}
+
+.ml-feature-mocks-ask input::placeholder,
+.ml-feature-mocks-field::placeholder {
+  color: #9aa6b5;
+}
+
+.ml-feature-mocks-ask button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  color: var(--tone);
+}
+
+.ml-feature-mocks-ask button svg {
+  fill: currentColor;
+}
+
+/* Add task */
+.ml-feature-mocks-field-label {
+  font-weight: 700;
+  color: var(--tone);
+}
+
+.ml-feature-mocks-field {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 1px rgba(138, 99, 184, 0.14);
+  font-weight: 600;
+  color: #3b3340;
+}
+
+.ml-feature-mocks-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ml-feature-mocks-tool {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #b9a9cc;
+}
+
+.ml-feature-mocks-tool:first-child,
+.ml-feature-mocks-tool[aria-pressed="true"] {
+  color: var(--tone);
+}
+
+.ml-feature-mocks-tool[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.ml-feature-mocks-due {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: #e6d8f3;
+  color: #6b4a96;
+  font-weight: 700;
+  font-size: 11.5px;
+}
+
+.ml-feature-mocks-members {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ml-feature-mocks-submit {
+  height: 40px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #9d7bc6, #8460b0);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: filter 0.2s ease;
+}
+
+.ml-feature-mocks-submit:hover {
+  filter: brightness(1.06);
+}
+
+.ml-feature-mocks-status {
+  min-height: 16px;
+  font-size: 11.5px;
+  color: #6b4a96;
+}
+
+/* Team */
+.ml-feature-mocks-team-card,
+.ml-feature-mocks-meeting {
+  position: relative;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(58, 24, 10, 0.05),
+    0 18px 40px rgba(58, 24, 10, 0.07);
+  backdrop-filter: blur(10px);
+}
+
+.ml-feature-mocks-team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px 16px 18px;
+}
+
+.ml-feature-mocks-team-pick {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.ml-feature-mocks-team-pick label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ml-orange-text);
+}
+
+.ml-feature-mocks-team-pick em {
+  font-family: var(--ml-serif);
+  font-style: normal;
+  font-size: 17px;
+}
+
+.ml-feature-mocks-team-pick select {
+  appearance: none;
+  -webkit-appearance: none;
+  max-width: 108px;
+  padding: 4px 22px 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ml-feature-mocks-team-pick svg {
+  position: absolute;
+  right: 6px;
+  pointer-events: none;
+}
+
+.ml-feature-mocks-team-card > strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3b3531;
+}
+
+.ml-feature-mocks-team-card > small {
+  margin: 2px 0 16px;
+}
+
+.ml-feature-mocks-meeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.ml-feature-mocks-meeting > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.ml-feature-mocks-meeting strong {
+  font-weight: 600;
+  color: #3b3531;
+}
+
+.ml-feature-mocks-meeting-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--ml-orange);
+}
+
+.ml-feature-mocks-meeting button {
+  min-width: 52px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #ff9a5c, var(--ml-orange));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.ml-feature-mocks-meeting button[aria-pressed="true"] {
+  background: #ffffff;
+  color: var(--ml-orange-text);
+  box-shadow: 0 0 0 1px rgba(255, 127, 55, 0.4);
+}
+
+/* 16px fields on phones so focusing one does not zoom the page. */
+@media (max-width: 600px) {
+  .ml-feature-mocks-ask input,
+  .ml-feature-mocks-field,
+  .ml-feature-mocks-team-pick select {
+    font-size: 16px;
+  }
+  .ml-feature-mocks-team-pick select {
+    max-width: 132px;
+    padding-block: 7px;
+  }
+}

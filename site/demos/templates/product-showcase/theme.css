@@ -1,0 +1,96 @@
+:root:where([data-template="product-showcase"]) {
+  --background: #f1f1f1;
+  --card: #f9f9f9;
+  --foreground: #1a1a1a;
+  --primary-cta: #1a1a1a;
+  --primary-cta-text: #fff;
+  --secondary-cta-text: #1a1a1a;
+  --accent: #7a7a72;
+  --background-accent: #e5e4df;
+  --width-content-width: clamp(40rem, 72.5vw, 80rem);
+}
+
+@media (width < 768px) {
+  :root:where([data-template="product-showcase"]) {
+    --width-content-width: 85vw;
+  }
+}
+
+:where([data-template="product-showcase"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff4d #fff0;
+}
+
+html:where([data-template="product-showcase"]) {
+  overscroll-behavior: none;
+}
+
+:where([data-template="product-showcase"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="product-showcase"]) h1,
+:where([data-template="product-showcase"]) h2,
+:where([data-template="product-showcase"]) h3,
+:where([data-template="product-showcase"]) h4,
+:where([data-template="product-showcase"]) h5,
+:where([data-template="product-showcase"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="product-showcase"]) .primary-button,
+:where([data-template="product-showcase"]) .secondary-button,
+:where([data-template="product-showcase"]) button.card {
+  min-width: 3.25rem;
+  min-height: 3.25rem;
+  font-size: var(--text-base);
+}
+
+:where([data-template="product-showcase"]) .card {
+  background: var(--color-card);
+  box-shadow:
+    color-mix(in srgb, var(--color-primary-cta) 5%, transparent) 0px 0.706592px
+      0.706592px -0.666667px,
+    color-mix(in srgb, var(--color-primary-cta) 3%, transparent) 0px 1.80656px 1.80656px -1.33333px,
+    color-mix(in srgb, var(--color-primary-cta) 2%, transparent) 0px 3.62176px 3.62176px -2px,
+    color-mix(in srgb, var(--color-primary-cta) 2%, transparent) 0px 6.8656px 6.8656px -2.66667px,
+    color-mix(in srgb, var(--color-primary-cta) 2%, transparent) 0px 13.6468px 13.6468px -3.33333px,
+    color-mix(in srgb, var(--color-primary-cta) 2%, transparent) 0px 30px 30px -4px;
+  box-shadow: none;
+}
+
+:where([data-template="product-showcase"]) .primary-button {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-primary-cta) 75%, var(--color-background)) -50%,
+    var(--color-primary-cta) 75%
+  );
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+}
+
+:where([data-template="product-showcase"]) .secondary-button {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-secondary-cta) 75%, var(--color-background)) -35%,
+    var(--color-secondary-cta) 75%
+  );
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  box-shadow: none;
+}
+
+:where([data-template="product-showcase"]) button.primary-button,
+:where([data-template="product-showcase"]) button.secondary-button {
+  border-radius: 10rem;
+}
+
+@layer utilities {
+  :where([data-template="product-showcase"]) .font-serif {
+    font-family: var(--font-playfair-display), serif;
+  }
+}

@@ -1,0 +1,82 @@
+:root:where([data-template="landscaping-services"]) {
+  --background: #f7f9f4;
+  --foreground: #1a2e1a;
+  --primary-cta: #2d5a27;
+  --primary-cta-text: #fff;
+  --secondary-cta-text: #2d5a27;
+  --accent: #4a8c3f;
+  --background-accent: #6fb85e;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="landscaping-services"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="landscaping-services"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff0;
+}
+
+html:where([data-template="landscaping-services"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="landscaping-services"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="landscaping-services"]) h1,
+:where([data-template="landscaping-services"]) h2,
+:where([data-template="landscaping-services"]) h3,
+:where([data-template="landscaping-services"]) h4,
+:where([data-template="landscaping-services"]) h5,
+:where([data-template="landscaping-services"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="landscaping-services"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="landscaping-services"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-background) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 0.839802px
+      0.503881px -0.3125px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 1.99048px 1.19429px -0.625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 3.63084px 2.1785px -0.9375px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 6.03627px 3.62176px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 9.74808px 5.84885px -1.5625px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 15.9566px 9.57398px -1.875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 27.4762px 16.4857px -2.1875px,
+    color-mix(in srgb, var(--color-primary-cta) 13%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="landscaping-services"]) .secondary-button {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-secondary-cta) 80%, transparent),
+    var(--color-secondary-cta)
+  );
+  border: 1px solid var(--color-secondary-cta);
+  box-shadow: 0 1px 2px #0000000d;
+}

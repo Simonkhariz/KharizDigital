@@ -1,0 +1,88 @@
+:root:where([data-template="ai-consulting"]) {
+  --background: #0a0a0a;
+  --card: #1a1a1a;
+  --foreground: #eeeded;
+  --primary-cta: #00ffab;
+  --primary-cta-text: #000;
+  --secondary-cta: #1a1a1a;
+  --secondary-cta-text: #ffffffe6;
+  --accent: #737373;
+  --background-accent: #00d5c7;
+  --radius: 2rem;
+}
+
+@media (width <= 1440px) and (width >= 768px) {
+  :root:where([data-template="ai-consulting"]) {
+    --width-content-width: 87.5vw;
+  }
+}
+
+:where([data-template="ai-consulting"]) * {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffab4d #fff0;
+}
+
+html:where([data-template="ai-consulting"]) {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+:where([data-template="ai-consulting"]) body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+:where([data-template="ai-consulting"]) h1,
+:where([data-template="ai-consulting"]) h2,
+:where([data-template="ai-consulting"]) h3,
+:where([data-template="ai-consulting"]) h4,
+:where([data-template="ai-consulting"]) h5,
+:where([data-template="ai-consulting"]) h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+
+:where([data-template="ai-consulting"]) .card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in srgb, var(--color-card) 80%, transparent),
+    color-mix(in srgb, var(--color-card) 40%, transparent)
+  );
+  border: 1px solid var(--color-card);
+  box-shadow: 0 1px 2px #0000000d;
+}
+
+:where([data-template="ai-consulting"]) .primary-button {
+  background: var(--color-primary-cta);
+  box-shadow:
+    color-mix(in srgb, var(--color-background) 20%, transparent) 0px 3px 1px 0px inset,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 0.84px 0.5px -0.3px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 2px 1.2px -0.6px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 3.6px 2.2px -0.9px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 6px 3.6px -1.25px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 10px 6px -1.6px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 16px 9.6px -1.9px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 27px 16px -2.2px,
+    color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 0px 50px 30px -2.5px;
+}
+
+:where([data-template="ai-consulting"]) .secondary-button {
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-accent) 5%, transparent) 0%, transparent 59.26%),
+    linear-gradient(var(--color-secondary-cta), var(--color-secondary-cta)),
+    linear-gradient(var(--color-secondary-cta), var(--color-secondary-cta)),
+    linear-gradient(color-mix(in srgb, var(--color-accent) 5%, transparent) 0%, transparent 59.26%),
+    linear-gradient(
+      color-mix(in srgb, var(--color-secondary-cta) 60%, transparent),
+      color-mix(in srgb, var(--color-secondary-cta) 60%, transparent)
+    ),
+    var(--color-secondary-cta);
+  box-shadow: 2.10837px 3.16256px 9.48767px color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border: 1px solid var(--color-secondary-cta);
+}

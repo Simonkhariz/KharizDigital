@@ -1,0 +1,83 @@
+.ml-faq-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 96px);
+  width: min(100% - 2 * var(--ml-gutter), var(--ml-max));
+  margin-inline: auto;
+  padding: clamp(60px, 7vw, 100px) 0;
+}
+
+.ml-faq-header h2 {
+  margin-top: 34px;
+  font-size: clamp(42px, 5.7vw, 84px);
+  letter-spacing: -0.035em;
+}
+
+.ml-faq-header h2 em {
+  color: var(--ml-orange);
+}
+
+.ml-faq-header p {
+  margin-top: 26px;
+  font-size: 15.5px;
+}
+
+.ml-faq-header a {
+  color: var(--ml-orange-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ml-faq-item {
+  border-bottom: 1px solid var(--ml-line);
+}
+
+.ml-faq-item:first-child {
+  border-top: 1px solid var(--ml-line);
+}
+
+.ml-faq-item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 24px 0;
+  text-align: left;
+  font-family: var(--ml-serif);
+  font-size: clamp(22px, 2.1vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ml-ink);
+}
+
+.ml-faq-plus {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  background: var(--ml-orange);
+  color: var(--ml-white);
+}
+
+.ml-faq-plus svg {
+  transition: transform 0.3s ease;
+}
+
+.ml-faq-item button[aria-expanded="true"] .ml-faq-plus svg {
+  transform: rotate(45deg);
+}
+
+.ml-faq-answer {
+  padding: 0 56px 26px 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .ml-faq-section {
+    grid-template-columns: 1fr;
+  }
+}
