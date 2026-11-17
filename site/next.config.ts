@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
+const isStandalone = process.env.NEXT_OUTPUT_MODE === "standalone";
+
 const nextConfig: NextConfig = {
-  // The site is exported as plain HTML, CSS and JavaScript files into `out/`.
-  // Those files can be uploaded to any web host, including shared hosting.
-  output: "export",
+  // If NEXT_OUTPUT_MODE=standalone, build a Node.js standalone server; otherwise export static HTML.
+  output: isStandalone ? "standalone" : "export",
   // Every page becomes a folder with an index.html (e.g. /work/index.html), so
-  // addresses work on Apache without rewrite rules.
+  // addresses work on Apache/Node without complex rewrite rules.
   trailingSlash: true,
   images: {
     // There is no image server on static hosting. Images are resized ahead of

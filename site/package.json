@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "package": "node scripts/package-site.mjs",
+    "package:node": "node scripts/package-node.mjs",
     "preview": "node scripts/preview.mjs",
     "images": "node scripts/optimize-images.mjs",
     "lint": "eslint",

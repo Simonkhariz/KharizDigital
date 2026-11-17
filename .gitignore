@@ -12,7 +12,9 @@ site/out/
 
 # Packaged distribution & artifacts
 upload/
+upload-node/
 khariz-digital-upload.zip
+khariz-digital-node.zip
 *.zip
 *.tar.gz
 
