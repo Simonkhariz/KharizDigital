@@ -37,12 +37,8 @@ fs.cpSync(out, upload, { recursive: true });
 fs.rmSync(zip, { force: true });
 try {
   if (process.platform === "win32") {
-    const zipRel = path.relative(upload, zip);
-    try {
-      execSync(`tar -a -c -f "${zipRel}" *`, { cwd: upload, stdio: "inherit" });
-    } catch {
-      execSync(`powershell -NoProfile -Command "Compress-Archive -Path '*' -DestinationPath '${zip}' -Force"`, { cwd: upload, stdio: "inherit" });
-    }
+    const ps = `Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::CreateFromDirectory('${upload}', '${zip}', [System.IO.Compression.CompressionLevel]::Optimal, $false);`;
+    execSync(`powershell -NoProfile -Command "${ps}"`, { stdio: "inherit" });
   } else {
     run(`zip -qr "${zip}" . -x "*.DS_Store"`, upload);
   }
