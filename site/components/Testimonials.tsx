@@ -14,7 +14,7 @@ export const visibleTestimonials = testimonials.filter((t) => t.published || IS_
 export function Testimonials({ number }: { number: string }) {
   if (visibleTestimonials.length === 0) return null;
   return (
-    <Section id="testimonials" title="Testimonials." number={number}>
+    <Section id="reviews" title="Reviews." number={number}>
       <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-border">
         {visibleTestimonials.map((item, i) => (
           <Reveal key={i} delay={0.06 * i} className="border-r border-b border-border p-6 md:p-8 flex flex-col gap-8">

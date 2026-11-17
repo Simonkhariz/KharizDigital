@@ -20,8 +20,17 @@ const siteUrl = (envText.match(/^NEXT_PUBLIC_SITE_URL=(.+)$/m)?.[1] ?? "").trim(
 
 const run = (command, cwd = site) => execSync(command, { cwd, stdio: "inherit" });
 
-run("node scripts/optimize-images.mjs");
-run("npx next build");
+try {
+  run("node scripts/optimize-images.mjs");
+} catch (err) {
+  console.warn("Notice: optimize-images skipped (images already compiled or sharp native binary missing for this OS).");
+}
+const nextBin = path.join(site, "node_modules", "next", "dist", "bin", "next");
+if (fs.existsSync(nextBin)) {
+  run(`node "${nextBin}" build`);
+} else {
+  run(process.platform === "win32" ? "npx.cmd next build" : "npx next build");
+}
 
 fs.rmSync(upload, { recursive: true, force: true });
 fs.cpSync(out, upload, { recursive: true });

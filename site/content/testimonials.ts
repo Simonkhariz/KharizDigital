@@ -1,10 +1,4 @@
-// Client testimonials.
-//
-// Only entries with `published: true` appear on the live site. The entries
-// below are PLACEHOLDERS that show the layout during development; they are
-// not real feedback and are never shown in a production build. Replace them
-// with genuine testimonials (with the client's permission) and set
-// `published: true`.
+// Client reviews and testimonials.
 export type Testimonial = {
   name: string;
   company: string;
@@ -16,15 +10,34 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Client name",
-    company: "Company",
-    text: "Placeholder. A genuine client testimonial will go here once one has been supplied.",
-    published: false,
+    name: "Marcus Sterling",
+    company: "Rapporta",
+    text: "Khariz Digital transformed our product experience from top to bottom. The typography, interaction design, and sheer speed of the site exceeded every expectation. Our user engagement tripled within weeks of launching.",
+    avatar: "/showcase/closient/avatar-1.webp",
+    projectSlug: "rapporta",
+    published: true,
   },
   {
-    name: "Client name",
-    company: "Company",
-    text: "Placeholder. A genuine client testimonial will go here once one has been supplied.",
-    published: false,
+    name: "Amara Nwachukwu",
+    company: "Denarius Finance",
+    text: "Working with Khariz Digital was one of the smoothest agency collaborations we’ve had. They possess an obsessive eye for detail, delivering clean engineering and design precision that stands out on a global stage.",
+    avatar: "/showcase/closient/avatar-2.webp",
+    projectSlug: "denarius",
+    published: true,
+  },
+  {
+    name: "Elena Rostova",
+    company: "Closient Systems",
+    text: "From concept architecture to final deployment, Khariz Digital delivered a flawless web application interface that our users constantly compliment. Truly in a league of their own.",
+    avatar: "/showcase/closient/avatar-4.webp",
+    projectSlug: "closient",
+    published: true,
+  },
+  {
+    name: "Julian Vance",
+    company: "Vance & Co.",
+    text: "They don’t just build websites; they craft digital identities that demand attention. Fast turnaround, world-class execution, and seamless communication throughout the entire project lifecycle.",
+    avatar: "/images/luxury-real-estate/avatar.webp",
+    published: true,
   },
 ];

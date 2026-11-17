@@ -41,8 +41,31 @@ export function Faq() {
                     }`}
                     aria-hidden
                   >
-                    <span className="absolute w-3 h-px bg-current" />
-                    <span className={`absolute w-3 h-px bg-current transition-transform duration-300 ${isOpen ? "rotate-0" : "rotate-90"}`} />
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      className="overflow-visible"
+                    >
+                      {/* Horizontal stroke: always present */}
+                      <path
+                        d="M1 5H9"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                      />
+                      {/* Vertical stroke: collapses cleanly when open */}
+                      <path
+                        d="M5 1V9"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                        className={`origin-center transition-all duration-300 ${
+                          isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100"
+                        }`}
+                      />
+                    </svg>
                   </span>
                 </span>
               </button>

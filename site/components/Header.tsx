@@ -85,23 +85,35 @@ export function Header() {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
+          className="md:hidden relative w-9 h-9 flex items-center justify-center text-foreground -mr-2"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
-          <motion.span
-            initial={false}
-            animate={menuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -3 }}
-            className="absolute w-5 h-[1px] bg-foreground"
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span
-            initial={false}
-            animate={menuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 3 }}
-            className="absolute w-5 h-[1px] bg-foreground"
-            transition={{ duration: 0.2 }}
-          />
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="overflow-visible">
+            <motion.line
+              x1="3"
+              y1={menuOpen ? "10" : "6.5"}
+              x2="17"
+              y2={menuOpen ? "10" : "6.5"}
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              animate={menuOpen ? { rotate: 45, transformOrigin: "10px 10px" } : { rotate: 0, transformOrigin: "10px 6.5px" }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.line
+              x1="3"
+              y1={menuOpen ? "10" : "13.5"}
+              x2="17"
+              y2={menuOpen ? "10" : "13.5"}
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              animate={menuOpen ? { rotate: -45, transformOrigin: "10px 10px" } : { rotate: 0, transformOrigin: "10px 13.5px" }}
+              transition={{ duration: 0.2 }}
+            />
+          </svg>
         </button>
       </div>
 
