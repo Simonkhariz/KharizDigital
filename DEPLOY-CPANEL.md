@@ -21,7 +21,7 @@ You need:
 - About 150 MB of free disk space on the hosting account.
 
 The site must sit at the **root of a domain or subdomain**, for example
-`https://kharizdigital.com/` or `https://www.kharizdigital.com/`. It will not
+`https://kharizdigital.com.ng/` or `https://www.kharizdigital.com.ng/`. It will not
 work inside a sub-folder such as `https://example.com/khariz/`, because its
 links and images use addresses that start at `/`.
 
@@ -41,7 +41,7 @@ Open `site/.env.production` and put in your real address, with `https://` and
 without a slash at the end:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://kharizdigital.com
+NEXT_PUBLIC_SITE_URL=https://kharizdigital.com.ng
 ```
 
 Then build:
