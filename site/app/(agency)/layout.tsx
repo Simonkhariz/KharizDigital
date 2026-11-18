@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ColourOnScroll } from "@/components/ColourOnScroll";
 import { Header } from "@/components/Header";
 import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { site } from "@/content/site";
@@ -24,8 +25,23 @@ export const metadata: Metadata = {
     description: site.description,
     url: "/",
     locale: "en",
+    images: [
+      {
+        url: "/og-image.jpg",
+        secureUrl: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — ${site.descriptor}`,
+        type: "image/jpeg",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title, description: site.description },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: site.description,
+    images: ["/og-image.jpg"],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -44,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <div id="content">{children}</div>
         <ProgressiveBlur />
+        <ColourOnScroll />
       </body>
     </html>
   );

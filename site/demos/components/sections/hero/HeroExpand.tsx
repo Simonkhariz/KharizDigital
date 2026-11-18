@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import AutoFillText from "@/demos/components/ui/AutoFillText";
-import ImageOrVideo from "@/demos/components/ui/ImageOrVideo";
+import ImageOrVideo, { videoPoster } from "@/demos/components/ui/ImageOrVideo";
 import { useButtonClick } from "@/demos/hooks/useButtonClick";
 import type { ButtonLink } from "@/demos/lib/types";
 
@@ -113,7 +113,12 @@ export default function HeroExpand({
                 ease: [0.76, 0, 0.24, 1],
               }}
             >
-              <ImageOrVideo imageSrc={imageSrc} videoSrc={videoSrc} className="rounded-none" />
+              {/* The intro lasts 1.5 s: show the video's first frame here rather than
+                  download and decode the same video twice while the hero loads it. */}
+              <ImageOrVideo
+                imageSrc={imageSrc ?? (videoSrc ? videoPoster(videoSrc) : undefined)}
+                className="rounded-none"
+              />
             </motion.div>
           </motion.div>
         )}

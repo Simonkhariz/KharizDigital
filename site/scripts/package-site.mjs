@@ -22,14 +22,22 @@ const run = (command, cwd = site) => execSync(command, { cwd, stdio: "inherit" }
 
 try {
   run("node scripts/optimize-images.mjs");
-} catch (err) {
+} catch {
   console.warn("Notice: optimize-images skipped (images already compiled or sharp native binary missing for this OS).");
 }
+// Start from a clean build: Next.js can reuse stale CSS from its cache in .next.
+fs.rmSync(path.join(site, ".next"), { recursive: true, force: true });
 const nextBin = path.join(site, "node_modules", "next", "dist", "bin", "next");
-if (fs.existsSync(nextBin)) {
-  run(`node "${nextBin}" build`);
-} else {
-  run(process.platform === "win32" ? "npx.cmd next build" : "npx next build");
+const buildCommand = fs.existsSync(nextBin)
+  ? `node "${nextBin}" build`
+  : process.platform === "win32" ? "npx.cmd next build" : "npx next build";
+// A clean build downloads the Google fonts again; one slow download fails the
+// build, so try once more before giving up.
+try {
+  run(buildCommand);
+} catch {
+  console.warn("Build failed (often a font download timing out). Trying once more...");
+  run(buildCommand);
 }
 
 fs.rmSync(upload, { recursive: true, force: true });

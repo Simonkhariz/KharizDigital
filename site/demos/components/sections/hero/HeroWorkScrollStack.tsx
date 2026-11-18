@@ -84,138 +84,155 @@ export default function HeroWorkScrollStack({
   const handleSecondaryClick = useButtonClick(secondaryButton?.href || "#");
 
   useEffect(() => {
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-    const gsapContext = gsap.context(() => {
-      const cards = [firstCardRef.current, secondCardRef.current, thirdCardRef.current];
+    // gsap.matchMedia rebuilds the animation whenever the layout crosses the
+    // phone/desktop breakpoint (a rotated tablet, a resized window, a browser's
+    // phone preview). Deciding once on load left the cards scattered until a reload.
+    const media = gsap.matchMedia(containerRef);
+    const cardRefs = [firstCardRef, secondCardRef, thirdCardRef];
+
+    /** Vertical distance that puts the card's centre on the stack anchor's centre. */
+    const distanceToAnchor = (card: HTMLElement, stackAnchor: HTMLElement) =>
+      getDocumentTop(stackAnchor) +
+      stackAnchor.offsetHeight / 2 -
+      (getDocumentTop(card) + card.offsetHeight / 2);
+
+    /** The layout is still settling when the breakpoint flips, so measure again once it has. */
+    const remeasureSoon = () => {
+      const timeoutId = setTimeout(() => ScrollTrigger.refresh(), 350);
+      return () => clearTimeout(timeoutId);
+    };
+
+    media.add("(min-width: 768px)", () => {
       const stackAnchor = stackAnchorRef.current;
       if (!stackAnchor) {
         return;
       }
-      const anchorRect = stackAnchor.getBoundingClientRect();
-      const anchorCenterY = anchorRect.top + anchorRect.height / 2;
-      if (isDesktop) {
-        // The horizontal offsets suit the full 61rem content width; narrower layouts scale them down
-        // so the stack stays beside the copy instead of running off the right edge.
-        const offsetScale = Math.min(1, (gridRef.current?.offsetWidth ?? Infinity) / (61 * 16));
-        const xOffsets = [32, 14.5, -1.8].map((offset) => `${offset * offsetScale}rem`);
-        const yOffsets = [0, -48, 0];
-        const rotations = [-5, 0, 5];
-        const scales = [1.35, 1.3, 1.25];
-        const zIndexes = [30, 20, 10];
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        });
-        cards.forEach((card, index) => {
-          if (!card) {
-            return;
-          }
-          const cardRect = card.getBoundingClientRect();
-          const distanceToAnchor = anchorCenterY - (cardRect.top + cardRect.height / 2);
-          gsap.set(card, {
-            x: xOffsets[index],
-            y: distanceToAnchor + yOffsets[index],
+      // The horizontal offsets suit the full 61rem content width; narrower layouts scale them down
+      // so the stack stays beside the copy instead of running off the right edge.
+      const offsetScale = () => Math.min(1, (gridRef.current?.offsetWidth ?? Infinity) / (61 * 16));
+      const xOffsets = [32, 14.5, -1.8];
+      const yOffsets = [0, -48, 0];
+      const rotations = [-5, 0, 5];
+      const scales = [1.35, 1.3, 1.25];
+      const zIndexes = [30, 20, 10];
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+      cardRefs.forEach(({ current: card }, index) => {
+        if (!card) {
+          return;
+        }
+        gsap.set(card, { zIndex: zIndexes[index], willChange: "transform", force3D: true });
+        timeline.fromTo(
+          card,
+          {
+            x: () => `${xOffsets[index] * offsetScale()}rem`,
+            y: () => distanceToAnchor(card, stackAnchor) + yOffsets[index],
             rotation: rotations[index],
             scale: scales[index],
-            zIndex: zIndexes[index],
-            willChange: "transform",
-            force3D: true,
-          });
-          timeline.to(
-            card,
-            {
-              x: 0,
-              y: 0,
-              rotation: 0,
-              scale: 1,
-              duration: 0.4,
-              ease: "none",
-            },
-            0,
-          );
-          timeline.to(
-            card,
-            {
-              zIndex: 1,
-              duration: 0.1,
-              ease: "none",
-            },
-            0.3,
-          );
-        });
-      } else {
-        // Phones: the cards sit fanned under the hero copy, then follow the scroll down into the list.
-        // The work heading lies on their path, so it fades out while they pass over it.
-        const widthFactors = [0, 0.09, -0.09];
-        const yOffsets = [6, -12, -4];
-        const rotations = [-3, 6, -8];
-        const scales = [0.8, 0.76, 0.72];
-        const zIndexes = [30, 20, 10];
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: stackAnchor,
-            start: "clamp(center 35%)",
-            endTrigger: gridRef.current,
-            end: "top 55%",
-            scrub: 0.6,
-            invalidateOnRefresh: true,
           },
-        });
-        cards.forEach((card, index) => {
-          if (!card) {
-            return;
-          }
-          gsap.set(card, {
-            zIndex: zIndexes[index],
-            willChange: "transform",
-            force3D: true,
-          });
-          timeline.fromTo(
-            card,
-            {
-              x: () => card.offsetWidth * widthFactors[index],
-              y: () =>
-                getDocumentTop(stackAnchor) +
-                stackAnchor.offsetHeight / 2 -
-                (getDocumentTop(card) + card.offsetHeight / 2) +
-                yOffsets[index],
-              rotation: rotations[index],
-              scale: scales[index],
-            },
-            {
-              x: 0,
-              y: 0,
-              rotation: 0,
-              scale: 1,
-              duration: 1,
-              ease: "power1.inOut",
-            },
-            0,
-          );
-        });
-        timeline.to(
-          workHeaderRef.current,
           {
-            keyframes: {
-              "0%": { autoAlpha: 1 },
-              "15%": { autoAlpha: 1 },
-              "30%": { autoAlpha: 0 },
-              "68%": { autoAlpha: 0 },
-              "90%": { autoAlpha: 1 },
-              "100%": { autoAlpha: 1 },
-            },
-            duration: 1,
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            duration: 0.4,
             ease: "none",
           },
           0,
         );
+        timeline.to(
+          card,
+          {
+            zIndex: 1,
+            duration: 0.1,
+            ease: "none",
+          },
+          0.3,
+        );
+      });
+      return remeasureSoon();
+    });
+
+    media.add("(max-width: 767px)", () => {
+      const stackAnchor = stackAnchorRef.current;
+      if (!stackAnchor) {
+        return;
       }
-    }, containerRef);
-    return () => gsapContext.revert();
+      // Phones: the cards sit fanned under the hero copy, then follow the scroll down into the list.
+      // The work heading lies on their path, so it fades out while they pass over it.
+      const widthFactors = [0, 0.09, -0.09];
+      const yOffsets = [6, -12, -4];
+      const rotations = [-3, 6, -8];
+      const scales = [0.8, 0.76, 0.72];
+      const zIndexes = [30, 20, 10];
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: stackAnchor,
+          start: "clamp(center 35%)",
+          endTrigger: gridRef.current,
+          end: "top 55%",
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+        },
+      });
+      cardRefs.forEach(({ current: card }, index) => {
+        if (!card) {
+          return;
+        }
+        gsap.set(card, { zIndex: zIndexes[index], willChange: "transform", force3D: true });
+        timeline.fromTo(
+          card,
+          {
+            x: () => card.offsetWidth * widthFactors[index],
+            y: () => distanceToAnchor(card, stackAnchor) + yOffsets[index],
+            rotation: rotations[index],
+            scale: scales[index],
+          },
+          {
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          },
+          0,
+        );
+      });
+      timeline.to(
+        workHeaderRef.current,
+        {
+          keyframes: {
+            "0%": { autoAlpha: 1 },
+            "15%": { autoAlpha: 1 },
+            "30%": { autoAlpha: 0 },
+            "68%": { autoAlpha: 0 },
+            "90%": { autoAlpha: 1 },
+            "100%": { autoAlpha: 1 },
+          },
+          duration: 1,
+          ease: "none",
+        },
+        0,
+      );
+      return remeasureSoon();
+    });
+
+    // Fonts and images can change the page height after the positions were measured.
+    const refresh = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(refresh);
+    window.addEventListener("load", refresh);
+    return () => {
+      window.removeEventListener("load", refresh);
+      media.revert();
+    };
   }, []);
 
   return (

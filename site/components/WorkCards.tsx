@@ -5,7 +5,7 @@ import { categoryLabel, demoLinkProps, projectUrl } from "@/lib/projects";
 
 const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 const CARD = "group relative block aspect-[4/3] overflow-hidden bg-secondary";
-const COVER = `absolute inset-0 w-full h-full object-cover grayscale transition-[transform,filter] duration-700 ${EASE} group-hover:grayscale-0`;
+const COVER = `absolute inset-0 w-full h-full object-cover grayscale transition-[transform,filter] duration-700 ${EASE} group-hover:grayscale-0 group-data-[in-view]:grayscale-0`;
 const coverClass = (project: Project) => `${COVER} ${project.coverPosition === "center" ? "object-center" : "object-top"}`;
 const SIZES = "(max-width: 768px) 100vw, (max-width: 1792px) 50vw, 864px";
 
@@ -42,7 +42,7 @@ function Caption({ project, showDescription }: { project: Project; showDescripti
 export function FeaturedCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <article>
-      <Link href={`/work/${project.slug}`} aria-label={`${project.title}: project details`} className={CARD}>
+      <Link href={`/work/${project.slug}`} aria-label={`${project.title}: project details`} data-colour-on-scroll className={CARD}>
         <Picture image={project.coverImage} sizes={SIZES} priority={priority} className={coverClass(project)} />
         <span className="absolute left-0 bottom-0 inline-flex items-center gap-2 bg-background text-foreground font-mono text-[10px] md:text-[11px] uppercase tracking-[0.04em] leading-none px-3 py-2 transition-colors duration-500 group-hover:bg-foreground group-hover:text-background">
           <span aria-hidden>→</span>
@@ -58,7 +58,7 @@ export function FeaturedCard({ project, priority = false }: { project: Project; 
 export function WorkCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <article>
-      <Link href={`/work/${project.slug}`} aria-label={`${project.title}: project details`} className={CARD}>
+      <Link href={`/work/${project.slug}`} aria-label={`${project.title}: project details`} data-colour-on-scroll className={CARD}>
         <Picture image={project.coverImage} sizes={SIZES} priority={priority} className={coverClass(project)} />
         <span
           className={`absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/45 to-transparent opacity-0 transition-opacity duration-700 ${EASE} group-hover:opacity-100 pointer-events-none`}

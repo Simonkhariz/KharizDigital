@@ -22,6 +22,12 @@ html[data-showcase="rapporta"] {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Like the other demos: anything too wide is clipped instead of letting the
+   whole page scroll sideways on a phone. */
+html[data-showcase="rapporta"] body {
+  overflow-x: clip;
+}
+
 :where(html[data-showcase="rapporta"]) *,
 :where(html[data-showcase="rapporta"]) *::before,
 :where(html[data-showcase="rapporta"]) *::after {

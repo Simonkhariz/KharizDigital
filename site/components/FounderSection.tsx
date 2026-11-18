@@ -10,12 +10,12 @@ export function FounderSection({ number, className }: { number: string; classNam
   return (
     <Section id="founder" title={`${founder.heading}.`} number={number} className={className}>
       <Reveal className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-8 items-start lg:items-stretch">
-        <figure className="group md:col-span-5 lg:col-span-4 w-[280px] md:w-full border border-border flex flex-col">
+        <figure data-colour-on-scroll className="group md:col-span-5 lg:col-span-4 w-[280px] md:w-full border border-border flex flex-col">
           <div className="p-4 flex-1 flex flex-col justify-center">
             <Picture
               image={founder.photo}
               sizes="(max-width: 768px) 280px, 40vw"
-              className="w-full h-auto block grayscale transition-[filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:grayscale-0"
+              className="w-full h-auto block grayscale transition-[filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:grayscale-0 group-data-[in-view]:grayscale-0"
             />
           </div>
           <figcaption className="border-t border-border p-4 flex justify-between gap-4">

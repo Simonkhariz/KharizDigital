@@ -113,6 +113,15 @@ body {
     --width-carousel-item-2: calc(100vw - 2.5rem) !important;
     --width-carousel-item-3: calc(100vw - 2.5rem) !important;
     --width-carousel-item-4: calc(100vw - 2.5rem) !important;
+    /* The desktop sizes are vw-based and fall to 7–11px on a phone. */
+    --text-2xs: 0.6875rem !important;
+    --text-xs: 0.75rem !important;
+    --text-sm: 0.875rem !important;
+    --text-base: 1rem !important;
+    --text-lg: 1.0625rem !important;
+    --text-xl: 1.125rem !important;
+    --text-2xl: 1.2rem !important;
+    --text-3xl: 1.3rem !important;
     --text-4xl: clamp(1.35rem, 5vw, 1.75rem) !important;
     --text-5xl: clamp(1.6rem, 6vw, 2.2rem) !important;
     --text-6xl: clamp(1.85rem, 7vw, 2.6rem) !important;

@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 import HeroBackgroundSlot from "@/demos/components/providers/HeroBackgroundSlot";
 import AvatarGroup from "@/demos/components/ui/AvatarGroup";
 import Button from "@/demos/components/ui/buttons/Button";
+import { videoPoster } from "@/demos/components/ui/ImageOrVideo";
 import TextAnimation from "@/demos/components/ui/TextAnimation";
 import type { ButtonLink, TextAnimationVariant } from "@/demos/lib/types";
 
@@ -54,23 +55,26 @@ export default function HeroSection({
       return;
     }
 
-    const handleCanPlayThrough = () => {
+    // Lift the loader as soon as the first frame can be drawn. Waiting for
+    // "canplaythrough" (the whole file) kept phones on the loader for up to 8 s;
+    // the poster covers the hero until the video has caught up.
+    const handleLoadedData = () => {
       setIsVideoReady(true);
     };
-    if (video.readyState >= 4) {
+    if (video.readyState >= 2) {
       setIsVideoReady(true);
     } else {
-      video.addEventListener("canplaythrough", handleCanPlayThrough, {
+      video.addEventListener("loadeddata", handleLoadedData, {
         once: true,
       });
     }
 
     const fallbackTimeoutId = setTimeout(() => {
       setIsVideoReady(true);
-    }, 8e3);
+    }, 2500);
 
     return () => {
-      video.removeEventListener("canplaythrough", handleCanPlayThrough);
+      video.removeEventListener("loadeddata", handleLoadedData);
       clearTimeout(fallbackTimeoutId);
     };
   }, []);
@@ -199,6 +203,7 @@ export default function HeroSection({
           <video
             ref={videoRef}
             src={videoSrc}
+            poster={videoPoster(videoSrc)}
             muted
             playsInline
             preload="auto"
