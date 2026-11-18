@@ -336,9 +336,12 @@ export default function HeroWorkScrollStack({
                 className="md:max-w-7/10 text-lg md:text-xl leading-snug text-center text-balance"
               />
             </div>
-            <div ref={gridRef} className="grid md:grid-cols-3 gap-5">
+            {/* grid-cols-1 and min-w-0 keep each column to the screen width. Without them
+                Safari sizes the column to the image's full resolution (1281px on an iPhone),
+                which blew the cards up and scattered the hero stack. */}
+            <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {items.map((item, index) => (
-                <div key={item.title} className="flex flex-col gap-3 xl:gap-4 2xl:gap-5">
+                <div key={item.title} className="flex flex-col gap-3 xl:gap-4 2xl:gap-5 min-w-0">
                   <div
                     ref={index === 0 ? firstCardRef : index === 1 ? secondCardRef : thirdCardRef}
                     className="aspect-4/3 rounded-2xl shadow-2xl relative card p-2 xl:p-3 2xl:p-4"
