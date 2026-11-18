@@ -41,7 +41,7 @@ export default function LuxuryRealEstateTemplate() {
         <div id="hero" data-section="hero">
           <HeroSection
             textAnimation="fade"
-            videoSrc="/images/luxury-real-estate/hero.mp4"
+            frames={{ path: "/images/luxury-real-estate/hero-frames", count: 125 }}
             tag="Le Cercle Premium Real Estate"
             title="Live Where the Sun Meets the Sea"
             description="Exclusive beachfront villas and luxury apartments on the Costa del Sol. Your Mediterranean dream, delivered turnkey."

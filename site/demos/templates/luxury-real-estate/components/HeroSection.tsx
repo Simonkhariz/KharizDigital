@@ -1,23 +1,46 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AnimatePresence, motion } from "motion/react";
 import HeroBackgroundSlot from "@/demos/components/providers/HeroBackgroundSlot";
 import AvatarGroup from "@/demos/components/ui/AvatarGroup";
 import Button from "@/demos/components/ui/buttons/Button";
-import { videoPoster } from "@/demos/components/ui/ImageOrVideo";
 import TextAnimation from "@/demos/components/ui/TextAnimation";
 import type { ButtonLink, TextAnimationVariant } from "@/demos/lib/types";
 
-gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
+/** Still frames made from a video by scripts/video-frames.mjs (npm run frames). */
+interface ScrollFrames {
+  /** Folder holding wide/001.webp... and tall/001.webp...; its first frame is <path>-poster.jpg. */
+  path: string;
+  /** Number of frames in each set. */
+  count: number;
+}
+
+const frameUrl = (path: string, set: "wide" | "tall", index: number) =>
+  `${path}/${set}/${String(index + 1).padStart(3, "0")}.webp`;
+
+/** Frame 0 first, then every 8th, 4th and 2nd, then the rest: scrolling works long before all have arrived. */
+function loadOrder(count: number) {
+  const order: number[] = [];
+  const seen = new Set<number>();
+  for (const step of [count, 8, 4, 2, 1]) {
+    for (let index = 0; index < count; index += step) {
+      if (!seen.has(index)) {
+        seen.add(index);
+        order.push(index);
+      }
+    }
+  }
+  return order;
+}
+
 interface HeroSectionProps {
-  /** Video whose playback position follows the scroll progress through the hero. */
-  videoSrc: string;
+  /** Frames drawn in step with the scroll progress through the hero. */
+  frames: ScrollFrames;
   /** Shown in the loading screen and as the small label above the title. */
   tag: string;
   title: string;
@@ -31,9 +54,13 @@ interface HeroSectionProps {
   textAnimation: TextAnimationVariant;
 }
 
-/** Full-screen hero with a loading screen and a pinned video that is scrubbed by scrolling. */
+/**
+ * Full-screen hero with a loading screen and a pinned scene that plays as you scroll.
+ * The scene is a sequence of still frames drawn on a canvas, not a <video>: setting a
+ * video's currentTime on scroll shows nothing on iPhones and stutters on Android.
+ */
 export default function HeroSection({
-  videoSrc,
+  frames,
   tag,
   title,
   description,
@@ -45,76 +72,128 @@ export default function HeroSection({
   textAnimation,
 }: HeroSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoReady, setIsVideoReady] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isSceneReady, setIsSceneReady] = useState(false);
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
+  const { path: framesPath, count: frameCount } = frames;
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext("2d");
+    if (!canvas || !context) {
       return;
     }
+    const path = framesPath;
+    const count = frameCount;
+    // Phones held upright get the portrait crop: smaller files, same picture.
+    const portrait = window.matchMedia("(max-aspect-ratio: 1/1)");
+    let images: (HTMLImageElement | null)[] = [];
+    let generation = 0;
+    let target = 0;
+    let drawnImage: HTMLImageElement | null = null;
 
-    // Lift the loader as soon as the first frame can be drawn. Waiting for
-    // "canplaythrough" (the whole file) kept phones on the loader for up to 8 s;
-    // the poster covers the hero until the video has caught up.
-    const handleLoadedData = () => {
-      setIsVideoReady(true);
+    const nearestLoaded = (index: number) => {
+      for (let distance = 0; distance < count; distance++) {
+        const before = images[index - distance];
+        if (before) {
+          return before;
+        }
+        const after = images[index + distance];
+        if (after) {
+          return after;
+        }
+      }
+      return null;
     };
-    if (video.readyState >= 2) {
-      setIsVideoReady(true);
-    } else {
-      video.addEventListener("loadeddata", handleLoadedData, {
-        once: true,
-      });
-    }
 
-    const fallbackTimeoutId = setTimeout(() => {
-      setIsVideoReady(true);
-    }, 2500);
+    const draw = () => {
+      const image = nearestLoaded(target);
+      if (!image || image === drawnImage) {
+        return;
+      }
+      drawnImage = image;
+      // Like object-fit: cover.
+      const scale = Math.max(canvas.width / image.naturalWidth, canvas.height / image.naturalHeight);
+      const width = image.naturalWidth * scale;
+      const height = image.naturalHeight * scale;
+      context.drawImage(image, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
+    };
+
+    const resize = () => {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(canvas.clientWidth * pixelRatio);
+      canvas.height = Math.round(canvas.clientHeight * pixelRatio);
+      drawnImage = null;
+      draw();
+    };
+
+    const load = () => {
+      const set = portrait.matches ? "tall" : "wide";
+      const current = ++generation;
+      images = new Array(count).fill(null);
+      drawnImage = null;
+      const order = loadOrder(count);
+      let next = 0;
+      const worker = async () => {
+        while (next < order.length && current === generation) {
+          const index = order[next++];
+          const image = new Image();
+          image.src = frameUrl(path, set, index);
+          try {
+            // Decode now so drawing it while scrolling never stalls.
+            await image.decode();
+          } catch {
+            continue;
+          }
+          if (current !== generation) {
+            return;
+          }
+          images[index] = image;
+          if (index === 0) {
+            setIsSceneReady(true);
+          }
+          draw();
+        }
+      };
+      for (let lane = 0; lane < 6; lane++) {
+        void worker();
+      }
+    };
+
+    // Smooths the scroll position, like the scrub on the old video.
+    const playhead = { frame: 0 };
+    const tween = gsap.to(playhead, {
+      frame: count - 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.5,
+      },
+      onUpdate: () => {
+        target = Math.round(playhead.frame);
+        draw();
+      },
+    });
+
+    resize();
+    load();
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(canvas);
+    portrait.addEventListener("change", load);
+    // Never keep visitors on the loader: the poster covers the hero until frames arrive.
+    const fallbackTimeoutId = setTimeout(() => setIsSceneReady(true), 2500);
 
     return () => {
-      video.removeEventListener("loadeddata", handleLoadedData);
+      generation++;
       clearTimeout(fallbackTimeoutId);
+      portrait.removeEventListener("change", load);
+      resizeObserver.disconnect();
+      tween.scrollTrigger?.kill();
+      tween.kill();
     };
-  }, []);
-
-  useGSAP(
-    () => {
-      if (!isVideoReady) {
-        return;
-      }
-      const video = videoRef.current;
-      if (!video) {
-        return;
-      }
-
-      const createScrubTrigger = () => {
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.5,
-          onUpdate: (scrollTrigger) => {
-            if (video.duration) {
-              video.currentTime = video.duration * scrollTrigger.progress;
-            }
-          },
-        });
-      };
-      if (video.readyState >= 1) {
-        createScrubTrigger();
-      } else {
-        video.addEventListener("loadedmetadata", createScrubTrigger, {
-          once: true,
-        });
-      }
-    },
-    {
-      scope: containerRef,
-      dependencies: [isVideoReady],
-    },
-  );
+  }, [framesPath, frameCount]);
 
   return (
     <>
@@ -133,7 +212,7 @@ export default function HeroSection({
             <motion.div
               className="flex flex-col items-center gap-6"
               animate={
-                isVideoReady
+                isSceneReady
                   ? {
                       opacity: 0,
                       y: -20,
@@ -147,7 +226,7 @@ export default function HeroSection({
                 duration: 0.5,
               }}
               onAnimationComplete={() => {
-                if (isVideoReady) {
+                if (isSceneReady) {
                   setIsLoaderVisible(false);
                 }
               }}
@@ -179,13 +258,13 @@ export default function HeroSection({
                     scaleX: 0,
                   }}
                   animate={{
-                    scaleX: isVideoReady ? 1 : 0.9,
+                    scaleX: isSceneReady ? 1 : 0.9,
                   }}
                   style={{
                     originX: 0,
                   }}
                   transition={{
-                    duration: isVideoReady ? 0.3 : 3,
+                    duration: isSceneReady ? 0.3 : 3,
                     ease: [0.76, 0, 0.24, 1],
                   }}
                 />
@@ -200,14 +279,11 @@ export default function HeroSection({
           className="sticky top-0 overflow-hidden flex flex-col justify-between w-full h-svh"
         >
           <HeroBackgroundSlot />
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            poster={videoPoster(videoSrc)}
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+          <canvas
+            ref={canvasRef}
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${framesPath}-poster.jpg)` }}
           />
           <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
           <div

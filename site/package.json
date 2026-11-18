@@ -10,6 +10,7 @@
     "preview": "node scripts/preview.mjs",
     "images": "node scripts/optimize-images.mjs",
     "videos": "node scripts/optimize-videos.mjs",
+    "frames": "node scripts/video-frames.mjs",
     "lint": "eslint",
     "sync:webild": "bash scripts/sync-webild-sites.sh"
   },

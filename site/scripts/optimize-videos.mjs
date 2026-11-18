@@ -33,8 +33,8 @@ const outIndex = args.indexOf("--out");
 const outDir = outIndex >= 0 ? path.resolve(args[outIndex + 1]) : null;
 const force = args.includes("--force");
 
-// Videos scrubbed by scrolling need a keyframe on every frame, or seeking stutters.
-const SCRUBBED = new Set(["luxury-real-estate/hero.mp4"]);
+// Videos driven by scrolling are not handled here: they are turned into still
+// frames by scripts/video-frames.mjs (npm run frames).
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -93,7 +93,6 @@ for (const file of walk(SOURCE).filter((f) => f.toLowerCase().endsWith(".mp4")))
       "-c:v", "libx264", "-preset", "slow", "-crf", "20",
       "-pix_fmt", "yuv420p", "-profile:v", "high",
       "-fps_mode", "passthrough",
-      ...(SCRUBBED.has(rel) ? ["-g", "1"] : []),
       "-movflags", "+faststart",
       temp,
     ]);
